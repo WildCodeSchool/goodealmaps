@@ -1,3 +1,6 @@
+
+{% include 'Item/_footer.html.twig' %}
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -13,6 +16,7 @@
 </head>
 
 <body>
+    {% block footer %}{% endblock %}
     {% block content %}{% endblock %}
     {% block javascript %}{% endblock %}
 </body>
