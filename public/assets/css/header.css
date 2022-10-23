@@ -59,10 +59,27 @@ a {
     text-decoration: none;
     color: var(--color-primary);
     font-size: 40px;
+    text-decoration: none;
+    position: relative;
 }
 
-.title:hover {
-    text-decoration: underline;
+.title:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-primary);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out;
+}
+
+.title:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+
 }
 
 /*serch*/
@@ -160,7 +177,7 @@ ul li {
     text-align: center
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 490px) {
 
     header {
         flex-direction: column;
