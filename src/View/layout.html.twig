@@ -1,5 +1,5 @@
 
-{% include 'Item/_footer.html.twig' %}
+
 
 <!doctype html>
 <html lang="fr">
@@ -8,6 +8,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/assets/images/favicon.png">
+  
 
     <title>{% block title %}{% endblock %}</title>
 
@@ -16,8 +17,11 @@
 </head>
 
 <body>
-    {% block footer %}{% endblock %}
+
+    
     {% block content %}{% endblock %}
+    {% include 'Item/_footer.html.twig' %}
+
     {% block javascript %}{% endblock %}
 </body>
 </html>
