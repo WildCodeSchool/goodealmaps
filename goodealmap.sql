@@ -55,7 +55,7 @@ CREATE TABLE `author` (
 
 CREATE TABLE `region` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
-  `regionName` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `regionName` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 

@@ -20,9 +20,12 @@
     --color-text: #000;
     --font-primary-regular: IstokWebRegular;
     --font-primary-bold: IstokWebBold;
-    --font-size-cart-header: 18px;
-    --font-size-cart-date: 16px;
-    --font-size-button: 12px;
+    --font-size-cart-header: 1.125rem;
+    /*18px*/
+    --font-size-cart-date: 1rem;
+    /*16px;*/
+    --font-size-button: 0.75rem;
+    /*12px;*/
     --padding-cart: 20px;
     --padding-line: 3px;
     --cart-header-height: calc(3*var(--font-size-cart-header));
@@ -139,12 +142,9 @@ a.icon.remove {
     line-height: 55px;
 }
 
-.cart-modify {
+.cart-date-city {
     height: calc(1.5*var(--cart-header-height));
     font-size: var(--font-size-cart-date);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .cart-icons,
@@ -167,7 +167,7 @@ a.icon.remove {
 }
 
 .cart-date span {
-    padding: var(--padding-line) 0;
+    padding: calc(2*var(--padding-line)) 0;
 }
 
 
