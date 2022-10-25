@@ -1,0 +1,43 @@
+@media only screen and (max-width: 1100px) {
+    .lastNews{
+        /* display: none; */
+        width: 100%;
+       
+        background-color: var(--color-secondary);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: solid 1px red;
+        
+    }
+    .btnGooDeals {
+        display: none;
+    }
+   
+  /*Caroussel CSS*/
+    .slide {
+      padding-top: 80px;
+      padding-bottom: 80px;
+      display: flex;
+      overflow: scroll;
+      scroll-behavior: smooth;
+    }
+   .allArrows{
+    width: 700px;
+    min-width: 700px;
+    display: flex;
+    margin: auto;
+   }
+
+  ::-webkit-scrollbar {
+    display: none;
+
+  }
+  .card{
+    border: solid 1px black;
+    width: 200px;
+    height: 400px;
+  }     
+    
+}
+
