@@ -11,10 +11,15 @@
 
 
     <title>{% block title %}GoodealMap{% endblock %}</title>
+		
+		{% block stylesheet %}
         <link rel="stylesheet" href="/assets/css/reset.css">
-		{% block stylesheet %}{% endblock %}
         <link rel="stylesheet" href="/assets/css/style.css">
-        <link rel="stylesheet" href="/assets/css/map.css">s
+        <link rel="stylesheet" href="/assets/css/mapDesktop.css">
+		<link rel="stylesheet" href="/assets/css/mapMobile.css">
+		<link rel="stylesheet" href="/assets/css/columnReviewDesktop.css">
+		<link rel="stylesheet" href="/assets/css/columnReviewMobile.css">
+		{% endblock %}
 	</head>
 
 
