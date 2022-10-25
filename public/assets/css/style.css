@@ -1,0 +1,46 @@
+:root {
+    --width-photo-dev: 230px;
+    --margin-photo-dev: 70 px;
+    --width-about-text: 300px;
+}
+
+
+/* styles for About us page */
+h1 {
+    font-size: 36px;
+    text-align: center;
+    color: var(--color-primary);
+    font-family: var(--font-primary-bold);
+}
+
+.container-about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.container-about p {
+    align-self: flex-start;
+    width: var(--width-about-text);
+    font-size: var(--font-size-cart-header);
+    font-family: var(--font-primary-regular);
+    background-color: var(--color-secondary);
+    border-radius: 20px;
+    text-align: justify;
+    padding: var(--padding-cart);
+}
+
+span.devs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: calc(3*var(--width-photo-dev) + 140px);
+}
+
+span.dev {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

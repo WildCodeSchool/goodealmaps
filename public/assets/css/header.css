@@ -33,7 +33,7 @@
 
 body {
     color: var(--color-text);
-    font-family: var(--font-primary);
+    font-family: var(--font-primary-regular);
 }
 
 .global_header {

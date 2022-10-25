@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+	<h1>Qui nous sommes </h1>
+    <div class="container-about">	
+    <p>Salut !<br/>Nous sommes une équipe de 5 devs-voyagers. 
+        On apprecie le bon pain (et le vin) ainsi que les bon jeux du cirque. 
+        C’est pourquoi on a crie ce site.<br/>Bon courage et bon voyage !
+    </p>
+    <span class="devs">
+        {% for dev in devs %}
+        <span class="dev">
+            <img src="{{pathAva ~ dev.link}}" />
+            <span class="name">{{dev.name}}</span>
+            <span>
+                <span class="icon"><a href="{{dev.github}}"><img class="icon" src="{{pathIcon ~ 'github.png'}}" /></a></span>
+                <span class="icon"><a href="{{dev.linkedin}}"><img class="icon" src="{{pathIcon ~ 'linkedin.png'}}" /></a></span>
+            </span>
+        </span>
+        {% endfor %}
+    </span>
+{% endblock %}
