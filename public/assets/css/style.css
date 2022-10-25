@@ -23,6 +23,12 @@
     --font-size-cart-header: 18px;
     --font-size-cart-date: 16px;
     --padding-cart: 20px;
+    --margin-cart: 85px;
+    --padding-line: 3px;
+    --cart-header-height: calc(3*var(--font-size-cart-header));
+    --cart-width: 382px;
+    --cart-height: 636px;
+    --cart-icon-width: 25px;
     --cart-header-height: 54px;
     --width-photo-dev: 230px;
     --margin-photo-dev: 70 px;
@@ -247,7 +253,7 @@ div.cart-see-more {
     }
 }
 
-@media (max-width: 840px) {
+@media (max-width: 860px) {
     div.container {
         width: var(--cart-width);
     }
