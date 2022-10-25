@@ -4,38 +4,35 @@
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		{% block stylesheet%}
 		<link rel="icon" href="/assets/images/icons/favicon.png">
 		<link rel="stylesheet" href="/assets/css/style.css">
 		<link rel="stylesheet" href="/assets/css/header.css">
-		<title>
-			{% block title %}GooDealMap
-			{% endblock %}
-		</title>    
-		
-		{% block stylesheet %}
-        <link rel="stylesheet" href="/assets/css/reset.css">
-        <link rel="stylesheet" href="/assets/css/style.css">
+    	<link rel="stylesheet" href="/assets/css/footer.css">		
+        <link rel="stylesheet" href="/assets/css/reset.css">        
         <link rel="stylesheet" href="/assets/css/mapDesktop.css">
 		<link rel="stylesheet" href="/assets/css/mapMobile.css">
 		<link rel="stylesheet" href="/assets/css/columnReviewDesktop.css">
 		<link rel="stylesheet" href="/assets/css/columnReviewMobile.css">
 		{% endblock %}
+		<title>
+			{% block title %}GooDealMap
+			{% endblock %}
+		</title>  		
 	</head>
 
+<body>
+    {% block header %} 
+    {% include 'Item/_header.html.twig' %}
+    {% endblock %}
+    {% block content %}{% endblock %}
 
-	</head>
+    {% block footer %} 
+    {% include 'Item/_footer.html.twig' %}
+    {% endblock %}
 
-	<body>
-		{% block header %}
-			{% include 'Item/_header.html.twig' %}
-		{% endblock %}
-
-		{% block content %}{% endblock %}
-
-		{% block footer %}{% endblock %}
 		{% block javascript %}
 		<script src="./assets/javascript/modalMap.js"></script>
 		{% endblock %}
-		
-	</body>
+</body>
 </html>
