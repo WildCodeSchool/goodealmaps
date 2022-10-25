@@ -36,7 +36,7 @@ body {
     font-family: var(--font-primary);
 }
 
-header {
+.global_header {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -46,7 +46,7 @@ header {
 
 }
 
-a {
+.a_header {
     font-family: var(--font-primary-regular);
     text-decoration: none;
     color: var(--color-primary);
@@ -155,7 +155,7 @@ a {
 }
 
 
-ul {
+.ul_header {
     background: white;
     position: absolute;
     width: 100%;
@@ -168,18 +168,18 @@ ul {
     list-style: none;
 }
 
-ul.open {
+.ul_header.open {
     transform: scaleY(1);
 }
 
-ul li {
+.ul_header li {
     padding: 10px 0;
     text-align: center
 }
 
 @media screen and (max-width: 490px) {
 
-    header {
+    .global_header {
         flex-direction: column;
     }
 
@@ -198,16 +198,11 @@ ul li {
         display: flex;
         justify-content: space-around;
         align-items: center;
+        margin-top: -17px;
 
     }
 
-    header {
-        display: flex;
-        align-items: center;
-        height: 85px;
-        background-color: var(--color-secondary);
-        padding-top: 5px;
-        padding-bottom: 15px;
-
+    .search {
+        margin-top: -30px;
     }
 }
