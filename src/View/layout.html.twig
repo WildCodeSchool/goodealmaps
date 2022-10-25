@@ -8,6 +8,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/assets/images/favicon.png">
+    <link rel="stylesheet" href="/assets/css/footer.css">
   
 
     <title>{% block title %}{% endblock %}</title>
@@ -20,7 +21,10 @@
 
     
     {% block content %}{% endblock %}
+
+    {% block footer %} 
     {% include 'Item/_footer.html.twig' %}
+    {% endblock %}
 
     {% block javascript %}{% endblock %}
 </body>

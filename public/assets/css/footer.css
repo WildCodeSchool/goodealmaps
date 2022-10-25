@@ -37,7 +37,7 @@
 
 @media screen and (max-width: 490px) {
 
-  footer {
+  .global_footer {
     display: block;
     position:relative;
   
@@ -50,7 +50,7 @@
     
     }
 
-    ul{
+    .ul_footer{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -70,7 +70,7 @@
 
 
 /* -------------Footer desktop---------------- */
-footer {
+.global_footer {
     display: block;
     height: 95px;
     width: 100%;
@@ -96,20 +96,20 @@ height: 100%;
     justify-content: center;
     
 }
- ul{
+.ul_footer{
     display: flex;
    
  }
 
 
- a, p {
+ .a_footer, p {
     font-family: var(--font-primary-regular);
     text-decoration: none;
     color: var(--color-primary);
     font-size: var(--font-size-cart-footer);
 }
 
-li {
+.li_footer {
     list-style-type :none;
     margin-left: 1rem;
 }
@@ -120,7 +120,7 @@ li {
     justify-content: center;
 
 }
-p {
+.p_footer {
     margin-right: 10px;
 }
 
