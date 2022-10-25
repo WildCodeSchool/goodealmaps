@@ -20,9 +20,9 @@ class ItemController extends AbstractController
     /**
      * Show cart for a category
      */
-    public function category(int $id = 0): string
+    public function category(): string
     {
-        $itemManager = new ItemManager();
+       // $itemManager = new ItemManager();int $id = 0
       //  $item = $itemManager->selectOneById($id); , ['item' => $item]
 
         return $this->twig->render('Item/category.html.twig');
