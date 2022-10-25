@@ -1,28 +1,27 @@
-	<link rel="stylesheet" href="/assets/css/header.css">
-	<header>
-		<div class="nav_header">
-			<a href="/home" class="title">
-				GooDealMap</a>
+<header>
+	<div class="nav_header">
+		<a href="/home" class="title">
+			GooDealMap</a>
 
 
-			<nav class="menu_burger">
-				<a id="link" href="#">
-					<span id="burger"></span>
-				</a>
-				<ul>
-					<li><a href="/concept">Le concept</a></li>
-					<li><a href="/connexion">Connexion</a></li>
-					<li><a href="/connexion">Inscripion</a></li>
-				</ul>
-			</nav>
-		</div>
+		<nav class="menu_burger">
+			<a id="link" href="#">
+				<span id="burger"></span>
+			</a>
+			<ul>
+				<li><a href="/concept">Le concept</a></li>
+				<li><a href="/connexion">Connexion</a></li>
+				<li><a href="/connexion">Inscripion</a></li>
+			</ul>
+		</nav>
+	</div>
 
-		<div class="search">
-			<img src="/assets/images/search_icone.png" alt="search_icone" class="search_icone"/>
-			<input class="searchbar" onkeyup="search_GooDeal()" type="text" name="search" placeholder="Rechercher un GooDeal...">
-		</div>
-	</header>
+	<div class="search">
+		<img src="/assets/images/search_icone.png" alt="search_icone" class="search_icone"/>
+		<input class="searchbar" onkeyup="search_GooDeal()" type="text" name="search" placeholder="Rechercher un GooDeal...">
+	</div>
+</header>
 
-	{% block javascript %}
-		<script src="./assets/javascript/header.js"></script>
-	{% endblock %}
+{% block javascript %}
+	<script src="./assets/javascript/header.js"></script>
+{% endblock %}

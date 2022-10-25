@@ -192,15 +192,25 @@ ul li {
         display: unset;
     }
 
-    .search {
-        margin-top: 7px;
-    }
-
     .nav_header {
-        margin-top: 7px;
+
         width: 100%;
         display: flex;
         justify-content: space-around;
         align-items: center;
+        height: 40px;
+
+
+
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        height: 85px;
+        background-color: var(--color-secondary);
+        padding-top: 5px;
+        padding-bottom: 15px;
+
     }
 }
