@@ -281,7 +281,7 @@ div.cart-see-more {
 }
 
 /* styles for About us page */
-h1 {
+body h1 {
     font-size: 36px;
     text-align: center;
     color: var(--color-primary);

@@ -1,69 +1,36 @@
-@font-face {
-    font-family: 'IstokWebRegular';
-    src: url('../fonts/IstokWeb-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'IstokWebBold';
-    src: url('../fonts/IstokWeb-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-:root {
-    --color-primary: #224151;
-    --color-secondary: #F1EFDA;
-    --color-text: #000;
-    --font-primary-regular: IstokWebRegular;
-    --font-primary-bold: IstokWebBold;
-    --font-size-cart-header: 18px;
-    --font-size-cart-date: 16px;
-    --font-size-cart-footer: 1rem;
-    --padding-cart: 20px;
-    --cart-header-height: 54px;
-}
-
-* {
-    margin: 0px;
-    padding: 0px;
-}
-
-
 /* ------------Footer Mobile---------------- */
 
 @media screen and (max-width: 490px) {
 
-  .global_footer {
-    display: block;
-    position:relative;
-  
-  }
+    .global_footer {
+        display: block;
+        position: relative;
 
-    .container  {
+    }
+
+    .container {
         display: flex;
         flex-direction: column;
         position: relative;
-    
+
     }
 
-    .ul_footer{
+    .ul_footer {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        
-        
+
+
     }
-    .container_wild{
+
+    .container_wild {
         display: flex;
         justify-content: center;
-    
+
     }
-    p{
+
+    p {
         text-align: center;
     }
 }
@@ -75,18 +42,19 @@
     height: 95px;
     width: 100%;
     background-color: var(--color-secondary);
-    position:absolute;
+    position: absolute;
     bottom: 0;
-    
+
 
 
 }
-.container{  
 
-display: flex;
-height: 100%;
-   
-    
+.container {
+
+    display: flex;
+    height: 100%;
+
+
 }
 
 .container_list {
@@ -94,15 +62,17 @@ height: 100%;
     flex-grow: 1;
     align-items: center;
     justify-content: center;
-    
+
 }
-.ul_footer{
+
+.ul_footer {
     display: flex;
-   
- }
+
+}
 
 
- .a_footer, p {
+.a_footer,
+p {
     font-family: var(--font-primary-regular);
     text-decoration: none;
     color: var(--color-primary);
@@ -110,18 +80,17 @@ height: 100%;
 }
 
 .li_footer {
-    list-style-type :none;
+    list-style-type: none;
     margin-left: 1rem;
 }
 
-.container_wild{
+.container_wild {
     display: flex;
     align-items: center;
     justify-content: center;
 
 }
+
 .p_footer {
     margin-right: 10px;
 }
-
-

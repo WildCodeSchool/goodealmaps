@@ -2,19 +2,19 @@
 
 namespace App\Controller;
 
-use App\Model\ItemManager;
+use App\Model\AnnouncementManager;
 
-class ItemController extends AbstractController
+class AnnouncementController extends AbstractController
 {
     /**
      * List items
      */
     public function index(): string
     {
-        $itemManager = new ItemManager();
-        $items = $itemManager->selectAll('title');
+        /*$itemManager = new ItemManager();
+        $items = $itemManager->selectAll('title'); , ['items' => $items]*/
 
-        return $this->twig->render('Item/index.html.twig', ['items' => $items]);
+        return $this->twig->render('Announcement/index.html.twig');
     }
 
     /**
@@ -22,7 +22,7 @@ class ItemController extends AbstractController
      */
     public function category(): string
     {
-        return $this->twig->render('Item/category.html.twig');
+        return $this->twig->render('Announcement/category.html.twig');
     }
 
     /**

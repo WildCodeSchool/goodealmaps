@@ -3,8 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		{% block stylesheet%}
+		<meta name="viewport" content="width=device-width, initial-scale=1">		
 		<link rel="icon" href="/assets/images/icons/favicon.png">
 		<link rel="stylesheet" href="/assets/css/style.css">
 		<link rel="stylesheet" href="/assets/css/header.css">
@@ -14,6 +13,7 @@
 		<link rel="stylesheet" href="/assets/css/mapMobile.css">
 		<link rel="stylesheet" href="/assets/css/columnReviewDesktop.css">
 		<link rel="stylesheet" href="/assets/css/columnReviewMobile.css">
+		{% block stylesheet%}
 		{% endblock %}
 		<title>
 			{% block title %}GooDealMap
@@ -23,12 +23,12 @@
 
 <body>
     {% block header %} 
-    {% include 'Item/_header.html.twig' %}
+    {% include 'Components/_header.html.twig' %}
     {% endblock %}
     {% block content %}{% endblock %}
 
     {% block footer %} 
-    {% include 'Item/_footer.html.twig' %}
+    {% include 'Components/_footer.html.twig' %}
     {% endblock %}
 
 		{% block javascript %}
