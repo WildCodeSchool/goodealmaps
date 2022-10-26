@@ -1,0 +1,98 @@
+
+@font-face {
+    font-family: 'IstokWebRegular';
+    src: url('../fonts/IstokWeb-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IstokWebBold';
+    src: url('../fonts/IstokWeb-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --color-primary: #224151;
+    --color-secondary: #F1EFDA;
+    --color-text: #000;
+    --font-primary-regular: IstokWebRegular;
+    --font-primary-bold: IstokWebBold;
+    --font-size-cart-header: 18px;
+    --font-size-cart-date: 16px;
+    --font-size-cart-footer: 1rem;
+    --padding-cart: 20px;
+    --cart-header-height: 54px;
+}
+
+
+
+input[type=text], textarea, input[type=email] {
+    width: 50%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+  margin-right: 0px;
+  margin-left: 0px;
+    resize: vertical;
+  }
+  label{margin-right: 0px;
+    margin-left: 0px;
+    width: 100%;
+    color: var(--color-secondary);
+    display: block;
+}
+  
+  input[type=submit] {
+    background-color: rgba(34, 65, 81, 1);
+    color: white;
+    padding: 12px 40px;
+    border: none;
+    cursor: pointer;
+    margin-left: 70%;
+    display: block;
+    border-radius:28px;
+  }
+  
+  input[type=submit]:hover {
+    background-color:var(--color-secondary);
+    color: var(--color-primary)
+}
+
+ 
+
+  .contact_overlay 
+  { margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    background-color: rgba(34, 65, 81, 0.6);
+    z-index: 2;
+    border-radius: 16px;
+  }
+
+  .form{
+    height: 100%;
+    width: 100%;
+    padding-bottom: 5px;
+
+  }
+  .contact_form{
+    text-align: center;
+    vertical-align: middle;
+  
+}
+
+ .txt_form {
+ font-size: 16px;
+ text-align: center;
+ padding: 15px;
+ color: var(--color-secondary);
+}
+

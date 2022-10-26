@@ -10,6 +10,7 @@
     <link rel="icon" href="/assets/images/favicon.png">
 	<link rel="stylesheet" href="/assets/css/header.css">
 	<link rel="stylesheet" href="/assets/css/footer.css">
+	<link rel="stylesheet" href="/assets/css/contact.css">
 	
 
 
@@ -28,6 +29,10 @@
 
 	{% block header %} 
 	 {% include 'Item/_header.html.twig' %}
+    {% endblock %}
+
+	{% block contact %} 
+	 {% include 'Contact/contact.html.twig' %}
     {% endblock %}
 
 	  {% block footer %} 
