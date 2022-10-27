@@ -39,22 +39,16 @@
 /* -------------Footer desktop---------------- */
 .global_footer {
     display: block;
-    height: 95px;
+    height: 75px;
     width: 100%;
     background-color: var(--color-secondary);
-    position: absolute;
+    position: relative;
     bottom: 0;
-
-
-
 }
 
 .container {
-
     display: flex;
     height: 100%;
-
-
 }
 
 .container_list {
@@ -67,7 +61,9 @@
 
 .ul_footer {
     display: flex;
-
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 
@@ -84,6 +80,10 @@ p {
     margin-left: 1rem;
 }
 
+.li_footer.wilder-text {
+    width: 50%;
+}
+
 .container_wild {
     display: flex;
     align-items: center;
@@ -92,5 +92,11 @@ p {
 }
 
 .p_footer {
-    margin-right: 10px;
+    margin-right: 300px - var(--margin-cart);
+}
+
+
+.contact_form {
+    margin-left: auto;
+    margin-right: auto;
 }

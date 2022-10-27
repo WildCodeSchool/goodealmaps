@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="/assets/css/mapMobile.css">
 		<link rel="stylesheet" href="/assets/css/columnReviewDesktop.css">
 		<link rel="stylesheet" href="/assets/css/columnReviewMobile.css">
+        <link rel="stylesheet" href="/assets/css/contact.css">
 		{% block stylesheet%}
 		{% endblock %}
 		<title>
@@ -21,11 +22,14 @@
 		</title>  		
 	</head>
 
+	</head>
 <body>
+
     {% block header %} 
     {% include 'Components/_header.html.twig' %}
     {% endblock %}
-    {% block content %}{% endblock %}
+    {% block content %}    
+    {% endblock %}
 
     {% block footer %} 
     {% include 'Components/_footer.html.twig' %}
