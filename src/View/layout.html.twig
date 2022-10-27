@@ -3,22 +3,33 @@
 
 <!doctype html>
 <html lang="fr">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/assets/images/icons/favicon.png">
-    <link rel="stylesheet" href="/assets/css/footer.css">
-		<title>
-			{% block title %}GooDealMap
-			{% endblock %}
-		</title>
+	<link rel="stylesheet" href="/assets/css/header.css">
+	<link rel="stylesheet" href="/assets/css/footer.css">
+	<link rel="stylesheet" href="/assets/css/contact.css">
+    <title>
+        {% block title %}GooDealMap
+        {% endblock %}
+    </title>
+    {% block stylesheet %}{% endblock %}
 
+	</head>
 <body>
+   
 
-    
-    {% block content %}{% endblock %}
+	{% block header %} 
+	 {% include 'Item/_header.html.twig' %}
+    {% endblock %}
 
-    {% block footer %} 
+	{# {% block contact %} 
+	 {% include 'Contact/contact.html.twig' %}
+    {% endblock %} #}
+
+	  {% block footer %} 
     {% include 'Item/_footer.html.twig' %}
     {% endblock %}
 
