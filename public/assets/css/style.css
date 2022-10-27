@@ -14,6 +14,8 @@
     font-display: swap;
 }
 
+
+
 :root {
     --color-primary: #224151;
     --color-secondary: #F1EFDA;
@@ -33,17 +35,21 @@
     --width-photo-dev: 230px;
     --margin-photo-dev: 70 px;
     --width-about-text: 300px;
+   
 }
 
 body {
     color: var(--color-text);
     font-family: var(--font-primary);
     background-image: url("../images/background.jpeg");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     background-position: center center;
     width: 100vw;
     height: 100vh;
+   
+  
+
 }
 
 .cart h2 {
@@ -286,6 +292,7 @@ body h1 {
     text-align: center;
     color: var(--color-primary);
     font-family: var(--font-primary-bold);
+    
 }
 
 .container-about {
@@ -318,6 +325,10 @@ span.dev {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.mention{
+    padding: 10%
 }
 
 /* end of About us page styles */

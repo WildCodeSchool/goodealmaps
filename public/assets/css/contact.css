@@ -25,6 +25,7 @@
   --font-size-cart-footer: 1rem;
   --padding-cart: 20px;
   --cart-header-height: 54px;
+  --webkit-filter : blur(8px);
 }
 
 
