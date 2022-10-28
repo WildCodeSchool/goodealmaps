@@ -28,6 +28,9 @@
     margin-left: 1rem;
     scroll-snap-align: start;
   }
+  .right-card a {
+    text-decoration: none;
+}
   ::-webkit-scrollbar-thumb {
     background-color: #3d4852;
     border-radius: 3px;
