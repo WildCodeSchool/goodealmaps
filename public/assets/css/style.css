@@ -47,18 +47,19 @@ body {
     background-position: center center;
     width: 100vw;
     height: 100vh;
-   
-  
-
 }
 
-.cart h2 {
+ h1 {
+ font-size: 40px;
+}
+
+.card-single h2 {
     font-size: var(--font-size-cart-header);
     font-family: var(--font-primary-bold);
     margin: auto;
 }
 
-div.cart-container {
+div.card-container {
     display: inline-block;
     position: relative;
 }
@@ -74,7 +75,7 @@ div.container {
     width: calc(3*var(--cart-width) + 2*var(--margin-cart));
 }
 
-div.cart {
+article.card-single {
     width: var(--cart-width);
     height: var(--cart-height);
     border: #000000 1px solid;
@@ -87,39 +88,39 @@ div.cart {
     cursor: pointer;
 }
 
-div.cart:hover .cart-header {
+article.card-single:hover .card-header {
     background-color: var(--color-secondary);
     transition: background-color 0.5s ease;
 }
 
-div.cart:hover {
+article.card-single:hover {
     background-color: var(--color-primary);
     color: var(--color-secondary);
     transition: background-color 0.5s ease;
 }
 
-div.cart:hover .cart-see-more {
+article.card-single:hover .card-see-more {
     background-color: var(--color-secondary);
     color: var(--color-primary);
     transition: background-color 0.5s ease;
 }
 
-div.cart:hover .cart-header h2 {
+article.card-single:hover .card-single h2 {
     color: var(--color-primary);
 }
 
-div.cart h2 {
+article.card-single h2 {
     text-transform: uppercase;
 }
 
-div.cart>div {
+article.card-single>div {
     width: 100%;
     padding: 0 var(--padding-cart);
 }
 
-a.cart a.cart:active,
-a.cart:hover,
-a.cart {
+a.card-single a.card-single:active,
+a.card-single:hover,
+a.card-single {
     text-decoration: none;
     color: var(--color-text);
     font-family: var(--font-primary);
@@ -152,7 +153,7 @@ a.icon.remove {
     top: calc(2.5*var(--cart-header-height) - var(--cart-icon-width) - 0.5*var(--padding-cart));
 }
 
-.cart-header {
+.card-header {
     height: var(--cart-header-height);
     background-color: var(--color-primary);
     color: var(--color-secondary);
@@ -160,13 +161,13 @@ a.icon.remove {
     line-height: 55px;
 }
 
-.cart-date-city {
+.card-date-city {
     height: calc(1.5*var(--cart-header-height));
     font-size: var(--font-size-cart-date);
 }
 
-.cart-icons,
-.cart-date {
+.card-icons,
+.card-date {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -177,19 +178,19 @@ a.icon.remove {
     -webkit-filter: sepia(100%);
 }
 
-.cart-date {
+.card-date {
     font-family: var(--font-primary-regular);
     justify-content: center;
     align-items: flex-start;
     height: 100%;
 }
 
-.cart-date span {
+.card-date span {
     padding: calc(2*var(--padding-line)) 0;
 }
 
 
-div.cart-title {
+div.card-title {
     height: calc(2*var(--cart-header-height));
     text-transform: uppercase;
     display: flex;
@@ -198,17 +199,17 @@ div.cart-title {
     line-height: 55px;
 }
 
-div.cart-title h2 {
+div.card-title h2 {
     align-self: center;
 }
 
-div.cart-image img {
+div.card-image img {
     object-fit: contain;
     height: 250px;
     width: 100%;
 }
 
-div.cart-text {
+div.card-text {
     font-family: var(--font-primary-bold);
     text-align: left;
     line-height: calc(1.5*var(--font-size-cart-date));
@@ -219,14 +220,14 @@ div.cart-text {
     -webkit-box-orient: vertical;
 }
 
-div.cart-info {
+div.card-info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
 }
 
-div.cart-author {
+div.card-author {
     font-family: var(--font-primary-bold);
     height: var(--cart-header-height);
     align-self: flex-start;
@@ -237,13 +238,13 @@ div.cart-author {
     padding-bottom: var(--padding-cart);
 }
 
-div.cart-author span {
+div.card-author span {
     font-style: italic;
     font-family: var(--font-primary-regular);
     align-self: flex-start;
 }
 
-div.cart-see-more {
+div.card-see-more {
     align-self: flex-end;
     border-radius: 25px;
     background-color: var(--color-primary);
@@ -267,7 +268,7 @@ div.cart-see-more {
 }
 
 @media (max-width: 390px) {
-    div.cart {
+    article.card-single {
         width: 300px;
         padding: 0;
     }
@@ -281,7 +282,7 @@ div.cart-see-more {
         left: calc(300px - var(--padding-cart) - var(--cart-icon-width));
     }
 
-    div.cart-container {
+    div.card-container {
         width: 100%
     }
 }
