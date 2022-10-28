@@ -55,8 +55,11 @@
         background-color:var(--color-primary);
         color: var(--color-secondary);
         align-items: center;
-        height: 45px;
+        height: 45px;  
     } 
+    .right-card a {
+        text-decoration: none;
+    }
     .header-card i {
         font-size: 14px;
     } 
