@@ -1,6 +1,6 @@
 /*CSS Colum review +Button add GooDeals*/
 @media only screen and (min-width: 1100px) {
-    .lastNews {
+    .last-news {
         width: 300px;
         height: 100%;
         background-color: var(--color-secondary);
@@ -8,7 +8,7 @@
         flex-direction: column;
         align-items: center;
     }
-    .btnGooDeals {
+    .btn-goodeals {
         box-shadow: 0px 10px 14px -7px var(--color-primary);
         background-color:var(--color-primary);
         border-radius:25px;
@@ -28,8 +28,7 @@
         margin-right: 15px;
         border: solid 1px var(--color-primary);
     }
-    .btnGooDeals:hover {
-        /* background:linear-gradient(to bottom,var(--color-primary) 5%,var(--color-secondary) 100%); */
+    .btn-goodeals:hover {
         background-color:var(--color-secondary);
         color: var(--color-primary);
         border: solid 1px var(--color-primary);
@@ -37,20 +36,20 @@
 
     /*Card Column right CSS*/
     
-    .titleColumn {
+    .title-column {
         margin-top: 30px;
         font-size: 24px;
         color: var(--color-primary);
         
     }
     
-    .rightCard {
+    .right-card {
         width: 200px;
         height: 210px;
         margin-top: 20px;
         box-shadow: 0px 0px 10px 0px var(--color-primary);
     }
-    .headerCard {
+    .header-card {
         font-size: 22px;
         text-align: center;
         background-color:var(--color-primary);
@@ -58,10 +57,10 @@
         align-items: center;
         height: 45px;
     } 
-    .headerCard i {
+    .header-card i {
         font-size: 14px;
     } 
-    .bodyCard img{
+    .body-card img{
        padding: 10px;
        width: 200px;
        height: 165px;

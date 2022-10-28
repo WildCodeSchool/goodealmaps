@@ -1,16 +1,16 @@
 
-const modal = document.querySelector(".modalMap");
-const modalNAQ = document.querySelector(".modalMap");
+const modal = document.querySelector(".modal-map");
+const modalNAQ = document.querySelector(".modal-map");
 const areas = document.getElementsByClassName("area");
 
 Array.from(areas).map((area) => {
   area.addEventListener("click", toggleModal);
 });
 
-const closeButton = document.querySelector(".closeButtonMap");
+const closeButton = document.querySelector(".close-button-map");
 
 function toggleModal() {
-  modal.classList.toggle("showModalMap");
+  modal.classList.toggle("show-modal-map");
 }
 
 function windowOnClick(event) {
