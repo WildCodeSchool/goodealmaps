@@ -24,11 +24,11 @@ DROP TABLE IF EXISTS `announcement`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `announcement` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `region_ID` int NOT NULL,
+  `region_id` int NOT NULL,
   `title` char(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `message` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `author_ID` int NOT NULL,
+  `author_id` int NOT NULL,
   `category` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `date` date NOT NULL,
   `dateStart` date DEFAULT NULL,
@@ -37,10 +37,10 @@ CREATE TABLE `announcement` (
   `city` char(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `zipcode` int NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `regionID` (`region_ID`),
-  KEY `authorID` (`author_ID`),
-  CONSTRAINT `announcement_ibfk_1` FOREIGN KEY (`region_ID`) REFERENCES `region` (`id`),
-  CONSTRAINT `announcement_ibfk_2` FOREIGN KEY (`author_ID`) REFERENCES `author` (`id`)
+  KEY `region_id` (`region_id`),
+  KEY `author_id` (`author_id`),
+  CONSTRAINT `announcement_ibfk_1` FOREIGN KEY (`region_id`) REFERENCES `region` (`id`),
+  CONSTRAINT `announcement_ibfk_2` FOREIGN KEY (`author_id`) REFERENCES `author` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -117,4 +117,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-27 21:15:48
+-- Dump completed on 2022-10-28 16:38:18
