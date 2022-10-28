@@ -12,14 +12,9 @@
 
     <title>{% block title %}GoodealMap{% endblock %}</title>
 		
-		{% block stylesheet %}
         <link rel="stylesheet" href="/assets/css/reset.css">
         <link rel="stylesheet" href="/assets/css/style.css">
-        <link rel="stylesheet" href="/assets/css/mapDesktop.css">
-		<link rel="stylesheet" href="/assets/css/mapMobile.css">
-		<link rel="stylesheet" href="/assets/css/columnReviewDesktop.css">
-		<link rel="stylesheet" href="/assets/css/columnReviewMobile.css">
-		{% endblock %}
+		{% block stylesheet %}{% endblock %}
 	</head>
 
 
@@ -34,7 +29,6 @@
 
 		{% block footer %}{% endblock %}
 		{% block javascript %}
-		<script src="./assets/javascript/modalMap.js"></script>
 		{% endblock %}
 		
 	</body>
