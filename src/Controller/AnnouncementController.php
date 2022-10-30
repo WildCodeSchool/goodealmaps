@@ -3,22 +3,63 @@
 namespace App\Controller;
 
 use App\Model\AnnouncementManager;
+use App\Model\RegionManager;
 
 class AnnouncementController extends AbstractController
 {
+    private array $events = [
+        0 => 'tous',
+        1 => 'evenements',
+        2 => 'restaurations',
+        3 => 'hebergements'
+    ];
+
+    private int $perPage = 9;
+
     /**
-     * List items
+     * List announcements
      */
     public function index(): string
     {
-        return $this->twig->render('Announcement/index.html.twig');
-    }
+        $announcementManager = new AnnouncementManager();        
+        $active = 'tous';
+        $regionManager = new RegionManager();
+        $where = [];
+        $selected = ''; 
+        $page = 1;       
+        if (isset($_GET) && !(empty($_GET))) {
+            $where = $_GET;
+            if (isset($where['page'])) {
+                unset($where['page']);
+            }
+            if (isset($where['region_id'])) {
+                $selected = $where['region_id'];                
+            }
+            if (isset($where['category'])) {
+                if ($where['category'] == 'tous') {
+                unset($where['category']);
+                } else {
+                    $active = $where['category'];
+                }
+            }
+        }        
+        $regions = $regionManager->select();
+        $announcements = $announcementManager->select($where);
 
-    /**
-     * Show cart for a category
-     */
-    public function category(): string
-    {
-        return $this->twig->render('Announcement/category.html.twig');
+        $numrows = count($announcements);
+        $numpages = ceil($numrows / $this->perPage);        
+        
+        if ($numpages > 1) {
+            $page = (!isset($_GET['page']) || $_GET['page'] == 0 || $_GET['page'] > $numpages) ? 1 : $_GET['page'];
+            $begin = ($page - 1) * $this->perPage;
+            $end = $this->perPage;
+            $where['limitQuery'] = ' LIMIT ' . $begin . ',' . $end;
+            //$where['pageURL'] = '&page=' . $where['page'];
+            $announcements = $announcementManager->select($where);
+            unset($where['limitQuery']);            
+        }
+        return $this->twig->render('Announcement/index.html.twig', ['announcements' => $announcements, 
+        'events' => $this->events, 'active' => $active, 'regions' => $regions, 'selected' => $selected,
+        'numpages' => $numpages, 'where' => $where, 'page' => $page]);
     }
 }

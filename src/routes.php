@@ -11,11 +11,10 @@ return [
     'about' => ['AboutController', 'about'],
     'contact' => ['ContactController', 'contact'],
     'legal' => ['LegalController', 'legal'],
-    'home' => ['HomeController', 'index',],
-    'announcement' => ['AnnouncementController', 'index',],
+    'home' => ['HomeController', 'index'],
+    'announcement' => ['AnnouncementController', 'index'],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
-    'items/delete' => ['ItemController', 'delete',],
-    'announcement/category' => ['AnnouncementController', 'category',],
+    'items/delete' => ['ItemController', 'delete',]    
 ];

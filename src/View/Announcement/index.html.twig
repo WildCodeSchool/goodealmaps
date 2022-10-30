@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+{% block title %}
+    {{parent}} - Categorie
+{% endblock %}
+{% block stylesheet%}
+    <link rel="stylesheet" href="/assets/css/category.css">
+{% endblock %}
+{% block content %}
+    <button class="btnGooDeals" type="button">
+        Ajoute GooDeals
+    </button>
+    {% include 'Components/_navbar.html.twig' %}
+    {% include 'Components/_regions.html.twig' %}
+    <div class="container">  
+        {% if announcements %}  
+            {% for announcement in announcements %}    
+                {% include 'Components/_card.html.twig' %}
+            {% endfor %}
+        {% else %}
+            <p>Rien trouvé, désolé</p>
+        {% endif %}
+        {% if numpages > 1 %}
+            <div class="pages">
+                {% set line = "" %}
+                {% for key, value in where %}
+                    {% set line =line~key~"="~value~"&" %}
+                {% endfor %}{{line}}
+                {% for i in 1..numpages %}
+                    <span>
+                        {% if i == page %}
+                            {{i}}
+                        {% else %}<a href="/announcement?{{line}}page={{i}}">{{i}}</a>
+                        {% endif %}
+                    </span>
+                {% endfor %}
+            </div>
+        {% endif%}
+    </div>    
+{% endblock %}

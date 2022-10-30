@@ -5,25 +5,25 @@
 <a href="" class="card-single" >
 <article class="card-single" >
 	<div class="card-header">
-		<h2>HÔTEL CROWNE PLAZA - LILLE</h2>
+		<h2>{{announcement.title}}</h2>
 	</div>
 	<div class="card-date-city">	
 		<span class="card-date">	
-			<span class="">Du 16 Mai - 27 Mai 2023</span>
-			<span>Lieu : Cannes</span>
+			<span class="">{% if announcement.date_start %}Du {{announcement.date_start|date('d M')}}{% endif %} -
+			{% if announcement.date_end %}{{announcement.date_end|date('d M Y')}}{% endif %}</span>
+			<span>Lieu : {{announcement.city}}</span>
 		</span>		
 	</div>		
 	<div class="card-info">
 		<div class="card-image">
-			<img src="/assets/images/cards/full/fritte.png" alt="HÔTEL CROWNE PLAZA - LILLE"/>
+			<img src="/assets/images/cards/{{announcement.image}}" alt="{{announcement.title}}"/>
 		</div>
 		<div class="card-text">
-			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-			Lorem Ipsum is simply dummy text of the printing and typesetting
+			{{announcement.message}}
 		</div>
 		<div class="card-see-more">En savoir plus</div>
 		<div class="card-author">
-			<div class="author-line">De <span>Vinchent Paul</span></div>
+			<div class="author-line">De <span>{{announcement.firstname}} {{announcement.lastname}}</span></div>
 		</div>
 	</div>
 </article>
