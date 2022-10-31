@@ -38,17 +38,15 @@
 
 /* -------------Footer desktop---------------- */
 .global_footer {
-    display: block;
     height: 75px;
     width: 100%;
     background-color: var(--color-secondary);
     position: relative;
-    bottom: 0;
 }
 
 .container {
     display: flex;
-    height: 100%;
+    
 }
 
 .container_list {

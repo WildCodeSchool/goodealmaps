@@ -42,11 +42,13 @@ body {
     color: var(--color-text);
     font-family: var(--font-primary);
     background-image: url("../images/background.jpeg");
-    background-repeat: repeat;
+    background-repeat: norepeat;
     background-size: cover;
     background-position: center center;
     width: 100vw;
     height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
  h1 {
