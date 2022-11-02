@@ -25,16 +25,16 @@ DROP TABLE IF EXISTS `announcement`;
 CREATE TABLE `announcement` (
   `id` int NOT NULL AUTO_INCREMENT,
   `region_id` int NOT NULL,
-  `title` char(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `message` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `author_id` int NOT NULL,
   `category` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `date` date NOT NULL,
-  `dateStart` date DEFAULT NULL,
-  `dateEnd` date DEFAULT NULL,
-  `image` char(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `city` char(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `date_start` date DEFAULT NULL,
+  `date_end` date DEFAULT NULL,
+  `image` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `zipcode` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `region_id` (`region_id`),
@@ -89,7 +89,7 @@ DROP TABLE IF EXISTS `region`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `region` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `regionName` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `region_name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -117,4 +117,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-28 16:38:18
+-- Dump completed on 2022-10-28 16:55:54

@@ -4,22 +4,13 @@
     height: 100vh;
     overflow: auto;
   }
-  svg{
-      width: 95%;
-      height: 100%;
-      display: block;
-      
-    }
+    svg{
+        width: 95%;
+        height: 100%;
+        display: block;
+        
+      }
       /* CSS modal */
-    .map-img path {
-      stroke: #FFF ;
-      stroke-width: 1px;
-      transition: 0.3;
-      } 
-    .map-img path:hover {
-      fill: var(--color-secondary);
-      margin-top: 50px;
-    }
   .modal-map {
     position: fixed;
     left: 50%;
@@ -59,7 +50,6 @@
     opacity: 0.5;
   }
   .show-modal-map {
-   
     opacity: 1;
     visibility: visible;
     transform: scale(1);

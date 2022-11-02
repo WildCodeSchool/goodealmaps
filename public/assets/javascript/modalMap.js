@@ -1,6 +1,5 @@
 
 const modal = document.querySelector(".modal-map");
-const modalNAQ = document.querySelector(".modal-map");
 const areas = document.getElementsByClassName("area");
 
 Array.from(areas).map((area) => {

@@ -1,15 +1,13 @@
 {% extends 'layout.html.twig' %}
-
-    {% block title %}
+  {% block title %}
       {{ parent() }} - Accueil
     {% endblock %}
 
-		{% block stylesheet %}
-        <link rel="stylesheet" href="/assets/css/mapDesktop.css">
-      <link rel="stylesheet" href="/assets/css/mapMobile.css">
-      <link rel="stylesheet" href="/assets/css/columnReviewDesktop.css">
-      <link rel="stylesheet" href="/assets/css/columnReviewMobile.css">
-		{% endblock %}
+{% block stylesheet %}
+  <link rel="stylesheet" href="/assets/css/mapDesktop.css">
+	<link rel="stylesheet" href="/assets/css/mapMobile.css">
+{% endblock %}
+
 
 
 {% block content %} 
@@ -36,61 +34,9 @@
                     <h2>Vos gooDeals arrivent bientôt !</h2>
                   </div>
                 </div>
-  
-                 <div class="last-news">
-                    <button class="btn-goodeals"
-                      type="button">
-                      Ajoute ton GooDeals
-                    </button>
-                    <h2 class="title-column">Vos derniers avis</h2>
-
-
-                  <ul class="right-column">
-                     {# {% for user in users %} #}
-
-                    <li class="right-card">
-                     <a href="#" target="_blank">
-                      <div class="header-card">
-                        <h2>La popote cocote</h2>
-                        <i>Maubeuge</i>
-                      </div>
-                      <div class="body-card">
-                        <img  src="../assets/images/popote.jpg ">
-                      </div> 
-                      </a>
-                    </li> 
-
-                    <li class="right-card">
-                    <a href="#" target="_blank">
-                      <div class="header-card">
-                        <h2>Braderie de Lille</h2>
-                         <i>Lille</i>
-                      </div>
-                      <div class="body-card">
-                        <img   src="../assets/images/braderieDeLille.jpg ">
-                      </div>
-                      </a>
-                    </li>
-
-                    <li class="right-card">
-                    <a href="#" target="_blank">
-                      <div class="header-card">
-                        <h2>The people</h2>
-                         <i>Paris</i>
-                      </div>
-                      <div class="body-card">
-                        <img  src="../assets/images/hotel.jpg ">
-                      </div>
-                      </a>
-                    </li>
-                        {# {% endfor %} #}
-                   </ul>
-                </div>
-              </section>
+            </section>
         </main>       
 {% endblock %}
-
-
-  {% block javascript %}
-    <script src="./assets/javascript/modalMap.js"></script>
-  {% endblock %}
+{% block javascript %}
+	<script src="./assets/javascript/modalMap.js"></script>
+{% endblock %}
