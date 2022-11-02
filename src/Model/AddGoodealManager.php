@@ -13,13 +13,15 @@ class AddGoodealManager extends AbstractManager
      */
     public function insert(array $announcement): int
     {
-        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . "(title, lastname, firstname, category, adress, region_id, city, zipcode, date_start, date_end, email, image, message) VALUES (:deal-name, :lastname, :firstname, :category, :adress, :region, :city, :zip-code, :start-date, :end-date, :email, :avatar, :description)");
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . "(title, lastname)
+        VALUES (:deal-name, :lastname)");
         $statement->bindValue('title', $announcement['title'], PDO::PARAM_STR);
 
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
     }
 
+    /*
     public function saveRecipe(array $recipe): void
     {
         $query = 'INSERT INTO recipe (title, description) VALUES (:title, :description)';
@@ -28,7 +30,7 @@ class AddGoodealManager extends AbstractManager
         $statement->bindValue(':description', $recipe["description"], \PDO::PARAM_STR);
         $statement->execute();
     }
-
+/*
 
 /*
     /**
