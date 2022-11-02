@@ -13,4 +13,12 @@ class AnnouncementController extends AbstractController
     {
         return $this->twig->render('Announcement/index.html.twig');
     }
+
+    /**
+     * Show cart for a category
+     */
+    public function category(): string
+    {
+        return $this->twig->render('Announcement/category.html.twig');
+    }
 }
