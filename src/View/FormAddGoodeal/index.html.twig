@@ -1,5 +1,4 @@
 {% extends 'layout.html.twig' %}
-{% import "form.html.twig" as form %}
 {% block title %}
 	{{ parent() }}
 	- Ajouter un GooDeal
@@ -11,6 +10,7 @@
 
 
 {% block content %}
+
 	<div class="form">
 		<div class="overlay">
 
@@ -38,7 +38,7 @@
 
 				<div class="label-column">
 					<label for="category">Choisis ta Catégorie*</label>
-					<select name="categoty" id="categoty">
+					<select name="category" id="category">
 						<option value="Event">Evenement</option>
 						<option value="food-service">Restauration</option>
 						<option value="accommodation">Logement</option>
