@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="fr">
 	<head>
@@ -8,14 +10,14 @@
 		<link rel="stylesheet" href="/assets/css/header.css">
 
 
-		<title>
-			{% block title %}GooDealMap
-			{% endblock %}
-		</title>
 
-		{% block stylesheet %}{% endblock %}
+    <title>{% block title %}GoodealMap{% endblock %}</title>
+		
+        <link rel="stylesheet" href="/assets/css/reset.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
+		{% block stylesheet %}
+		{% endblock %}
 	</head>
-
 	<body>
 		{% block header %}
 			{% include 'Item/_header.html.twig' %}
@@ -24,6 +26,8 @@
 		{% block content %}{% endblock %}
 
 		{% block footer %}{% endblock %}
-		{% block javascript %}{% endblock %}
+		
+		{% block javascript %}
+		{% endblock %}
 	</body>
 </html>
