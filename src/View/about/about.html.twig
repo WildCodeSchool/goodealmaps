@@ -6,11 +6,11 @@
     {% endblock %}
 {% block content %}
 	<h1>Qui nous sommes </h1>
-    <div class="container-about">	
+    <div class="container-about">
     <div class="text">
     <h3>Salut !</h3>
-    <p>Nous sommes une équipe de 5 devs-voyagers. 
-        On apprecie le bon pain (et le vin) ainsi que les bon jeux du cirque. 
+    <p>Nous sommes une équipe de 5 devs-voyagers.
+        On apprecie le bon pain (et le vin) ainsi que les bon jeux du cirque.
         C’est pourquoi on a crie ce site.<br/>Bon courage et bon voyage !
     </p>
     </div>
@@ -18,10 +18,10 @@
         {% for dev in devs %}
         <span class="dev">
             <img class="dev-ava" src="{{pathAva ~ dev.image}}" />
-            <span class="name">{{dev.name}}</span>            
+            <span class="name">{{dev.name}}</span>
             <!--<span class="icon git"><a href="{{dev.github}}"><img class="icon" src="{{pathIcon ~ 'github1.svg'}}" /></a></span>-->
-            <span class="icon git"><a href="{{dev.github}}" class="svg-background"></a></span>                
-            <span class="icon linkedin"><a href="{{dev.linkedin}}"><img class="icon" src="{{pathIcon ~ 'linkedin.png'}}" /></a></span>            
+            <span class="icon git"><a href="{{dev.github}}" class="svg-background"></a></span>
+            <span class="icon linkedin"><a href="{{dev.linkedin}}"><img class="icon" src="{{pathIcon ~ 'linkedin.png'}}" /></a></span>
         </span>
         {% endfor %}
     </span>
