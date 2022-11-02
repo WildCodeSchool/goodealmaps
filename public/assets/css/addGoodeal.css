@@ -1,0 +1,77 @@
+.contact_form input[type=text],
+.contact_form textarea,
+.contact_form input[type=email] {
+  width: 50%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  margin-right: 0px;
+  margin-left: 0px;
+  resize: vertical;
+}
+
+label {
+  margin-right: 0px;
+  margin-left: 0px;
+  width: 100%;
+  color: var(--color-secondary);
+  display: block;
+}
+
+input[type=submit] {
+  background-color: rgba(34, 65, 81, 1);
+  color: white;
+  padding: 12px 40px;
+  border: none;
+  cursor: pointer;
+  margin-left: 70%;
+  display: block;
+  border-radius: 28px;
+}
+
+input[type=submit]:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-primary)
+}
+
+
+
+.overlay {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 80%;
+  background-color: rgba(34, 65, 81, 0.5);
+  z-index: 1;
+  border-radius: 16px;
+}
+
+.form {
+  height: 100%;
+  width: 100%;
+  padding-bottom: 5px;
+
+}
+
+.contact_form {
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+.txt_form {
+  font-size: 16px;
+  text-align: center;
+  padding: 15px;
+  color: var(--color-secondary);
+}
+
+.label-column {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+}

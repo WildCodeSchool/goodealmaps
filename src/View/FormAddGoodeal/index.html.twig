@@ -1,0 +1,119 @@
+{% extends 'layout.html.twig' %}
+{% import "form.html.twig" as form %}
+{% block title %}
+	{{ parent() }}
+	- Ajouter un GooDeal
+{% endblock %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/addGoodeal.css">
+{% endblock %}
+
+
+{% block content %}
+	<div class="form">
+		<div class="overlay">
+
+			<h1 class="txt_form">Dépose ton GooDeal
+
+			</h1>
+
+			<form class="contact_form" action="/" enctype="multipart/form-data">
+
+				<div class="label-column">
+					<label for="Nomme ton Deal">Nomme ton Deal*</label>
+					<input type="text" id="deal-name" name="deal-name" placeholder="Nom du Deal">
+				</div>
+
+
+				<div class="label-column">
+					<label for="lastname">Ton nom*</label>
+					<input type="text" id="lastname" name="lastname" placeholder="ex: Juste">
+				</div>
+
+				<div class="label-column">
+					<label for="firstname">Ton prénom*</label>
+					<input type="text" id="firstname" name="firstname" placeholder="ex: Axel">
+				</div>
+
+				<div class="label-column">
+					<label for="category">Choisis ta Catégorie*</label>
+					<select name="categoty" id="categoty">
+						<option value="Event">Evenement</option>
+						<option value="food-service">Restauration</option>
+						<option value="accommodation">Logement</option>
+					</select>
+				</div>
+
+
+				<div class="label-column">
+					<label for="adress">Nom et Numéro de rue du GooDeal*</label>
+					<input type="text" id="adress" name="adress" placeholder="ex: 14 bis route nationale">
+				</div>
+
+				<div class="label-column">
+					<label for="region">Région du GooDeal*</label>
+					<select name="region" id="region">
+						<option value="Auvergne-Rhône-Alpes">Auvergne-Rhône-Alpes</option>
+						<option value="Bourgogne-Franche-Comté">Bourgogne-Franche-Comté</option>
+						<option value="Bretagne">Bretagne</option>
+						<option value="Centre-Val de Loire">Centre-Val de Loire</option>
+						<option value="Corse">Corse</option>
+						<option value="Grand Est">Grand Est</option>
+						<option value="Hauts-de-France">Hauts-de-France</option>
+						<option value="Île-de-France">Île-de-France</option>
+						<option value="Normandie">Normandie</option>
+						<option value="Nouvelle-Aquitaine">Nouvelle-Aquitaine</option>
+						<option value="Occitanie">Occitanie</option>
+						<option value="Pays de la Loire">Pays de la Loire</option>
+						<option value="Provence-Alpes-Côte d'Azur">Provence-Alpes-Côte d'Azur</option>
+					</select>
+				</div>
+
+
+				<div class="label-column">
+					<label for="city">Ville du GooDeal*</label>
+					<input type="text" id="city" name="city" placeholder="ex: Wargnies">
+				</div>
+
+				<div class="label-column">
+					<label for="zip-code">Code postal du GooDeal*</label>
+					<input type="text" id="zip-code" name="zip-code" placeholder="ex: 59144">
+				</div>
+
+				<div class="label-column">
+					<label for="start-date">Date de début</label>
+					<input type="date" id="start-date" name="start-date" placeholder="ex: 20/12/2022">
+				</div>
+
+				<div class="label-column">
+					<label for="end-date">Date de fin</label>
+					<input type="date" id="end-date" name="end-date" placeholder="ex: 25/12/2022">
+				</div>
+
+
+				<div class="label-column">
+					<label for="email">Ton mail*</label>
+					<input type="email" id="email" name="email" placeholder="ex: florent.dupond@gmail.com">
+				</div>
+
+				<div class="label-column">
+					<label for="imageUpload">La photo de ton Deal</label>
+					<input type="file" name="avatar" id="imageUpload"/>
+				</div>
+
+				<div class="label-column">
+					<label for="description">
+						Décris ton deal*
+					</label>
+
+					<textarea name="description" id="description" placeholder="ex: Grand tournoi de pétanque avec plus de 300 paritcipants..."></textarea>
+				</div>
+
+				<input class="btn" type="submit" value="Ajouter ton deal">
+			</form>
+		</div>
+	</div>
+
+{% endblock %}
+{% block javascript %}{% endblock %}
