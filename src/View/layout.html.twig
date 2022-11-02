@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/dev
 <!doctype html>
 <html lang="fr">
 	<head>
@@ -7,6 +11,7 @@
 		<link rel="icon" href="/assets/images/icons/favicon.png">
 		<link rel="stylesheet" href="/assets/css/style.css">
 		<link rel="stylesheet" href="/assets/css/header.css">
+<<<<<<< HEAD
     	<link rel="stylesheet" href="/assets/css/footer.css">		
         <link rel="stylesheet" href="/assets/css/reset.css">        
         <link rel="stylesheet" href="/assets/css/mapDesktop.css">
@@ -24,6 +29,14 @@
 			{% endblock %}
 		</title>  		
 	</head>
+=======
+
+        <link rel="stylesheet" href="/assets/css/reset.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
+		{% block stylesheet %}{% endblock %}
+	</head>
+	 <title>{% block title %}GooDealMap{% endblock %}</title>
+>>>>>>> origin/dev
 
 	</head>
 <body>
@@ -38,8 +51,16 @@
     {% include 'Components/_footer.html.twig' %}
     {% endblock %}
 
+<<<<<<< HEAD
+=======
+		{% block footer %}{% endblock %}
+	
+>>>>>>> origin/dev
 		{% block javascript %}
-		<script src="./assets/javascript/modalMap.js"></script>
 		{% endblock %}
+<<<<<<< HEAD
 </body>
+=======
+	</body>
+>>>>>>> origin/dev
 </html>

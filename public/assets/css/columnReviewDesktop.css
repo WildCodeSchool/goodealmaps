@@ -1,6 +1,6 @@
 /*CSS Colum review +Button add GooDeals*/
 @media only screen and (min-width: 1100px) {
-    .last-News {
+    .last-news {
         width: 300px;
         height: 100%;
         background-color: var(--color-secondary);
@@ -8,7 +8,7 @@
         flex-direction: column;
         align-items: center;
     }
-    .btn-GooDeals {
+    .btn-goodeals {
         box-shadow: 0px 10px 14px -7px var(--color-primary);
         background-color:var(--color-primary);
         border-radius:25px;
@@ -28,21 +28,15 @@
         margin-right: 15px;
         border: solid 1px var(--color-primary);
     }
-
-    .btnGoo-Deals:hover {
-        /* background:linear-gradient(to bottom,var(--color-primary) 5%,var(--color-secondary) 100%); */
-        background-color: var(--color-secondary);
+    .btn-goodeals:hover {
+        background-color:var(--color-secondary);
         color: var(--color-primary);
         border: solid 1px var(--color-primary);
     }
 
-    div h2 {
-        margin-top: 50px;
-        font-size: 24px;
-    }
-     /*Card Column right CSS*/
+    /*Card Column right CSS*/
     
-     .title-column {
+    .title-column {
         margin-top: 30px;
         font-size: 24px;
         color: var(--color-primary);
@@ -79,3 +73,4 @@
        object-position: right;
    }
 }
+    
