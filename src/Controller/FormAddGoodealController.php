@@ -9,4 +9,3 @@ class FormAddGoodealController extends AbstractController
         return $this->twig->render('FormAddGoodeal/index.html.twig');
     }
 }
-

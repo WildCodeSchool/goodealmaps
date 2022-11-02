@@ -21,10 +21,10 @@ class AddGoodealManager extends AbstractManager
     }
 
 
-/*    
+/*
     /**
      * Update item in database
-     
+
     public function update(array $item): bool
     {
         $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `title` = :title WHERE id=:id");
