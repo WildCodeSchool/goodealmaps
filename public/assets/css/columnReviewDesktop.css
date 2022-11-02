@@ -40,4 +40,42 @@
         margin-top: 50px;
         font-size: 24px;
     }
+     /*Card Column right CSS*/
+    
+     .title-column {
+        margin-top: 30px;
+        font-size: 24px;
+        color: var(--color-primary);
+        
+    }
+    
+    .right-card {
+        width: 200px;
+        height: 210px;
+        margin-top: 20px;
+        box-shadow: 0px 0px 10px 0px var(--color-primary);
+    }
+    .header-card {
+        font-size: 22px;
+        text-align: center;
+        background-color:var(--color-primary);
+        color: var(--color-secondary);
+        align-items: center;
+        height: 45px;  
+    } 
+    .right-card a {
+        text-decoration: none;
+    }
+    .header-card i {
+        font-size: 14px;
+    } 
+    .body-card img{
+       padding: 10px;
+       width: 200px;
+       height: 165px;
+       text-align: center;
+       background-size: cover;
+       object-fit:cover;
+       object-position: right;
+   }
 }
