@@ -38,17 +38,17 @@ class AnnouncementManager extends AbstractManager
     public function select(array $where = []): array
     {
         $addWhere = ' 1';
-        if ($where) {            
+        if ($where) {
             foreach ($where as $key => $value) {
                 if ($key != 'limitQuery') {
                     $addWhere .= " AND `" . $key . "`='" . $value . "'";
                 }
-            }            
+            }
         }
         $query = "SELECT * FROM `" . self::TABLE . "` as ann
-         INNER JOIN `author` ON ann.author_id=author.id WHERE" . $addWhere. " ORDER BY ann.id DESC" .
-          (isset($where['limitQuery']) ? $where['limitQuery'] : '');//echo $query;
-        $statement = $this->pdo->prepare($query);        
+         INNER JOIN `author` ON ann.author_id=author.id WHERE" . $addWhere . " ORDER BY ann.id DESC" .
+          (isset($where['limitQuery']) ? $where['limitQuery'] : '');
+        $statement = $this->pdo->prepare($query);
         $statement->execute();
         return $statement->fetchAll();
     }

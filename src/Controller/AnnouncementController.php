@@ -37,7 +37,7 @@ class AnnouncementController extends AbstractController
             }
             if (isset($where['category'])) {
                 if ($where['category'] == 'tous') {
-                unset($where['category']);
+                    unset($where['category']);
                 } else {
                     $active = $where['category'];
                 }
@@ -48,7 +48,7 @@ class AnnouncementController extends AbstractController
 
         $numrows = count($announcements);
         $numpages = ceil($numrows / $this->perPage);
-        
+
         if ($numpages > 1) {
             $page = (!isset($_GET['page']) || $_GET['page'] == 0 || $_GET['page'] > $numpages) ? 1 : $_GET['page'];
             $begin = ($page - 1) * $this->perPage;
