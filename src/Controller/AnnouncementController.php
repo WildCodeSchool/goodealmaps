@@ -27,7 +27,7 @@ class AnnouncementController extends AbstractController
         $where = [];
         $selected = '';
         $page = 1;
-        if (isset($_GET) && !(empty($_GET))) {
+        if (!(empty($_GET))) {
             $where = $_GET;
             if (isset($where['page'])) {
                 unset($where['page']);

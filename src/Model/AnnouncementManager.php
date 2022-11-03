@@ -2,6 +2,8 @@
 
 namespace App\Model;
 
+use PDO;
+
 class AnnouncementManager extends AbstractManager
 {
     public const TABLE = 'announcement';
