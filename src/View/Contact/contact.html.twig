@@ -1,12 +1,17 @@
 {% extends 'layout.html.twig' %}
+ 	{% block title %} {{parent}} Contact
+			{% endblock %}
 
 {% block content %}
+ <link rel="stylesheet" href="/assets/css/blur.css"
 <div class="form">
-    <div class="contact_overlay">
+    <div class="overlay">
     
-        <h1 class="txt_form">UN AVIS, UNE REMARQUE, NOUS SOMMES PRENEUR DE TOUT BON CONSEIL</h1>
+        <h1 class="txt-form">UN AVIS, UNE REMARQUE, NOUS SOMMES PRENEUR DE TOUT BON CONSEIL
 
-            <form method="post" class="contact_form">
+        </h1>
+
+            <form method="post" class="contact-form">
 
              <label for="topic"></label>
              <input type="text" id="sujet" name="sujet" placeholder="Sujet" required>

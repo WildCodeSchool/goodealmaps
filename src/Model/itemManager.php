@@ -4,12 +4,13 @@ namespace App\Model;
 
 use PDO;
 
-class AnnouncementManager extends AbstractManager
+class ItemManager extends AbstractManager
 {
-    public const TABLE = 'announcement';
+    public const TABLE = 'item';
 
-    /* Insert new item in database*/
-
+    /**
+     * Insert new item in database
+     */
     public function insert(array $item): int
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`title`) VALUES (:title)");

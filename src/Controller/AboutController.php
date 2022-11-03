@@ -18,7 +18,7 @@ class AboutController extends AbstractController
         'linkedin' => 'https://www.linkedin.com/in/natalia-nedbailo-7036b718/']
     ];
 
-    public function about(): string
+    public function index(): string
     {
         return $this->twig->render(
             'About/about.html.twig',

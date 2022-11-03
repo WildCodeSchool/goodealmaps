@@ -1,43 +1,65 @@
 @media only screen and (max-width: 1100px) {
-    .lastNews{
-        /* display: none; */
-        width: 100%;
-       
-        background-color: var(--color-secondary);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border: solid 1px red;
-        
-    }
-    .btnGooDeals {
-        display: none;
-    }
+  .last-news{
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      
+  }
+  .btn-goodeals {
+    display: none;
+  }
    
   /*Caroussel CSS*/
-    .slide {
-      padding-top: 80px;
-      padding-bottom: 80px;
-      display: flex;
-      overflow: scroll;
-      scroll-behavior: smooth;
-    }
-   .allArrows{
-    width: 700px;
-    min-width: 700px;
+  .right-column {
     display: flex;
-    margin: auto;
-   }
-
-  ::-webkit-scrollbar {
-    display: none;
-
+    overflow-x: auto;
+    width: 100%;
+    scroll-snap-type: x mandatory;
   }
-  .card{
-    border: solid 1px black;
+  .right-card {
     width: 200px;
-    height: 400px;
-  }     
+    height: 210px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px 0px var(--color-primary);
+    flex: 1 0 200px;
+    margin-left: 1rem;
+    scroll-snap-align: start;
+  }
+  .right-card a {
+    text-decoration: none;
+}
+  ::-webkit-scrollbar-thumb {
+    background-color: #3d4852;
+    border-radius: 3px;
+  }
+  .title-column {
+    margin-top: 30px;
+    font-size: 24px;
+    color: var(--color-primary);
+  }
+  .header-card {
+    font-size: 22px;
+    text-align: center;
+    background-color:var(--color-primary);
+    color: var(--color-secondary);
+    align-items: center;
+    height: 45px;
+  } 
+  .header-card i {
+    font-size: 14px;
+  } 
+  .body-card img{
+    padding: 10px;
+    width: 100%;
+    height: 165px;
+    text-align: center;
+    background-size: cover;
+    object-fit:cover;
+    object-position: right;
+  }
     
 }
 
