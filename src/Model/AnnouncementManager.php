@@ -23,7 +23,7 @@ class AnnouncementManager extends AbstractManager
     }
 
     /**
-     * Update announsment in database
+     * Update announcement in database
      */
     public function update(array $item): bool
     {

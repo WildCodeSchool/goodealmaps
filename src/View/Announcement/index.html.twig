@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 {% block title %}
-    {{parent}} - Annonces
+    {{parent()}} - Annonces
 {% endblock %}
 {% block stylesheet%}
     <link rel="stylesheet" href="/assets/css/announcement.css">
@@ -10,19 +10,19 @@
 {% for key, value in where %}
     {% set line =line~key~"="~value~"&" %}
 {% endfor %}
-<div>
+<main class="announcement">
     <button class="btn-goodeals" type="button" onclick="location.href='../addGoodeal?{{line|trim('&')}}'">
         Ajoute GooDeals
     </button>
     {% include 'Components/_navbar.html.twig' %}
     {% include 'Components/_regions.html.twig' %}
-    <div class="container">  
-        {% if announcements %}  
+    <ul class="container">
+        {% if announcements %}
             {% for announcement in announcements %}
                 {% include 'Components/_card.html.twig' %}
             {% endfor %}
         {% else %}
-            <p>Rien trouvé, désolé</p>
+            <li class="wide"><p>Rien trouvé, désolé</p></li>
         {% endif %}
         {% if numpages > 1 %}
             <div class="pages">
@@ -36,6 +36,6 @@
                 {% endfor %}
             </div>
         {% endif%}
-    </div>
-</div>
+    </ul>
+</main>
 {% endblock %}
