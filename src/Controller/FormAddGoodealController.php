@@ -8,4 +8,19 @@ class FormAddGoodealController extends AbstractController
     {
         return $this->twig->render('FormAddGoodeal/index.html.twig');
     }
+
+    public function add(): string
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // clean $_POST data
+            $goodeal = array_map('trim', $_POST);
+
+            // TODO validations (length, format...)
+
+            // if validation is ok, insert and redirection
+            $goodealManager = new AddGoodealManager();
+            $goodealManager->insert($goodeal);
+            header('Location:/home');
+        }
+    }
 }
