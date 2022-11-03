@@ -40,7 +40,7 @@ h1 {
     margin-left: var(--padding-cart);
 }
 
-.container-about .text h3 {
+.container-about .text h2 {
     text-align: center;
     margin: calc(var(--font-size-cart-header)) auto;
 }

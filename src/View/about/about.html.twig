@@ -1,14 +1,14 @@
 {% extends 'layout.html.twig' %}
-	{% block title %} {{parent}} A propos
+	{% block title %} {{ parent() }} - A propos
     {% endblock %}
     {% block stylesheet%}
         <link rel="stylesheet" href="/assets/css/about.css">
     {% endblock %}
 {% block content %}
 	<h1>Qui nous sommes </h1>
-    <div class="container-about">
+    <main class="container-about">
     <div class="text">
-    <h3>Salut !</h3>
+    <h2>Salut !</h2>
     <p>Nous sommes une équipe de 5 devs-voyagers.
         On apprecie le bon pain (et le vin) ainsi que les bon jeux du cirque.
         C’est pourquoi on a crie ce site.<br/>Bon courage et bon voyage !
@@ -25,5 +25,5 @@
         </span>
         {% endfor %}
     </span>
-    </div>
+    </main>
 {% endblock %}
