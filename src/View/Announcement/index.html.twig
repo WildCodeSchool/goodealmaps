@@ -6,14 +6,19 @@
     <link rel="stylesheet" href="/assets/css/announcement.css">
 {% endblock %}
 {% block content %}
-    <button class="btnGooDeals" type="button">
+{% set line = "" %}
+{% for key, value in where %}
+    {% set line =line~key~"="~value~"&" %}
+{% endfor %}
+<div>
+    <button class="btn-goodeals" type="button" onclick="location.href='../add?{{line|trim('&')}}'">
         Ajoute GooDeals
     </button>
     {% include 'Components/_navbar.html.twig' %}
     {% include 'Components/_regions.html.twig' %}
     <div class="container">  
         {% if announcements %}  
-            {% for announcement in announcements %}    
+            {% for announcement in announcements %}
                 {% include 'Components/_card.html.twig' %}
             {% endfor %}
         {% else %}
@@ -21,10 +26,6 @@
         {% endif %}
         {% if numpages > 1 %}
             <div class="pages">
-                {% set line = "" %}
-                {% for key, value in where %}
-                    {% set line =line~key~"="~value~"&" %}
-                {% endfor %}
                 {% for i in 1..numpages %}
                     <span>
                         {% if i == page %}
@@ -35,5 +36,6 @@
                 {% endfor %}
             </div>
         {% endif%}
-    </div>    
+    </div>
+</div>
 {% endblock %}

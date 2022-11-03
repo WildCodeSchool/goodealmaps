@@ -6,9 +6,11 @@ class AnnouncementManager extends AbstractManager
 {
     public const TABLE = 'announcement';
 
+
     /**
-     * Insert new announsment in database
+     * Insert new announcement in database
      */
+
     public function insert(array $item): int
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`title`) VALUES (:title)");
