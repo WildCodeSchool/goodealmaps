@@ -1,31 +1,44 @@
-
 <!doctype html>
 <html lang="fr">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="icon" href="/assets/images/favicon.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">		
+		<link rel="icon" href="/assets/images/icons/favicon.png">
+		<link rel="stylesheet" href="/assets/css/style.css">
 		<link rel="stylesheet" href="/assets/css/header.css">
-
-        <link rel="stylesheet" href="/assets/css/reset.css">
-        <link rel="stylesheet" href="/assets/css/style.css">
-		{% block stylesheet %}{% endblock %}
-	</head>
-	 <title>{% block title %}GooDealMap{% endblock %}</title>
-
-	</head>
-
-	<body>
-		{% block header %}
-			{% include 'Item/_header.html.twig' %}
-		{% endblock %}
-
-		{% block content %}{% endblock %}
-
-		{% block footer %}{% endblock %}
+    	<link rel="stylesheet" href="/assets/css/footer.css">		
+        <link rel="stylesheet" href="/assets/css/reset.css">        
+        <link rel="stylesheet" href="/assets/css/mapDesktop.css">
+		<link rel="stylesheet" href="/assets/css/mapMobile.css">
+		<link rel="stylesheet" href="/assets/css/columnReviewDesktop.css">
+		<link rel="stylesheet" href="/assets/css/columnReviewMobile.css">
+        <link rel="stylesheet" href="/assets/css/contact.css">
+		
 	
+		{% block stylesheet%}
+		 <link rel="stylesheet" href="/assets/css/blur.css">
+		{% endblock %}
+		<title>
+			{% block title %}GooDealMap
+			{% endblock %}
+		</title>  		
+	</head>
+
+	</head>
+<body>
+
+    {% block header %} 
+    {% include 'Components/_header.html.twig' %}
+    {% endblock %}
+    {% block content %}    
+    {% endblock %}
+
+    {% block footer %} 
+    {% include 'Components/_footer.html.twig' %}
+    {% endblock %}
+
 		{% block javascript %}
 		{% endblock %}
-	</body>
+</body>
 </html>

@@ -53,6 +53,10 @@ body {
     font-size: 20px;
 }
 
+.a_header.about {
+    font-size: var(--font-size-cart-date);
+}
+
 /* title */
 .title {
     font-family: var(--font-primary-bold);
