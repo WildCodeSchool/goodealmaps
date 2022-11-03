@@ -1,31 +1,35 @@
-<header class="global_header">
-	<div class="nav_header">
+<header class="global-header">
+	<div class="nav-header">
 		<a href="/home" class="title">
 			GooDealMap</a>
 
 
-		<nav class="menu_burger">
+		<nav class="menu-burger">
 			<a id="link" href="#">
 				<span id="burger"></span>
 			</a>
-			<ul class="ul_header">
+			<ul class="ul-header">
 				<li>
-					<a href="/concept" class="a_header" id="concept">Le concept</a>
+					<a href="/concept" class="a-header">Le concept</a>
 				</li>
 				<li>
-					<a href="/connexion" class="a_header" id="connexion">Connexion</a>
+					<a href="/connexion" class="a-header">Connexion</a>
 				</li>
 				<li>
-					<a href="/connexion" class="a_header" id="inscription">Inscripion</a>
+					<a href="/connexion" class="a-header">Inscripion</a>
 				</li>
 			</ul>
 		</nav>
+
+
 	</div>
 
 	<div class="search">
-		<img src="/assets/images/search_icone.png" alt="search_icone" class="search_icone"/>
-		<input class="searchbar" onkeyup="search_GooDeal()" type="text" name="search" placeholder="Rechercher un GooDeal...">
+		<img src="/assets/images/search-icone.png" alt="search-icone" class="search-icone"/>
+		<input class="searchbar" onkeyup="search-GooDeal()" type="text" name="search" placeholder="Rechercher un GooDeal...">
 	</div>
+
+	<a href="/concept" class="a-header undisplay-responsive">Le concept</a>
 </header>
 
 {% block javascript %}
