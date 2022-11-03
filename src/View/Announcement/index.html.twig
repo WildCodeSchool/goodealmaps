@@ -11,7 +11,7 @@
     {% set line =line~key~"="~value~"&" %}
 {% endfor %}
 <div>
-    <button class="btn-goodeals" type="button" onclick="location.href='../add?{{line|trim('&')}}'">
+    <button class="btn-goodeals" type="button" onclick="location.href='../addGoodeal?{{line|trim('&')}}'">
         Ajoute GooDeals
     </button>
     {% include 'Components/_navbar.html.twig' %}
