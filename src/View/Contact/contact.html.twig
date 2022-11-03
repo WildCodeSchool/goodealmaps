@@ -4,14 +4,12 @@
 <div class="form">
     <div class="contact_overlay">
     
-        <h1 class="txt_form">UN AVIS, UNE REMARQUE, NOUS SOMMES PRENEUR DE TOUT BON CONSEIL
+        <h1 class="txt_form">UN AVIS, UNE REMARQUE, NOUS SOMMES PRENEUR DE TOUT BON CONSEIL</h1>
 
-        </h1>
-
-            <form class=contact_form action="/">
+            <form method="post" class="contact_form" action="/">
 
              <label for="topic"></label>
-             <input type="text" id="sujet" name="sujet" placeholder="Sujet">
+             <input type="text" id="sujet" name="sujet" placeholder="Sujet" required>
 
              <label for="name"></label>
              <input type="text" id="lname" name="lname" placeholder="Votre nom">
@@ -20,13 +18,13 @@
              <input type="text" id="fname" name="fname" placeholder="Votre prénom">
 
              <label for="emailAddress"></label>
-             <input id="emailAddress" type="email" name="email" placeholder="Votre email">
+             <input id="emailAddress" type="email" name="email" placeholder="Votre email" required>
 
 
              <label for="subject"></label>
-             <textarea id="subject" name="subject" placeholder="Votre message" style="height:200px"></textarea>
+             <textarea id="subject" name="subject" placeholder="Votre message" style="height:200px" required></textarea>
 
-             <input class=btn type="submit" value="Envoyer">
+             <input class="btn" type="submit" value="Envoyer">
             </form>
     </div>
 </div>
