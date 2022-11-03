@@ -36,11 +36,7 @@ class AnnouncementController extends AbstractController
                 $selected = $where['region_id'];
             }
             if (isset($where['category'])) {
-                if ($where['category'] == 'tous') {
-                    unset($where['category']);
-                } else {
-                    $active = $where['category'];
-                }
+                $active = $where['category'];
             }
         }
         $regions = $regionManager->select();
