@@ -251,13 +251,13 @@ nav a.active {
 
 select.region {
     width: var(--nav-width);
-    height: var(--cart-header-height);
+    height: var(--cart-select-height);
     display: block;
     margin: 0 auto var(--padding-cart);
     border: 0.5px solid var(--color-primary);
     color: var(--color-primary);
     font-family: var(--font-primary-bold);
-    font-size: var(--font-size-h1-body);
+    font-size: var(--font-size-cart-header);
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
@@ -269,13 +269,10 @@ select.region {
     background-position: right;
 }
 
-select.region:focus,
-select.region:active {
-    background-image: url('/assets/images/icons/arrow-up.svg'), linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
-}
 
-select.region option {
-    font-family: var(--font-primary-bold);
+select.region:active,
+select.region.opened {
+    background-image: url('/assets/images/icons/arrow-up.svg'), linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
 }
 
 select.region:checked {

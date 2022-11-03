@@ -14,7 +14,7 @@ class AnnouncementController extends AbstractController
         3 => 'hebergements'
     ];
 
-    private int $perPage = 9;
+    private int $perPage = 3;
 
     /**
      * List announcements
