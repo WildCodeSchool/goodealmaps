@@ -1,3 +1,41 @@
+@font-face {
+    font-family: 'IstokWebRegular';
+    src: url('../fonts/IstokWeb-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IstokWebBold';
+    src: url('../fonts/IstokWeb-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --color-primary: #224151;
+    --color-secondary: #F1EFDA;
+    --color-text: #000;
+    --font-primary-regular: IstokWebRegular;
+    --font-primary-bold: IstokWebBold;
+    --font-size-cart-header: 18px;
+    --font-size-cart-date: 16px;
+    --padding-cart: 20px;
+    --cart-header-height: 54px;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    color: var(--color-text);
+    font-family: var(--font-primary);
+}
+
 .global_header {
     display: flex;
     align-items: center;
@@ -170,9 +208,5 @@
 
     .search {
         margin-top: -30px;
-    }
-
-    header .about {
-        display: none;
     }
 }
