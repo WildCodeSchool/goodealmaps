@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\AddGoodealManager;
+
 class FormAddGoodealController extends AbstractController
 {
     public function index(): string
@@ -9,7 +11,7 @@ class FormAddGoodealController extends AbstractController
         return $this->twig->render('FormAddGoodeal/index.html.twig');
     }
 
-    public function add(): string
+    public function add(): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
