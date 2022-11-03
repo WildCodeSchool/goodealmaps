@@ -9,13 +9,13 @@
 return [
     '' => ['HomeController', 'index',],
     'about' => ['AboutController', 'index'],
-    'contact' => ['ContactController', 'contact'],
-    'legal' => ['LegalController', 'legal'],
+    'contact' => ['ContactController', 'index'],
+    'legal' => ['LegalController', 'index'],
     'home' => ['HomeController', 'index',],
     'announcement' => ['AnnouncementController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
-    'announcement/category' => ['AnnouncementController', 'category',],
+    'announcement/category' => ['AnnouncementController', 'index',],
 ];

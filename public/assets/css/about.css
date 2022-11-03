@@ -59,7 +59,7 @@ span.dev {
     text-align: center;
     width: var(--width-photo-dev);
     flex-wrap: wrap;
-    margin: 0 25px;
+    margin: -10px 25px;
 }
 
 .devs .dev-ava {
@@ -88,7 +88,7 @@ span.dev {
     transition-duration: 0.7s;
     font-family: var(--font-primary-bold);
     font-size: var(--font-size-cart-header);
-    color: var(--color-secondary);
+    color: #000000;
     width: var(--width-photo-dev);
 }
 
@@ -109,13 +109,16 @@ span.dev {
     transform-origin: center bottom;
     transform: translateY(-60px);
     opacity: 1;
+}
 
+.dev:hover img.dev-ava {
+    opacity: 0.5;
 }
 
 .svg-background {
     width: 24px;
     height: 24px;
-    background-color: #BDB024;
+    background-color: #000000;
     display: inline-block;
     mask-image: url("/assets/images/icons/github1.svg");
 }
