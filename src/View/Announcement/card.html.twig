@@ -1,0 +1,14 @@
+{% extends 'layout.html.twig' %}
+	{% block title %} {{ parent() }} - {{announcement.title}}
+    {% endblock %}
+    {% block stylesheet%}
+        <link rel="stylesheet" href="/assets/css/announcement.css">
+    {% endblock %}
+{% block content %}
+    <main>
+    <h1 class="card">{{announcement.title}}</h1>
+    <div class="container-about">
+        {% include 'Components/_card.html.twig' %}
+    </div>
+    </main>
+{% endblock %}

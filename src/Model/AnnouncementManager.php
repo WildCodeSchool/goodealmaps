@@ -54,4 +54,16 @@ class AnnouncementManager extends AbstractManager
         $statement->execute();
         return $statement->fetchAll();
     }
+
+    /**
+     * Info about event with given id
+     */
+    public function selectById(int $id): array
+    {
+        $query = "SELECT * FROM `" . self::TABLE . "` as ann
+         INNER JOIN `author` ON ann.author_id=author.id WHERE ann.id=" . $id;
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
+        return $statement->fetch();
+    }
 }

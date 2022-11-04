@@ -58,4 +58,15 @@ class AnnouncementController extends AbstractController
         'events' => $this->events, 'active' => $active, 'regions' => $regions, 'selected' => $selected,
         'numpages' => $numpages, 'where' => $where, 'page' => $page]);
     }
+
+        /**
+     * List announcements
+     */
+    public function selectCard(int $id): string
+    {
+        $announcementManager = new AnnouncementManager();
+        $announcement = $announcementManager->selectById($id);
+        return $this->twig->render('Announcement/card.html.twig', ['announcement' => $announcement]);
+    }
+
 }
