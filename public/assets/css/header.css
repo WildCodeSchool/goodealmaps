@@ -20,10 +20,10 @@
     --color-text: #000;
     --font-primary-regular: IstokWebRegular;
     --font-primary-bold: IstokWebBold;
-    --font-size-cart-header: 18px;
-    --font-size-cart-date: 16px;
-    --padding-cart: 20px;
-    --cart-header-height: 54px;
+    --font-size-card-header: 18px;
+    --font-size-card-date: 16px;
+    --padding-card: 20px;
+    --card-header-height: 54px;
 }
 
 * {
@@ -54,6 +54,25 @@ body {
     color: var(--color-primary);
     font-size: 20px;
     position: relative;
+}
+
+.a_header:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-primary);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out;
+}
+
+.a_header:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+
 }
 
 .a_header:after {

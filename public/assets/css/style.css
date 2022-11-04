@@ -5,6 +5,7 @@
     font-style: normal;
     font-display: swap;
 }
+
 @font-face {
     font-family: 'IstokWebBold';
     src: url('../fonts/IstokWeb-Bold.ttf') format('truetype');
@@ -12,28 +13,74 @@
     font-style: normal;
     font-display: swap;
 }
+
 :root {
     --color-primary: #224151;
     --color-secondary: #F1EFDA;
     --color-text: #000;
+    --overlay-color: rgba(34, 65, 81, 0.5);
     --font-primary-regular: IstokWebRegular;
     --font-primary-bold: IstokWebBold;
-    --font-size-cart-header: 18px;
-    --font-size-cart-date: 16px;
-    --padding-cart: 20px;
-    --cart-header-height: 54px;
+    --font-size-h1-header: 40px;
+    --font-size-h1-body: 36px;
+    --font-size-card-header: 18px;
+    --font-size-card-date: 16px;
+    --padding-card: 20px;
+    --margin-card: 65px;
+    --padding-line: 3px;
+    --card-header-height: calc(3*var(--font-size-card-header));
+    --card-width: 382px;
+    --card-height: 636px;
+    --card-icon-width: 25px;
+    --card-header-height: 54px;
+    --card-select-height: 40px;
+    --width-photo-dev: 230px;
+    --margin-photo-dev: 70 px;
+    --width-about-text: 300px;
+    --nav-width: 700px;
 }
+
 body {
     color: var(--color-text);
     font-family: var(--font-primary);
-    background-image: url("../images/background.jpeg") ;
-    background-repeat: no-repeat;
-    background-size: cover ;
+    background-image: url("../images/background.jpeg");
+    background-repeat: norepeat;
+    background-size: cover;
     background-position: center center;
-    width: 100vw;
-    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
-h2 {
-    font-size: var(--font-size-cart-header);
-    font-family: var(--font-primary-bold)
+
+body h1 {
+    font-size: var(--font-size-h1-body);
+    text-align: center;
+    color: var(--color-primary);
+    font-family: var(--font-primary-bold);
+}
+
+.mention {
+    padding: 10%
+}
+
+
+input[type=submit] {
+    background-color: rgba(34, 65, 81, 1);
+    color: white;
+    padding: 12px 40px;
+    border: none;
+    cursor: pointer;
+    margin-left: 70%;
+    display: block;
+    border-radius: 28px;
+}
+
+.overlay {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    background-color: var(--overlay-color);
+    z-index: 1;
+    border-radius: 16px;
 }
