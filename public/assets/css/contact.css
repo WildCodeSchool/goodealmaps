@@ -20,7 +20,7 @@ label {
   display: block;
 }
 
-input[type=submit] {
+.btn[type=submit] {
   background-color: rgba(34, 65, 81, 1);
   color: white;
   padding: 12px 40px;

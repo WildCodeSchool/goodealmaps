@@ -55,8 +55,8 @@ body {
     grid-template-rows: auto 1fr auto;
 }
 
- h1 {
- font-size: 40px;
+h1 {
+font-size: 40px;
 }
 
 .card-single h2 {
@@ -348,8 +348,8 @@ input[type=submit] {
     margin-left: 70%;
     display: block;
     border-radius: 28px;
-  }
-  .overlay {
+}
+.overlay {
     margin-left: auto;
     margin-right: auto; 
     margin-top: 20px;
@@ -358,8 +358,8 @@ input[type=submit] {
     background-color: var(--overlay-color);
     z-index: 1;
     border-radius: 16px;
-  }
-  .overlay {
+}
+.overlay {
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
@@ -368,5 +368,5 @@ input[type=submit] {
     background-color: rgba(34, 65, 81, 0.5);
     z-index: 2;
     border-radius: 16px;
-  }
+}
 /* end of About us page styles */

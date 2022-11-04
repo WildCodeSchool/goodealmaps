@@ -7,8 +7,8 @@ if (isset($_POST["message"])) {
     Nom : " . $_POST["lname"] . "
     Prenom : " . $_POST["fname"] . "
     Email : " . $_POST["email"] . "
-    Sujet : " . $_POST["sujet"] . "
-    Message :" . $_POST["subject"];
+    Sujet : " . $_POST["topic"] . "
+    Message :" . $_POST["message"];
 
     $retour = mail(
         "emailtest@test.fr",
