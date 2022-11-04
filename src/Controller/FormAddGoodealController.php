@@ -21,7 +21,7 @@ class FormAddGoodealController extends AbstractController
             if ($cleanValue === "") {
                 $errors[$key] = "Merci de Remplir le champs $key";
             }
-          /*  if ($key === "title" && strlen($cleanValue) > 50) {
+            if ($key === "title" && strlen($cleanValue) > 50) {
                 $errors[$key] = "Le nom du Goodeal est trop long, merci de donner un nom plus court à votre Goodeal";
             }
             if ($key === "message" && strlen($cleanValue) > 65535) {
@@ -47,7 +47,7 @@ class FormAddGoodealController extends AbstractController
             }
             if ($key === "lastname" && strlen($cleanValue) > 20) {
                 $errors[$key] = "Nom trop long, merci de fournir un prénom plus court";
-            }*/
+            }
             if (!isset($errors[$key])) {
                 $gooDeal[$key] = $cleanValue;
             }
