@@ -1,0 +1,41 @@
+{% extends 'layout.html.twig' %}
+{% block title %}
+    {{parent()}} - Annonces
+{% endblock %}
+{% block stylesheet%}
+    <link rel="stylesheet" href="/assets/css/announcement.css">
+{% endblock %}
+{% block content %}
+{% set line = "" %}
+{% for key, value in where %}
+    {% set line =line~key~"="~value~"&" %}
+{% endfor %}
+<main class="announcement">
+    <button class="btn-goodeals" type="button" onclick="location.href='../addGoodeal?{{line|trim('&')}}'">
+        Ajoute GooDeals
+    </button>
+    {% include 'Components/_navbar.html.twig' %}
+    {% include 'Components/_regions.html.twig' %}
+    <ul class="container">
+        {% if announcements %}
+            {% for announcement in announcements %}
+                {% include 'Components/_card.html.twig' %}
+            {% endfor %}
+        {% else %}
+            <li class="wide"><p>Rien trouvé, désolé</p></li>
+        {% endif %}
+        {% if numpages > 1 %}
+            <div class="pages">
+                {% for i in 1..numpages %}
+                    <span>
+                        {% if i == page %}
+                            {{i}}
+                        {% else %}<a href="/announcement?{{line}}page={{i}}">{{i}}</a>
+                        {% endif %}
+                    </span>
+                {% endfor %}
+            </div>
+        {% endif%}
+    </ul>
+</main>
+{% endblock %}

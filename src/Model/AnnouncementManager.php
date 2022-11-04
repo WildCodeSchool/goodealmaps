@@ -8,7 +8,10 @@ class AnnouncementManager extends AbstractManager
 {
     public const TABLE = 'announcement';
 
-    /* Insert new item in database*/
+
+    /**
+     * Insert new announcement in database
+     */
 
     public function insert(array $item): int
     {
@@ -20,7 +23,7 @@ class AnnouncementManager extends AbstractManager
     }
 
     /**
-     * Update item in database
+     * Update announcement in database
      */
     public function update(array $item): bool
     {
@@ -29,5 +32,26 @@ class AnnouncementManager extends AbstractManager
         $statement->bindValue('title', $item['title'], PDO::PARAM_STR);
 
         return $statement->execute();
+    }
+
+    /**
+     * List of events
+     */
+    public function select(array $where = []): array
+    {
+        $addWhere = ' 1';
+        if ($where) {
+            foreach ($where as $key => $value) {
+                if ($key != 'limitQuery') {
+                    $addWhere .= " AND `" . $key . "`='" . $value . "'";
+                }
+            }
+        }
+        $query = "SELECT * FROM `" . self::TABLE . "` as ann
+         INNER JOIN `author` ON ann.author_id=author.id WHERE" . $addWhere . " ORDER BY ann.id DESC" .
+          (isset($where['limitQuery']) ? $where['limitQuery'] : '');
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
+        return $statement->fetchAll();
     }
 }
