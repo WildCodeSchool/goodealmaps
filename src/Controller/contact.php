@@ -7,11 +7,11 @@ if (isset($_POST["message"])) {
     Nom : " . $_POST["lname"] . "
     Prenom : " . $_POST["fname"] . "
     Email : " . $_POST["email"] . "
-    Sujet : " . $_POST["sujet"] . "
-    Message :" . $_POST["subject"];
+    Sujet : " . $_POST["topic"] . "
+    Message :" . $_POST["message"];
 
     $retour = mail(
-        "alexandremathieu1706@gmail.com",
+        "emailtest@test.fr",
         $_POST["sujet"],
         $message,
         "From:contact@exemplemail.fr" . "\r\n" . "Reply-to:" . $_POST["email"]

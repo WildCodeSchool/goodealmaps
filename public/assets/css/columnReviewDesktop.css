@@ -64,13 +64,13 @@
         font-size: 14px;
     } 
     .body-card img{
-       padding: 10px;
-       width: 200px;
-       height: 165px;
-       text-align: center;
-       background-size: cover;
-       object-fit:cover;
-       object-position: right;
-   }
+    padding: 10px;
+    width: 200px;
+    height: 165px;
+    text-align: center;
+    background-size: cover;
+    object-fit:cover;
+    object-position: right;
+    }
 }
     

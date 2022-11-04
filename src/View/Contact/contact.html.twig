@@ -1,35 +1,26 @@
 {% extends 'layout.html.twig' %}
- 	{% block title %} {{parent}} Contact
+{% block title %} {{parent}} Contact
 			{% endblock %}
 
 {% block content %}
- <link rel="stylesheet" href="/assets/css/blur.css"
+
 <div class="form">
     <div class="overlay">
     
         <h1 class="txt-form">UN AVIS, UNE REMARQUE, NOUS SOMMES PRENEUR DE TOUT BON CONSEIL
-
         </h1>
-
             <form method="post" class="contact-form">
-
-             <label for="topic">Donne un nom à ton Deal</label>
-             <input type="text" id="sujet" name="sujet" placeholder="Sujet" required>
-
-             <label for="name">Nom</label>
-             <input type="text" id="lname" name="lname" placeholder="Votre nom">
-
-             <label for="sujet">Prénom</label>
-             <input type="text" id="fname" name="fname" placeholder="Votre prénom">
-
-             <label for="emailAddress">Ton e-mail</label>
-             <input id="emailAddress" type="email" name="email" placeholder="Votre email" required>
-
-
-             <label for="subject">Descris nous ton deal</label>
-             <textarea id="subject" name="subject" placeholder="Votre message" style="height:200px" required></textarea>
-
-             <input class="btn" type="submit" value="Envoyer">
+            <label for="topic">Un petit titre a ta demande.</label>
+            <input type="text" id="topic" name="topic" placeholder="Sujet" required>
+            <label for="name">Nom</label>
+            <input type="text" id="lname" name="lname" placeholder="Votre nom" required>
+            <label for="sujet">Prénom</label>
+            <input type="text" id="fname" name="fname" placeholder="Votre prénom" required>
+            <label for="emailAddress">Ton e-mail</label>
+            <input id="emailAddress" type="email" name="email" placeholder="Votre email" required>
+            <label for="message">Décris nous ce qu'il se passe</label>
+            <textarea id="message" name="message" placeholder="Votre message" style="height:200px" required></textarea>
+            <input class="btn" type="submit" value="Envoyer">
             </form>
     </div>
 </div>

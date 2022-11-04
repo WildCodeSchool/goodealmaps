@@ -11,7 +11,7 @@
   .btn-goodeals {
     display: none;
   }
-   
+  
   /*Caroussel CSS*/
   .right-column {
     display: flex;
@@ -60,6 +60,6 @@
     object-fit:cover;
     object-position: right;
   }
-    
+
 }
 
