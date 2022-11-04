@@ -1,15 +1,16 @@
 <header class="global_header">
 	<div class="nav_header">
 		<a href="/home" class="title">
-			GooDealMap
-		</a>
+			GooDealMap</a>
+
+
 		<nav class="menu_burger">
 			<a id="link" href="#" class="a_header">
 				<span id="burger"></span>
 			</a>
 			<ul class="ul_header">
 				<li>
-					<a href="/concept" class="a_header">Le concept</a>
+					<a href="/about" class="a_header">Le concept</a>
 				</li>
 				<li>
 					<a href="/connexion" class="a_header">Connexion</a>
@@ -25,8 +26,9 @@
 		<img src="/assets/images/icons/search_icone.png" alt="search_icone" class="search_icone"/>
 		<input class="searchbar" onkeyup="search_GooDeal()" type="text" name="search" placeholder="Rechercher un GooDeal...">
 	</div>
+	<a href="/about" class="a_header about">Le concept</a>
 </header>
 
 {% block javascript %}
-	<script src="./assets/javascript/header.js"></script>
+	<script src="/assets/javascript/header.js"></script>
 {% endblock %}
