@@ -10,35 +10,39 @@
 
 
 {% block content %}
-
-	<div class="form" enctype="multipart/form-data">
+	<div class="form">
 		<div class="overlay">
+
+
+			{% for error in errors %}
+				<p>{{error}}</p>
+			{% endfor %}
 
 			<h1 class="txt_form">Dépose ton GooDeal
 
 			</h1>
 
-			<form class="contact_form" action="/" enctype="multipart/form-data">
+			<form class="contact_form" enctype="multipart/form-data" method="post">
 
 				<div class="label-column">
 					<label for="Nomme ton Deal">Nomme ton Deal*</label>
-					<input type="text" id="deal-name" name="deal-name" placeholder="Nom du Deal">
+					<input type="text" id="deal-name" name="deal-name" placeholder="Nom du Deal" required>
 				</div>
 
 
 				<div class="label-column">
 					<label for="lastname">Ton nom*</label>
-					<input type="text" id="lastname" name="lastname" placeholder="ex: Juste">
+					<input type="text" id="lastname" name="lastname" placeholder="ex: Juste" required>
 				</div>
 
 				<div class="label-column">
 					<label for="firstname">Ton prénom*</label>
-					<input type="text" id="firstname" name="firstname" placeholder="ex: Axel">
+					<input type="text" id="firstname" name="firstname" placeholder="ex: Axel" required>
 				</div>
 
 				<div class="label-column">
 					<label for="category">Choisis ta Catégorie*</label>
-					<select name="category" id="category">
+					<select name="category" id="category" required>
 						<option value="Event">Evenement</option>
 						<option value="food-service">Restauration</option>
 						<option value="accommodation">Logement</option>
@@ -48,12 +52,12 @@
 
 				<div class="label-column">
 					<label for="adress">Nom et Numéro de rue du GooDeal*</label>
-					<input type="text" id="adress" name="adress" placeholder="ex: 14 bis route nationale">
+					<input type="text" id="adress" name="adress" placeholder="ex: 14 bis route nationale" required>
 				</div>
 
 				<div class="label-column">
 					<label for="region">Région du GooDeal*</label>
-					<select name="region" id="region">
+					<select name="region" id="region" required>
 						<option value="Auvergne-Rhône-Alpes">Auvergne-Rhône-Alpes</option>
 						<option value="Bourgogne-Franche-Comté">Bourgogne-Franche-Comté</option>
 						<option value="Bretagne">Bretagne</option>
@@ -73,12 +77,12 @@
 
 				<div class="label-column">
 					<label for="city">Ville du GooDeal*</label>
-					<input type="text" id="city" name="city" placeholder="ex: Wargnies">
+					<input type="text" id="city" name="city" placeholder="ex: Wargnies" required>
 				</div>
 
 				<div class="label-column">
 					<label for="zip-code">Code postal du GooDeal*</label>
-					<input type="text" id="zip-code" name="zip-code" placeholder="ex: 59144">
+					<input type="text" id="zip-code" name="zip-code" placeholder="ex: 59144" required>
 				</div>
 
 				<div class="label-column">
@@ -94,7 +98,7 @@
 
 				<div class="label-column">
 					<label for="email">Ton mail*</label>
-					<input type="email" id="email" name="email" placeholder="ex: florent.dupond@gmail.com">
+					<input type="email" id="email" name="email" placeholder="ex: florent.dupond@gmail.com" required>
 				</div>
 
 				<div class="label-column">
@@ -107,7 +111,7 @@
 						Décris ton deal*
 					</label>
 
-					<textarea name="description" id="description" placeholder="ex: Grand tournoi de pétanque avec plus de 300 paritcipants..."></textarea>
+					<textarea name="description" id="description" placeholder="ex: Grand tournoi de pétanque avec plus de 300 paritcipants..." required></textarea>
 				</div>
 
 				<input class="btn" type="submit" value="Ajouter ton deal">
