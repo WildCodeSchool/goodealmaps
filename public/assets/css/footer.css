@@ -70,7 +70,7 @@ p {
     font-family: var(--font-primary-regular);
     text-decoration: none;
     color: var(--color-primary);
-    font-size: var(--font-size-cart-footer);
+    font-size: var(--font-size-card-footer);
 }
 
 .li_footer {
@@ -90,7 +90,7 @@ p {
 }
 
 .p_footer {
-    margin-right: 300px - var(--margin-cart);
+    margin-right: 300px - var(--margin-card);
 }
 
 

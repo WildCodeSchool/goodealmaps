@@ -3,6 +3,7 @@ main.error-404 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 75vh;
 }
 
 .error-404 div {
