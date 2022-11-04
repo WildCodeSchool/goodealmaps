@@ -23,14 +23,14 @@
 
 	</head>
 <body>
+	{% include 'Components/_header.html.twig' %}
     {% block header %} 
-    	{% include 'Components/_header.html.twig' %}
     {% endblock %}
     {% block content %}
     {% endblock %}
 
+	{% include 'Components/_footer.html.twig' %}
     {% block footer %}
-    	{% include 'Components/_footer.html.twig' %}
     {% endblock %}
 
 	{% block javascript %}
