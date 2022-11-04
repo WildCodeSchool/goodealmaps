@@ -39,9 +39,11 @@ body {
 .global_header {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 95px;
     background-color: var(--color-secondary);
+    padding-right: var(--padding-cart);
+    padding-left: var(--padding-cart);
 
 
 }
@@ -51,11 +53,47 @@ body {
     text-decoration: none;
     color: var(--color-primary);
     font-size: 20px;
+    position: relative;
 }
 
-.a_header.about {
-    font-size: var(--font-size-card-date);
+.a_header:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-primary);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out;
 }
+
+.a_header:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+
+}
+
+.a_header:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-primary);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out;
+}
+
+.a_header:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+
+}
+
 
 /* title */
 .title {
@@ -160,7 +198,7 @@ body {
 
 
 .ul_header {
-    background: white;
+    background-color: var(--color-secondary);
     position: absolute;
     width: 100%;
     left: 0;
@@ -185,6 +223,7 @@ body {
 
     .global_header {
         flex-direction: column;
+        justify-content: space-around;
     }
 
     .title {
@@ -200,9 +239,10 @@ body {
 
         width: 100%;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         margin-top: -17px;
+
 
     }
 
