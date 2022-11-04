@@ -1,5 +1,5 @@
 /* styles for About us page */
-h1 {
+h1.about {
     text-shadow:
         -0 -1px 0 var(--color-secondary),
         0 -1px 0 var(--color-secondary),
@@ -17,6 +17,7 @@ h1 {
         1px -1px 0 var(--color-secondary),
         -1px 1px 0 var(--color-secondary),
         1px 1px 0 var(--color-secondary);
+    margin: var(--padding-card) auto;
 }
 
 .container-about {
@@ -29,20 +30,20 @@ h1 {
 .container-about .text {
     align-self: flex-start;
     width: var(--width-about-text);
-    font-size: var(--font-size-cart-header);
+    font-size: var(--font-size-card-header);
     font-family: var(--font-primary-regular);
     background-color: var(--color-secondary);
     border-radius: 20px;
     text-align: justify;
-    padding: var(--padding-cart);
+    padding: var(--padding-card);
     min-width: 300px;
-    line-height: calc(1.5*var(--font-size-cart-header));
-    margin-left: var(--padding-cart);
+    line-height: calc(1.5*var(--font-size-card-header));
+    margin-left: var(--padding-card);
 }
 
 .container-about .text h2 {
     text-align: center;
-    margin: calc(var(--font-size-cart-header)) auto;
+    margin: calc(var(--font-size-card-header)) auto;
 }
 
 span.devs {
@@ -74,8 +75,8 @@ span.dev {
 .devs .name,
 .devs span.icon {
     opacity: 0;
-    width: var(--cart-icon-width);
-    height: var(--cart-icon-width);
+    width: var(--card-icon-width);
+    height: var(--card-icon-width);
     display: inline-block;
 }
 
@@ -87,7 +88,7 @@ span.dev {
 .devs .name {
     transition-duration: 0.7s;
     font-family: var(--font-primary-bold);
-    font-size: var(--font-size-cart-header);
+    font-size: var(--font-size-card-header);
     color: #000000;
     width: var(--width-photo-dev);
 }
@@ -130,7 +131,7 @@ span.dev {
 
     .container-about .text {
         align-self: center;
-        margin: 0 0 var(--padding-cart);
+        margin: 0 0 var(--padding-card);
     }
 }
 
