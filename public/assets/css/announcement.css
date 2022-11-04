@@ -1,5 +1,5 @@
 .card-single h2 {
-    font-size: var(--font-size-cart-header);
+    font-size: var(--font-size-card-header);
     font-family: var(--font-primary-bold);
     margin: auto;
 }
@@ -7,7 +7,7 @@
 li.card-container {
     display: inline-block;
     position: relative;
-    margin-bottom: calc(0.5*var(--margin-cart));
+    margin-bottom: calc(0.5*var(--margin-card));
 }
 
 /* styles for a card */
@@ -16,16 +16,16 @@ ul.container {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    column-gap: var(--margin-cart);
+    column-gap: var(--margin-card);
     margin: auto;
-    width: calc(3*var(--cart-width) + 2*var(--margin-cart));
+    width: calc(3*var(--card-width) + 2*var(--margin-card));
 }
 
 ul.container p {
     width: 100%;
     text-align: center;
     font-family: var(--font-primary-bold);
-    font-size: var(--font-size-cart-header);
+    font-size: var(--font-size-card-header);
     color: var(--color-primary);
 }
 
@@ -34,8 +34,8 @@ li.wide {
 }
 
 article.card-single {
-    width: var(--cart-width);
-    height: var(--cart-height);
+    width: var(--card-width);
+    height: var(--card-height);
     border: #000000 1px solid;
     margin: auto;
     background-color: var(--color-secondary);
@@ -73,7 +73,7 @@ article.card-single h2 {
 
 article.card-single>div {
     width: 100%;
-    padding: 0 var(--padding-cart);
+    padding: 0 var(--padding-card);
 }
 
 a.card-single a.card-single:active,
@@ -88,13 +88,13 @@ a.card-single {
 a.icon {
     display: flex;
     position: absolute;
-    width: var(--cart-icon-width);
-    top: calc(var(--cart-header-height) + 0.5*var(--padding-cart));
-    left: calc(var(--cart-width) - var(--padding-cart) - var(--cart-icon-width));
+    width: var(--card-icon-width);
+    top: calc(var(--card-header-height) + 0.5*var(--padding-card));
+    left: calc(var(--card-width) - var(--padding-card) - var(--card-icon-width));
 }
 
 span.icon {
-    height: var(--cart-icon-width);
+    height: var(--card-icon-width);
     cursor: pointer;
 }
 
@@ -103,16 +103,16 @@ span.icon.edit {
 }
 
 span.icon img {
-    width: var(--cart-icon-width);
+    width: var(--card-icon-width);
     height: 25px;
 }
 
 a.icon.remove {
-    top: calc(2.5*var(--cart-header-height) - var(--cart-icon-width) - 0.5*var(--padding-cart));
+    top: calc(2.5*var(--card-header-height) - var(--card-icon-width) - 0.5*var(--padding-card));
 }
 
 .card-header {
-    height: var(--cart-header-height);
+    height: var(--card-header-height);
     background-color: var(--color-primary);
     color: var(--color-secondary);
     text-transform: uppercase;
@@ -120,8 +120,8 @@ a.icon.remove {
 }
 
 .card-date-city {
-    height: calc(1.5*var(--cart-header-height));
-    font-size: var(--font-size-cart-date);
+    height: calc(1.5*var(--card-header-height));
+    font-size: var(--font-size-card-date);
 }
 
 .card-icons,
@@ -149,11 +149,11 @@ a.icon.remove {
 
 
 div.card-title {
-    height: calc(2*var(--cart-header-height));
+    height: calc(2*var(--card-header-height));
     text-transform: uppercase;
     display: flex;
     justify-content: center;
-    font-size: var(--cart-header-height);
+    font-size: var(--card-header-height);
     line-height: 55px;
 }
 
@@ -170,7 +170,7 @@ div.card-image img {
 div.card-text {
     font-family: var(--font-primary-bold);
     text-align: left;
-    line-height: calc(1.5*var(--font-size-cart-date));
+    line-height: calc(1.5*var(--font-size-card-date));
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box;
@@ -187,13 +187,13 @@ div.card-info {
 
 div.card-author {
     font-family: var(--font-primary-bold);
-    height: var(--cart-header-height);
+    height: var(--card-header-height);
     align-self: flex-start;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-end;
-    padding-bottom: var(--padding-cart);
+    padding-bottom: var(--padding-card);
 }
 
 div.card-author span {
@@ -209,16 +209,16 @@ div.card-see-more {
     color: var(--color-secondary);
     font-family: var(--font-primary-regular);
     font-size: var(--font-size-button);
-    padding: calc(0.5*var(--padding-cart)) var(--padding-cart);
-    margin-top: var(--padding-cart);
+    padding: calc(0.5*var(--padding-card)) var(--padding-card);
+    margin-top: var(--padding-card);
 }
 
 .announcement nav {
     width: var(--nav-width);
     display: flex;
     flex-direction: row;
-    height: var(--cart-header-height);
-    margin: var(--padding-cart) auto;
+    height: var(--card-header-height);
+    margin: var(--padding-card) auto;
     border: 0.5px solid var(--color-primary);
 }
 
@@ -230,7 +230,7 @@ div.card-see-more {
     color: var(--color-primary);
     width: 25%;
     font-family: var(--font-primary-bold);
-    font-size: var(--font-size-cart-header);
+    font-size: var(--font-size-card-header);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -245,13 +245,13 @@ div.card-see-more {
 
 select.region {
     width: var(--nav-width);
-    height: var(--cart-select-height);
+    height: var(--card-select-height);
     display: block;
-    margin: 0 auto var(--padding-cart);
+    margin: 0 auto var(--padding-card);
     border: 0.5px solid var(--color-primary);
     color: var(--color-primary);
     font-family: var(--font-primary-bold);
-    font-size: var(--font-size-cart-header);
+    font-size: var(--font-size-card-header);
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
@@ -284,7 +284,7 @@ div.pages {
     justify-content: center;
     color: var(--color-primary);
     width: 100%;
-    font-size: var(--font-size-cart-header);
+    font-size: var(--font-size-card-header);
 }
 
 div.pages span {
@@ -318,7 +318,7 @@ div.pages a {
     border: solid 1px var(--color-primary);
     position: absolute;
     right: 20px;
-    margin-top: var(--padding-cart);
+    margin-top: var(--padding-card);
 }
 
 .btn-goodeals:hover {
@@ -329,7 +329,7 @@ div.pages a {
 
 @media (max-width: 1300px) {
     ul.container {
-        width: calc(2*var(--cart-width) + var(--margin-cart));
+        width: calc(2*var(--card-width) + var(--margin-card));
     }
 }
 
@@ -337,13 +337,13 @@ div.pages a {
     .btn-goodeals {
         position: relative;
         display: block;
-        margin: var(--padding-cart) auto 0;
+        margin: var(--padding-card) auto 0;
     }
 }
 
 @media (max-width: 860px) {
     ul.container {
-        width: var(--cart-width);
+        width: var(--card-width);
     }
 }
 
@@ -354,7 +354,7 @@ div.pages a {
     }
 
     .announcement nav {
-        height: calc(0.75*var(--cart-header-height));
+        height: calc(0.75*var(--card-header-height));
         width: 100%;
     }
 
@@ -370,7 +370,7 @@ div.pages a {
     }
 
     .announcement nav {
-        height: calc(0.75*var(--cart-header-height));
+        height: calc(0.75*var(--card-header-height));
         width: 100%;
         flex-wrap: wrap;
     }
@@ -379,11 +379,11 @@ div.pages a {
     .announcement nav a:visited {
         border: 0.5px solid var(--color-primary);
         width: 50%;
-        font-size: var(--font-size-cart-date);
+        font-size: var(--font-size-card-date);
     }
 
     select.region {
-        margin-top: var(--cart-header-height);
+        margin-top: var(--card-header-height);
     }
 }
 
@@ -398,8 +398,8 @@ div.pages a {
     }
 
     a.icon {
-        top: calc(var(--cart-header-height) + 0.5*var(--padding-cart));
-        left: calc(300px - var(--padding-cart) - var(--cart-icon-width));
+        top: calc(var(--card-header-height) + 0.5*var(--padding-card));
+        left: calc(300px - var(--padding-card) - var(--card-icon-width));
     }
 
     li.card-container {
