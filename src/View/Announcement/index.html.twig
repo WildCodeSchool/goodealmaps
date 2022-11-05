@@ -3,6 +3,7 @@
     {{parent()}} - Annonces
 {% endblock %}
 {% block stylesheet%}
+    <link rel="stylesheet" href="/assets/css/blur.css">
     <link rel="stylesheet" href="/assets/css/announcement.css">
 {% endblock %}
 {% block content %}
@@ -11,9 +12,7 @@
     {% set line =line~key~"="~value~"&" %}
 {% endfor %}
 <main class="announcement">
-    <button class="btn-goodeals" type="button" onclick="location.href='../addGoodeal?{{line|trim('&')}}'">
-        Ajoute GooDeals
-    </button>
+    {% include 'Components/_button.html.twig' %}
     {% include 'Components/_navbar.html.twig' %}
     {% include 'Components/_regions.html.twig' %}
     <ul class="container">
@@ -22,7 +21,7 @@
                 {% include 'Components/_card.html.twig' %}
             {% endfor %}
         {% else %}
-            <li class="wide"><p>Rien trouvé, désolé</p></li>
+            <li class="wide"><p>Il n'y a encore aucune offerte pour votre recherce.<br/>Voulez vous ajouter la votre ?</p></li>
         {% endif %}
         {% if numpages > 1 %}
             <div class="pages">

@@ -2,11 +2,12 @@
 	{% block title %} {{ parent() }} - A propos
     {% endblock %}
     {% block stylesheet%}
+        <link rel="stylesheet" href="/assets/css/blur.css">
         <link rel="stylesheet" href="/assets/css/about.css">
     {% endblock %}
 {% block content %}
-    <main>
-    <h1 class="about">Qui nous sommes</h1>
+    <main class="about">
+    <h1>Qui nous sommes</h1>
     <div class="container-about">
         <div class="text">
         <h2>Salut !</h2>
@@ -18,7 +19,7 @@
         <span class="devs">
             {% for dev in devs %}
             <span class="dev">
-                <img class="dev-ava" src="{{pathAva ~ dev.image}}" />
+                <a href="#" class="over"><img class="dev-ava" src="{{pathAva ~ dev.image}}" /></a>
                 <span class="name">{{dev.name}}</span>
                 <!--<span class="icon git"><a href="{{dev.github}}"><img class="icon" src="{{pathIcon ~ 'github1.svg'}}" /></a></span>-->
                 <span class="icon git"><a href="{{dev.github}}" class="svg-background"></a></span>

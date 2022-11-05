@@ -1,5 +1,9 @@
 /* styles for About us page */
-h1.about {
+main.about {
+    padding-top: var(--padding-card);
+}
+
+.about h1 {
     text-shadow:
         -0 -1px 0 var(--color-secondary),
         0 -1px 0 var(--color-secondary),
@@ -17,7 +21,7 @@ h1.about {
         1px -1px 0 var(--color-secondary),
         -1px 1px 0 var(--color-secondary),
         1px 1px 0 var(--color-secondary);
-    margin: var(--padding-card) auto;
+    margin: 0 auto calc(1.5*var(--padding-card));
 }
 
 .container-about {
@@ -39,11 +43,12 @@ h1.about {
     min-width: 300px;
     line-height: calc(1.5*var(--font-size-card-header));
     margin-left: var(--padding-card);
+    margin-top: -10px;
 }
 
 .container-about .text h2 {
     text-align: center;
-    margin: calc(var(--font-size-card-header)) auto;
+    margin: 0 auto calc(var(--font-size-card-header));
 }
 
 span.devs {
@@ -69,8 +74,32 @@ span.dev {
     border-radius: 50%;
     border: 0.5px solid var(--color-primary);
     object-fit: cover;
-    cursor: pointer;
 }
+
+.dev a.over {
+    display: block;
+    position: relative;
+    width: var(--width-photo-dev);
+    height: var(--width-photo-dev);
+    border-radius: 50%;
+}
+
+.dev a.over:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .5);
+    opacity: 0;
+    border-radius: 50%;
+}
+
+.dev a.over:hover:after {
+    opacity: 1;
+}
+
 
 .devs .name,
 .devs span.icon {
@@ -89,17 +118,17 @@ span.dev {
     transition-duration: 0.7s;
     font-family: var(--font-primary-bold);
     font-size: var(--font-size-card-header);
-    color: #000000;
+    color: var(--color-secondary);
     width: var(--width-photo-dev);
 }
 
 .devs .icon.git {
-    transition-duration: 1.7s;
+    transition-duration: 1.2s;
     margin-right: calc(2*var(--padding-line));
 }
 
 .devs .icon.linkedin {
-    transition-duration: 2.7s;
+    transition-duration: 2s;
     margin-left: calc(2*var(--padding-line));
 }
 
@@ -110,16 +139,13 @@ span.dev {
     transform-origin: center bottom;
     transform: translateY(-60px);
     opacity: 1;
-}
-
-.dev:hover img.dev-ava {
-    opacity: 0.5;
+    z-index: 10;
 }
 
 .svg-background {
     width: 24px;
     height: 24px;
-    background-color: #000000;
+    background-color: #fff;
     display: inline-block;
     mask-image: url("/assets/images/icons/github1.svg");
 }

@@ -38,7 +38,7 @@
 
 /* -------------Footer desktop---------------- */
 .global_footer {
-    height: 75px;
+    height: var(--heignt-footer);
     width: 100%;
     background-color: var(--color-secondary);
     position: relative;
@@ -46,7 +46,7 @@
 
 .container {
     display: flex;
-    
+
 }
 
 .container_list {

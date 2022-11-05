@@ -14,7 +14,7 @@ class AnnouncementController extends AbstractController
         3 => 'hebergements'
     ];
 
-    private int $perPage = 3;
+    private int $perPage = 9;
 
     /**
      * List announcements
@@ -38,6 +38,9 @@ class AnnouncementController extends AbstractController
             if (isset($where['category'])) {
                 $active = $where['category'];
             }
+            if (isset($where['id'])) {
+                unset($where['id']);
+            }
         }
         $regions = $regionManager->select();
         $announcements = $announcementManager->select($where);
@@ -59,14 +62,25 @@ class AnnouncementController extends AbstractController
         'numpages' => $numpages, 'where' => $where, 'page' => $page]);
     }
 
-        /**
+    /**
      * List announcements
      */
     public function selectCard(int $id): string
     {
         $announcementManager = new AnnouncementManager();
         $announcement = $announcementManager->selectById($id);
+        $announcement['ref'] = $_SERVER['HTTP_REFERER'];
         return $this->twig->render('Announcement/card.html.twig', ['announcement' => $announcement]);
+    }
+
+    /**
+     * Delete announcement with given id
+     */
+    public function delete(int $id): void
+    {
+        $announcementManager = new AnnouncementManager();
+        $announcementManager->deleteById($id);
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 
 }

@@ -14,8 +14,7 @@ return [
     'home' => ['HomeController', 'index',],
     'announcements' => ['AnnouncementController', 'index',],
     'announcements/card' => ['AnnouncementController', 'selectCard', ['id']],
-    'items/edit' => ['ItemController', 'edit', ['id']],
+    'announcements/delete' => ['AnnouncementController', 'delete', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
-    'items/add' => ['ItemController', 'add',],
-    'items/delete' => ['ItemController', 'delete',],
+    'items/add' => ['ItemController', 'add',],    
 ];
