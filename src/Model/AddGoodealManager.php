@@ -3,12 +3,12 @@
 namespace App\Model;
 
 use PDO;
+
 /*use App\Model\RegionManager;
 use App\Model\AuthorManager;*/
 
 class AddGoodealManager extends AbstractManager
 {
-
     public const TABLE = 'announcement';
      /**
      * Insert new item in database
@@ -20,11 +20,11 @@ class AddGoodealManager extends AbstractManager
         author_id, category, date, date_start', date_end, image, city, zipcode )
         VALUES (:region_id, :title, :message, :adress, :author_id, :category, :date, :date_start',
         :date_end, :image, :city :zipcode)");
-        $statement->bindValue(':region_id', $regionId, \PDO::PARAM_INT);
+   //     $statement->bindValue(':region_id', $regionId, \PDO::PARAM_INT);
         $statement->bindValue(':title', $announcement['title'], \PDO::PARAM_STR);
         $statement->bindValue(':message', $announcement['message'], \PDO:: PARAM_STR);
         $statement->bindValue(':adress', $announcement['adress'], \PDO::PARAM_STR);
-        $statement->bindValue(':author_id', $authorId, PDO::PARAM_STR);
+   //     $statement->bindValue(':author_id', $authorId, PDO::PARAM_STR);
         $statement->bindValue(':category', $announcement['category'], \PDO::PARAM_STR);
         $statement->bindValue(':date', date("d-m-Y"), \PDO::PARAM_STR);
         $statement->bindValue(':date_start', $announcement['start-date'], \PDO::PARAM_STR);
@@ -38,7 +38,7 @@ class AddGoodealManager extends AbstractManager
 
 /*       $regionId = new RegionManager();
         $regionId->selectRegionById($announcement['region']);
-        
+
 
         $authorId = new AuthorManager();
         $authorId->selectAuthorById($announcement['email'], $announcement['firstname'], $announcement['lastname']);
@@ -81,5 +81,5 @@ class AddGoodealManager extends AbstractManager
 
         return $statement->execute();
     }*/
-}
+    }
 }

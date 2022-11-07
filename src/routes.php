@@ -14,7 +14,7 @@ return [
     'home' => ['HomeController', 'index',],
     'announcement' => ['AnnouncementController', 'index',],
     'addGoodeal' => ['FormAddGoodealController', 'index'],
-    'addGoodeal' => ['FormAddGoodealController', 'addGoodeal'],
+    'addGoodeal/add' => ['FormAddGoodealController', 'addGoodeal'],
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],

@@ -11,6 +11,16 @@ class FormAddGoodealController extends AbstractController
     {
         return $this->twig->render('Announcement/addGoodeal.html.twig');
     }
+/*
+  private function cleanValue(array $data): array
+  {
+    foreach ($data as $key => $value) {
+        $cleanValue = htmlentities(trim($value));
+        $checkedData[$key] = $cleanValue;
+    }
+    return $checkedData;
+
+  }
 
     public function checkForm(array $data): array
     {
@@ -18,51 +28,71 @@ class FormAddGoodealController extends AbstractController
         $gooDeal = [];
 
         foreach ($data as $key => $value) {
-            $cleanValue = htmlentities(trim($value));
-            
-            if ($key === "title" && strlen($cleanValue) > 50) {
-                $errors[$key] = "Le nom du Goodeal est trop long, merci de donner un nom plus court à votre Goodeal";
+ //           $value = htmlentities(trim($value));
+            switch ($value) {
+                case "":
+                    $errors[$key] = "Merci de Remplir le champ";
+                    break;
+                default:
+                    ;
             }
 
-            switch(true){
-                case $cleanValue === "" :
-                    $errors[$key] = "Merci de Remplir le champs";
+            switch ($key) {
+                case "title":
+                    if (strlen($value) > 50) {
+                        $errors[$key] = "Le nom du Goodeal est trop long, merci de donner
+                        un nom plus court à votre Goodeal";
+                    }
                     break;
-                
-                case strlen($cleanValue) > 20:
-                    switch ($key) {
-                        case "lastname" :
-                        $errors[$key] = "Nom trop long, merci de fournir un nom plus court";
+                case "lastname":
+                    if (strlen($value) > 20) {
+                        $errors[$key] = "Nom trop long, merci de fournir un nom
+                        plus court";
+                    }
                     break;
-
-                case "firstname" :
-                        $errors[$key] = "Prénom trop long, merci de fournir un prénom plus court";    
-                        break;
-                        case "email" :
-                            $errors[$key] = "L'email est trop long, merci de fournir une adresse mail plus courte";    
-                            break;
-                        default ;}
+                case "firstname":
+                    if (strlen($value) > 20) {
+                        $errors[$key] = "Prénom trop long, merci de fournir un prénom
+                        plus court";
+                    }
                     break;
-                    default ; } 
-
-            if ($key === "adress" && strlen($cleanValue) > 255) {
-                $errors[$key] = "L'adresse est trop longue, merci de donner une adresse valide";
+                case "email":
+                    if (strlen($value) > 20) {
+                        $errors[$key] = "L'email est trop long, merci de fournir une
+                        adresse mail plus courte";
+                    } elseif (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
+                        $errors[$key] = "Adresse mail non valide, merci de fournir
+                        une adresse mail valide";
+                    }
+                    break;
+                case "adress":
+                    if (strlen($value) > 255) {
+                        $errors[$key] = "L'adresse est trop longue, merci de donner
+                        une adresse valide";
+                    }
+                    break;
+                case "city":
+                    if (strlen($value) > 100) {
+                        $errors[$key] = "Le nom de la Ville est trop long, merci
+                        d'utiliser un nom de ville valide";
+                    }
+                    break;
+                case "zipcode":
+                    if (strlen($value) > 5 || strlen($value) < 5) {
+                        $errors[$key] = "Le Code Postal n'est pas valide, merci
+                        d'utiliser un Code Postal valide";
+                    }
+                    break;
+                default:
+                    ;
             }
-          /*  if ($key === "message" && strlen($cleanValue) > 65535) {
+
+          /*  if ($key === "message" && strlen($value) > 65535) {
                 $errors[$key] = "La description est trop longue, merci de raccourcir la description";
-            }*/
-            if ($key === "city" && strlen($cleanValue) > 100) {
-                $errors[$key] = "Le nom de la Ville est trop long, merci d'utiliser un nom de ville valide";
-            }
-            if (($key === "zipcode" && strlen($cleanValue) > 5) || ($key === "zipcode" && strlen($cleanValue) < 5)) {
-                $errors[$key] = "Le Code Postal n'est pas valide, merci d'utiliser un Code Postal valide";
-            }
-            if ($key === "email" && !filter_var($cleanValue, FILTER_VALIDATE_EMAIL)) {
-                $errors[$key] = "Adresse mail non valide, merci de fournir une adresse mail valide";
             }
 
             if (empty($errors[$key])) {
-                $gooDeal[$key] = $cleanValue;
+                $gooDeal[$key] = $value;
             }
         }
 
@@ -75,10 +105,10 @@ class FormAddGoodealController extends AbstractController
 
 
     public function addGoodeal(): string
-    {   
+    {
         $data = [];
-        $checkedData = [];
-        $checkedData['errors'] = [];
+        $finalValue = [];
+        $finalValue['errors'] = [];
 
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                 $data = [
@@ -92,28 +122,28 @@ class FormAddGoodealController extends AbstractController
                 "zipcode" => $_POST['zipcode'],
               /*  "start-date" => $_POST['start-date'],
                 "end-date" => $_POST['end-date'],
-                "image" => $_POST['avatar'],*/
+                "image" => $_POST['avatar'],
                 "email" => $_POST['email'],
-           /*     "message" => $_POST['description']*/
+           /*     "message" => $_POST['description']
                 ];
 
-                
-                $checkedData = $this->checkForm($data);
+                $checkedData = $this->cleanValue($data);
+                $finalValue = $this->checkForm($checkedData);
 
-                if (!$checkedData["errors"]) {
-                    $addGoodealManager = new AddGoodealManager();
+                if (!$finalValue["errors"]) {
+                 //   $addGoodealManager = new AddGoodealManager();
                  //   $addGoodealManager->insertGoodeal($checkedData["gooDeal"]);
 
                       $addAuthor = new AuthorManager();
-                      $addAuthor->insertAuthor($checkedData["gooDeal"]);
-                  //  header('Location: /addGoodeal');
+                      $addAuthor->insertAuthor($finalValue["gooDeal"]);
+                   //   header('Location: /addGoodeal');
                 }
         }
            // Generate the web page
-            
+
           return $this->twig->render('Announcement/addGoodeal.html.twig', [
             'data' => $data,
-            'errors' => $checkedData['errors']
+            'errors' => $finalValue['errors']
                ]);
-    }
+    }*/
 }
