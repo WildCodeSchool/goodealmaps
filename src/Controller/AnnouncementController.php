@@ -46,7 +46,7 @@ class AnnouncementController extends AbstractController
             }
         }
 
-        $regions = $regionManager->select();        
+        $regions = $regionManager->select();
         $announcements = $announcementManager->select($where);
 
         $numrows = count($announcements);
