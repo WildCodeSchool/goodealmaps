@@ -3,14 +3,16 @@
     width: 100%;
     height: 100vh;
     overflow: auto;
+    position: relative;
   }
-    svg{
-        width: 95%;
-        height: 100vh;
-        display: block;
-        
-      }
-      /* CSS modal */
+  svg{
+      width: 95%;
+      height: 85vh;
+      display: block;
+      
+    }
+
+/* CSS modal */
   .modal-map {
     position: fixed;
     left: 50%;
@@ -62,8 +64,17 @@
    margin: auto;
   }
   
-
-
-
-
+/*css button arrow*/
+  .btn-down img  {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    float: right;
+    
+   
+    
+  }
+ 
 }

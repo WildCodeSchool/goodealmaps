@@ -4,6 +4,8 @@
     width: 100%;
     height: 100vh;
     overflow: auto;
+    display: flex;
+    flex-direction: row;
     
   }
   /*CSS MAP First section*/
@@ -28,6 +30,7 @@
     display: block;
     margin: auto;
   }
+ 
   /* CSS modal */
   .modal-map {
     position: absolute;
@@ -80,6 +83,11 @@
     font-size: 32px;
     margin-top:20px;
   }
+/*css button arrow*/
+/* .btn-down {
+  display: none;
+ 
+} */
 
 }
 
