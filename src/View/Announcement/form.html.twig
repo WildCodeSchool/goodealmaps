@@ -1,0 +1,23 @@
+{% macro input(title, value, type, name, id, error, placeholder) %}
+	<div>
+		<label for="{{ title }}">{{ value }}</label>
+		<input
+		type="{{ type }}" id="{{ id }}" name="{{ name }}" required placeholder="{{ placeholder }}">
+
+
+		<!--  if type === "selected" && name === "category" <option value="Event"></option> <option value="food-service">Restauration</option> <option value="accommodation">Logement</option> " -->
+		{% if error %}
+			<p>{{ error }}</p>
+		{% endif %}
+	</div>
+{% endmacro %}
+
+<!--{% macro textarea(title, name, id, error, placeholder, value = "") %}
+	<div>
+		<label for="{{ id }}">{{ title }}</label>
+		<textarea id="{{ id }}" name="{{ name }}" required placeholder="{{ placeholder }}">{{ value }}</textarea>
+		{% if error %}
+			<p>{{ error }}</p>
+		{% endif %}
+	</div>
+{% endmacro %}-->

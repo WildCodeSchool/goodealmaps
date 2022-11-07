@@ -1,0 +1,99 @@
+{% extends 'layout.html.twig' %}
+{% import "Announcement/form.html.twig" as form %}
+
+{% block title %}
+	{{ parent() }}
+	- Ajouter un GooDeal
+{% endblock %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/addGoodeal.css">
+{% endblock %}
+
+
+{% block content %}
+	<div class="form">
+		<div class="overlay">
+			<h1 class="txt_form">Dépose ton GooDeal
+
+			</h1>
+
+			<form class="contact_form" method="post">
+
+
+				<div class="label-column">
+					{{ form.input("deal-name","Nomme ton Deal*", "text", "deal-name", "deal-name", errors.title, "Nom du Deal") }}
+				</div>
+
+				<div class="label-column">
+					{{ form.input("lastname","Ton nom*", "text", "lastname", "lastname", errors.lastname, "ex: Juste") }}
+				</div>
+
+				<div class="label-column">
+					{{ form.input("firstname","Ton Prénom*", "text", "firstname", "firstname", errors.firstname, "ex: Axel") }}
+				</div>
+
+				<!-- <label for="category">Choisis ta Catégorie*</label>
+																<select name="category" id="category" required>
+																	<option value="Event">Evenement</option>
+																	<option value="food-service">Restauration</option>
+																	<option value="accommodation">Logement</option>
+																</select></div><div class="label-column"> -->
+				<div class="label-column">
+					{{ form.input("adress","Nom et Numéro de rue du GooDeal*", "text", "adress", "adress", errors.adress, "ex: 14 bis route nationale") }}
+				</div>
+
+				<!--<label for="region">Région du GooDeal*</label>
+																<select name="region" id="region" required>
+																	<option value="Auvergne-Rhône-Alpes">Auvergne-Rhône-Alpes</option>
+																	<option value="Bourgogne-Franche-Comté">Bourgogne-Franche-Comté</option>
+																	<option value="Bretagne">Bretagne</option>
+																	<option value="Centre-Val de Loire">Centre-Val de Loire</option>
+																	<option value="Corse">Corse</option>
+																	<option value="Grand Est">Grand Est</option>
+																	<option value="Hauts-de-France">Hauts-de-France</option>
+																	<option value="Île-de-France">Île-de-France</option>
+																	<option value="Normandie">Normandie</option>
+																	<option value="Nouvelle-Aquitaine">Nouvelle-Aquitaine</option>
+																	<option value="Occitanie">Occitanie</option>
+																	<option value="Pays de la Loire">Pays de la Loire</option>
+																	<option value="Provence-Alpes-Côte d'Azur">Provence-Alpes-Côte d'Azur</option>
+																</select></div> -->
+
+				<div class="label-column">
+					{{ form.input("city","Ville du GooDeal*", "text", "city", "city", errors.city, "ex: Wargnies") }}
+				</div>
+
+				<div class="label-column">
+					{{ form.input("zipcode", "Code postal du GooDeal*", "text", "zipcode", "zipcode", errors.zipcode, "ex: 59144") }}
+				</div>
+
+				<div class="label-column">
+					{{ form.input("email", "Ton adresse mail*", "email", "email", "email", errors.email, "ex: florent.dupond@gmail.com") }}
+				</div>
+				<button type="submit">Ajouter ton deal</button>
+
+
+				<!-- 			
+																<div class="label-column">
+																<label for="start-date">Date de début</label>
+																<input type="date" id="start-date" name="start-date" placeholder="ex: 20/12/2022"></div><div class="label-column">
+																<label for="end-date">Date de fin</label>
+																<input type="date" id="end-date" name="end-date" placeholder="ex: 25/12/2022"></div><div class="label-column">
+																<label for="imageUpload">La photo de ton Deal</label>
+																<input type="file" name="avatar" id="imageUpload"/></div><div class="label-column">
+																<label for="description">
+																	Décris ton deal*
+																</label>
+																
+																<textarea name="description" id="description" placeholder="ex: Grand tournoi de pétanque avec plus de 300 paritcipants..." required></textarea></div>-->
+
+
+				<!--<input class="btn" type="submit" value="Ajouter ton deal">-->
+
+			</form>
+		</div>
+	</div>
+
+{% endblock %}
+{% block javascript %}{% endblock %}

@@ -3,29 +3,48 @@
 namespace App\Model;
 
 use PDO;
+/*use App\Model\RegionManager;
+use App\Model\AuthorManager;*/
 
 class AddGoodealManager extends AbstractManager
 {
+
+    public const TABLE = 'announcement';
      /**
      * Insert new item in database
      */
     public function insertGoodeal(array $announcement): void
     {
 
-        $statement = $this->pdo->prepare("SELECT id FROM region WHERE region_name=:region");
-        $statement->bindValue(':region', $announcement['region'], \PDO::PARAM_STR);
-        $regionId = $statement->fetchAll();
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (region_id, title, message, adress,
+        author_id, category, date, date_start', date_end, image, city, zipcode )
+        VALUES (:region_id, :title, :message, :adress, :author_id, :category, :date, :date_start',
+        :date_end, :image, :city :zipcode)");
+        $statement->bindValue(':region_id', $regionId, \PDO::PARAM_INT);
+        $statement->bindValue(':title', $announcement['title'], \PDO::PARAM_STR);
+        $statement->bindValue(':message', $announcement['message'], \PDO:: PARAM_STR);
+        $statement->bindValue(':adress', $announcement['adress'], \PDO::PARAM_STR);
+        $statement->bindValue(':author_id', $authorId, PDO::PARAM_STR);
+        $statement->bindValue(':category', $announcement['category'], \PDO::PARAM_STR);
+        $statement->bindValue(':date', date("d-m-Y"), \PDO::PARAM_STR);
+        $statement->bindValue(':date_start', $announcement['start-date'], \PDO::PARAM_STR);
+        $statement->bindValue(':date_end', $announcement['end-date'], \PDO::PARAM_STR);
+        $statement->bindValue(':image', $announcement['image'], \PDO::PARAM_STR);
+        $statement->bindValue(':city', $announcement['city'], \PDO::PARAM_STR);
+        $statement->bindValue(':zipcode', $announcement['zipcode'], \PDO::PARAM_INT);
 
-        $statement = $this->pdo->prepare("SELECT id FROM author WHERE firstname=:firstname
-        AND lastname=:lastname AND email=:email");
-        $statement->bindValue(':firstname', $announcement['firstname'], \PDO::PARAM_STR);
-        $statement->bindValue(':lastname', $announcement['lastname'], \PDO::PARAM_STR);
-        $statement->bindValue(':email', $announcement['email'], \PDO::PARAM_STR);
-        $authorId = $statement->fetchAll();
+
+        $statement->execute();
+
+/*       $regionId = new RegionManager();
+        $regionId->selectRegionById($announcement['region']);
+        
+
+        $authorId = new AuthorManager();
+        $authorId->selectAuthorById($announcement['email'], $announcement['firstname'], $announcement['lastname']);
 
 
-
-        $statement = $this->pdo->prepare("INSERT INTO announcement (region_id, title, message, adress,
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (region_id, title, message, adress,
         author_id, category, date, date_start, date_end, image, city, zipcode )
         VALUES (:region_id, :deal-name, :description, :adress, :author_id, :category, :date, :start-date,
         :end-date, :avatar, :city :zip-code)");
@@ -50,9 +69,8 @@ class AddGoodealManager extends AbstractManager
         $statement->bindValue(':firstname', $announcement['firstname'], \PDO::PARAM_STR);
         $statement->bindValue(':lastname', $announcement['lastname'], \PDO::PARAM_STR);
         $statement->execute();
-    }
 
-   /*
+
      * Update item in database
 
     public function update(array $item): bool
@@ -63,4 +81,5 @@ class AddGoodealManager extends AbstractManager
 
         return $statement->execute();
     }*/
+}
 }
