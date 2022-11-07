@@ -12,7 +12,7 @@ return [
     'contact' => ['ContactController', 'index'],
     'legal' => ['LegalController', 'index'],
     'home' => ['HomeController', 'index',],
-    'announcement' => ['AnnouncementController', 'index',],
+    'announcements' => ['AnnouncementController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],

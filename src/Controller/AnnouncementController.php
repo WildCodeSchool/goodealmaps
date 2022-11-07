@@ -7,7 +7,7 @@ use App\Model\RegionManager;
 
 class AnnouncementController extends AbstractController
 {
-    private array $events = [
+    CONST EVENTS = [
         0 => 'tous',
         1 => 'evenements',
         2 => 'restaurations',
@@ -29,14 +29,26 @@ class AnnouncementController extends AbstractController
         $page = 1;
         if (!(empty($_GET))) {
             $where = $_GET;
-            if (isset($where['page'])) {
-                unset($where['page']);
-            }
-            if (isset($where['region_id'])) {
-                $selected = $where['region_id'];
-            }
-            if (isset($where['category'])) {
-                $active = $where['category'];
+            if (isset($where['search'])) {
+                $where['search'] = htmlentities($where['search']);
+            } else {
+                if (isset($where['page'])) {
+                    unset($where['page']);
+                }
+                if (isset($where['region_id'])) {
+                    if (is_int((int) $where['region_id'])) {
+                        $selected = $where['region_id'];
+                    } else {
+                        throw new \Exception('Region n\'existe pas');
+                    }
+                }
+                if (isset($where['category'])) {
+                    if (in_array($where['category'], self::EVENTS)) {
+                        $active = $where['category'];
+                    } else {
+                        throw new \Exception('Categorie n\'existe pas');
+                    }
+                }
             }
         }
         $regions = $regionManager->select();
@@ -55,7 +67,7 @@ class AnnouncementController extends AbstractController
             unset($where['limitQuery']);
         }
         return $this->twig->render('Announcement/index.html.twig', ['announcements' => $announcements,
-        'events' => $this->events, 'active' => $active, 'regions' => $regions, 'selected' => $selected,
+        'events' => self::EVENTS, 'active' => $active, 'regions' => $regions, 'selected' => $selected,
         'numpages' => $numpages, 'where' => $where, 'page' => $page]);
     }
 }

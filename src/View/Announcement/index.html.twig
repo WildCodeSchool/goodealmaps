@@ -26,14 +26,20 @@
         {% endif %}
         {% if numpages > 1 %}
             <div class="pages">
+                {% if page > 1 %}
+                    <a href="/announcements?{{line}}page={{page-1}}">« prev</a>
+                {% endif %}
                 {% for i in 1..numpages %}
                     <span>
                         {% if i == page %}
                             {{i}}
-                        {% else %}<a href="/announcement?{{line}}page={{i}}">{{i}}</a>
+                        {% else %}<a href="/announcements?{{line}}page={{i}}">{{i}}</a>
                         {% endif %}
                     </span>
                 {% endfor %}
+                {% if page < numpages %}
+                    <a href="/announcements?{{line}}page={{page+1}}">suiv »</a>
+                {% endif %}
             </div>
         {% endif%}
     </ul>
