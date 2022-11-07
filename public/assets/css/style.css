@@ -25,6 +25,7 @@
     --font-size-h1-body: 36px;
     --font-size-card-header: 18px;
     --font-size-card-date: 16px;
+    --font-size-card-footer: 18px;
     --padding-card: 20px;
     --margin-card: 65px;
     --padding-line: 3px;
@@ -39,16 +40,17 @@
     --width-about-text: 300px;
     --nav-width: 700px;
     --height-header: 95px;
-    --heignt-footer: 75px;
+    --height-footer: 75px;
 }
 
 body {
     color: var(--color-text);
     font-family: var(--font-primary);
     background-image: url("../images/background.jpeg");
-    background-repeat: norepeat;
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    min-height: 100vh;
 }
 
 body h1 {
@@ -61,6 +63,7 @@ body h1 {
 main {
     min-height: calc(100vh - var(--height-header) - var(--heignt-footer));
     box-sizing: border-box;
+    padding: var(--padding-card) 0 var(--height-footer);
 }
 
 .mention {

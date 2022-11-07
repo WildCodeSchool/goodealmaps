@@ -31,6 +31,7 @@ ul.container p {
 
 li.wide {
     width: 100%;
+    margin-top: calc(2*var(--padding-card));
 }
 
 article.card-single {
@@ -224,7 +225,7 @@ div.card-see-more {
     display: flex;
     flex-direction: row;
     height: var(--card-header-height);
-    margin: var(--padding-card) auto;
+    margin: 0 auto var(--padding-card);
     border: 0.5px solid var(--color-primary);
 }
 

@@ -1,8 +1,4 @@
 /* styles for About us page */
-main.about {
-    padding-top: var(--padding-card);
-}
-
 .about h1 {
     text-shadow:
         -0 -1px 0 var(--color-secondary),
