@@ -19,20 +19,19 @@
 		{% endblock %}
 		</title>  		
 	</head>
-	</head>
-<body>
 
+<body>
+	{% include 'Components/_header.html.twig' %}
     {% block header %} 
-    {% include 'Components/_header.html.twig' %}
     {% endblock %}
     {% block content %}
     {% endblock %}
 
-    {% block footer %} 
-    {% include 'Components/_footer.html.twig' %}
+	{% include 'Components/_footer.html.twig' %}
+    {% block footer %}
     {% endblock %}
 
-		{% block javascript %}
-		{% endblock %}
+	{% block javascript %}
+	{% endblock %}
 </body>
 </html>
