@@ -21,30 +21,3 @@ return [
     'items/delete' => ['ItemController', 'delete',],
     '404' => ['ErrorController','index'],
 ];
-/*
-switch ($a) {
-    case '': 
-        ['HomeController', 'index',];
-    break;
-    case 'about': ['AboutController', 'index'];
-    break;
-    case 'contact': ['ContactController', 'index'];
-    break;
-    case 'legal': ['LegalController', 'index'];
-    break;
-    case 'home': ['HomeController', 'index',];
-    break;
-    case 'announcement': ['AnnouncementController', 'index',];
-    break;
-    case 'items/edit': ['ItemController', 'edit', ['id']];
-    break;
-    case 'items/show': ['ItemController', 'show', ['id']];
-    break;
-    case 'items/add': ['ItemController', 'add',];
-    break;
-    case 'items/delete': ['ItemController', 'delete',];
-    break;
-    case '404': ['ErrorController','index'];
-    break;
-    default: ['ErrorController','index'];
-}*/

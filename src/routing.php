@@ -36,7 +36,7 @@ foreach ($matchingRoute[2] ?? [] as $parameter) {
 try {
     // execute the controller
     echo (new $controller())->$method(...$parameters);
-} catch (Exception $e) { 
+} catch (Exception $e) {
     // if an exception is thrown during controller execution
     if (isset($whoops)) {
         echo $whoops->handleException($e);

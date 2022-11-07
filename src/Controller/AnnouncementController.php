@@ -7,7 +7,7 @@ use App\Model\RegionManager;
 
 class AnnouncementController extends AbstractController
 {
-    CONST EVENTS = [
+    public const EVENTS = [
         0 => 'tous',
         1 => 'evenements',
         2 => 'restaurations',
