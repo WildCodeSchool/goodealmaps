@@ -41,14 +41,12 @@ class AnnouncementController extends AbstractController
                     $active = $where['category'];
                 } else {
                     $error .= 'Categorie n\'existe pas'; //throw new \Exception('Categorie n\'existe pas');
+                    $where = [];
                 }
             }
         }
 
-        $regions = $regionManager->select();
-        if ($error) {
-            $where = [];
-        }
+        $regions = $regionManager->select();        
         $announcements = $announcementManager->select($where);
 
         $numrows = count($announcements);
