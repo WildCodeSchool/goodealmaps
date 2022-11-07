@@ -27,6 +27,7 @@ class AnnouncementController extends AbstractController
         $where = [];
         $selected = '';
         $page = 1;
+        $error = '';
         if (!(empty($_GET))) {
             $where = $_GET;
             if (isset($where['search'])) {
@@ -39,19 +40,22 @@ class AnnouncementController extends AbstractController
                     if (is_int((int) $where['region_id'])) {
                         $selected = $where['region_id'];
                     } else {
-                        throw new \Exception('Region n\'existe pas');
+                        $error .= 'Region n\'existe pas. ';//throw new \Exception('Region n\'existe pas');
                     }
                 }
                 if (isset($where['category'])) {
                     if (in_array($where['category'], self::EVENTS)) {
                         $active = $where['category'];
                     } else {
-                        throw new \Exception('Categorie n\'existe pas');
+                        $error .= 'Categorie n\'existe pas'; //throw new \Exception('Categorie n\'existe pas');
                     }
                 }
             }
         }
         $regions = $regionManager->select();
+        if ($error) {
+            $where = [];
+        }
         $announcements = $announcementManager->select($where);
 
         $numrows = count($announcements);
@@ -68,6 +72,6 @@ class AnnouncementController extends AbstractController
         }
         return $this->twig->render('Announcement/index.html.twig', ['announcements' => $announcements,
         'events' => self::EVENTS, 'active' => $active, 'regions' => $regions, 'selected' => $selected,
-        'numpages' => $numpages, 'where' => $where, 'page' => $page]);
+        'numpages' => $numpages, 'where' => $where, 'page' => $page, 'error' => $error]);
     }
 }

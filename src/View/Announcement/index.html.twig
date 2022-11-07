@@ -15,8 +15,9 @@
         Ajoute GooDeals
     </button>
     {% include 'Components/_navbar.html.twig' %}
-    {% include 'Components/_regions.html.twig' %}
+    {% include 'Components/_regions.html.twig' %}    
     <ul class="container">
+        {% if error %}<li class="wide"><p class="error">{{error}}</p></li>{% endif %}
         {% if announcements %}
             {% for announcement in announcements %}
                 {% include 'Components/_card.html.twig' %}
