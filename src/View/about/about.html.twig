@@ -1,9 +1,14 @@
 {% extends 'layout.html.twig' %}
-	{% block title %} {{ parent() }} - A propos
-    {% endblock %}
-    {% block stylesheet%}
-        <link rel="stylesheet" href="/assets/css/about.css">
-    {% endblock %}
+
+{% block title %} 
+    {{parent}} - A propos
+{% endblock %}
+
+{% block stylesheet%}
+    <link rel="stylesheet" href="/assets/css/blur.css">
+    <link rel="stylesheet" href="/assets/css/about.css">
+{% endblock %}
+
 {% block content %}
     <main>
     <h1 class="about">Qui nous sommes </h1>
