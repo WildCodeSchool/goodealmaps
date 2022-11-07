@@ -37,11 +37,7 @@ class AnnouncementController extends AbstractController
                     unset($where['page']);
                 }
                 if (isset($where['region_id'])) {
-                    if (is_int((int) $where['region_id'])) {
-                        $selected = $where['region_id'];
-                    } else {
-                        $error .= 'Region n\'existe pas. ';//throw new \Exception('Region n\'existe pas');
-                    }
+                    $where['region_id'] = (int) $where['region_id'];
                 }
                 if (isset($where['category'])) {
                     if (in_array($where['category'], self::EVENTS)) {
