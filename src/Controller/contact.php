@@ -11,7 +11,7 @@ if (isset($_POST["message"])) {
     Message :" . $_POST["message"];
 
     $retour = mail(
-        "emailtest@test.fr",
+        "goodealmap@email.fr",
         $_POST["sujet"],
         $message,
         "From:contact@exemplemail.fr" . "\r\n" . "Reply-to:" . $_POST["email"]
