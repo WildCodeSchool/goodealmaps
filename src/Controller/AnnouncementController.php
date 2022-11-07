@@ -28,23 +28,23 @@ class AnnouncementController extends AbstractController
         $selected = '';
         $page = 1;
         $error = '';
-        if (!(empty($_GET))) {
-            if (isset($_GET['search'])) {
-                $where['search'] = htmlentities($_GET['search']);
-            } else {
-                if (isset($_GET['region_id'])) {
-                    $where['region_id'] = (int) $_GET['region_id'];
-                }
-                if (isset($_GET['category'])) {
-                    if (in_array($_GET['category'], self::EVENTS)) {
-                        $where['category'] = $_GET['category'];
-                        $active = $where['category'];
-                    } else {
-                        $error .= 'Categorie n\'existe pas'; //throw new \Exception('Categorie n\'existe pas');
-                    }
+
+        if (isset($_GET['search'])) {
+            $where['search'] = htmlentities($_GET['search']);
+        } else {
+            if (isset($_GET['region_id'])) {
+                $where['region_id'] = (int) $_GET['region_id'];
+            }
+            if (isset($_GET['category'])) {
+                if (in_array($_GET['category'], self::EVENTS)) {
+                    $where['category'] = $_GET['category'];
+                    $active = $where['category'];
+                } else {
+                    $error .= 'Categorie n\'existe pas'; //throw new \Exception('Categorie n\'existe pas');
                 }
             }
         }
+
         $regions = $regionManager->select();
         if ($error) {
             $where = [];
