@@ -11,8 +11,8 @@ body {
 .global-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 95px;
+    justify-content: space-around;
+    height: var(--height-header);
     background-color: var(--color-secondary);
     padding-right: var(--padding-card);
     padding-left: var(--padding-card);
