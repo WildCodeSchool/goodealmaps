@@ -15,21 +15,21 @@ class AddGoodealManager extends AbstractManager
      */
     public function insertGoodeal(array $announcement): void
     {
-        $regionId = new RegionManager();
+     /*   $regionId = new RegionManager();
         $regionId->selectRegionById($announcement['region']);
 
         $authorId = new AuthorManager();
-        $authorId->selectAuthorById($announcement['email'], $announcement['firstname'], $announcement['lastname']);
+        $authorId->selectAuthorById($announcement['email'], $announcement['firstname'], $announcement['lastname']);*/
 
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (region_id, title, message, adress,
         author_id, category, date, date_start', date_end, image, city, zipcode )
         VALUES (:region_id, :title, :message, :adress, :author_id, :category, :date, :date_start',
         :date_end, :image, :city :zipcode)");
-        $statement->bindValue(':region_id', $regionId, \PDO::PARAM_INT);
+      //  $statement->bindValue(':region_id', $regionId, \PDO::PARAM_INT);
         $statement->bindValue(':title', $announcement['title'], \PDO::PARAM_STR);
         $statement->bindValue(':message', $announcement['message'], \PDO:: PARAM_STR);
         $statement->bindValue(':adress', $announcement['adress'], \PDO::PARAM_STR);
-        $statement->bindValue(':author_id', $authorId, PDO::PARAM_STR);
+      //  $statement->bindValue(':author_id', $authorId, PDO::PARAM_STR);
         $statement->bindValue(':category', $announcement['category'], \PDO::PARAM_STR);
         $statement->bindValue(':date', date("d-m-Y"), \PDO::PARAM_STR);
         $statement->bindValue(':date_start', $announcement['start-date'], \PDO::PARAM_STR);
@@ -41,10 +41,10 @@ class AddGoodealManager extends AbstractManager
 
         $statement->execute();
 
-/*       
+/*
 
 
-        
+
 
 
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (region_id, title, message, adress,
