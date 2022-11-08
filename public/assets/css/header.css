@@ -170,7 +170,7 @@ body {
     text-align: center
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1100px) {
 
     .global-header {
         flex-direction: column;
