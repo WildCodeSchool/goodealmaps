@@ -30,7 +30,6 @@
         border: solid 1px var(--color-primary);
     }
    
-
     .btn-goodeals:hover {
         background-color: var(--color-secondary);
         color: var(--color-primary);

@@ -47,7 +47,7 @@ body {
     background-repeat: norepeat;
     background-size: cover;
     background-position: center center;
-    display: grid; 
+    display: grid;
     grid-template-rows: auto 1fr auto;
 }
 
