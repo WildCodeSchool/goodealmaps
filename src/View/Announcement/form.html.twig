@@ -1,23 +1,72 @@
 {% macro input(title, value, type, name, id, error, placeholder) %}
-	<div>
+	<div class="label-column">
 		<label for="{{ title }}">{{ value }}</label>
-		<input
-		type="{{ type }}" id="{{ id }}" name="{{ name }}" required placeholder="{{ placeholder }}">
+		<input type="{{ type }}" id="{{ id }}" name="{{ name }}" required placeholder="{{ placeholder }}">
 
 
-		<!--  if type === "selected" && name === "category" <option value="Event"></option> <option value="food-service">Restauration</option> <option value="accommodation">Logement</option> " -->
 		{% if error %}
 			<p>{{ error }}</p>
 		{% endif %}
 	</div>
 {% endmacro %}
 
-<!--{% macro textarea(title, name, id, error, placeholder, value = "") %}
-	<div>
-		<label for="{{ id }}">{{ title }}</label>
-		<textarea id="{{ id }}" name="{{ name }}" required placeholder="{{ placeholder }}">{{ value }}</textarea>
+{% macro inputNoRequired(title, value, type, name, id, error, placeholder) %}
+	<div class="label-column">
+		<label for="{{ title }}">{{ value }}</label>
+		<input type="{{ type }}" id="{{ id }}" name="{{ name }}" placeholder="{{ placeholder }}">
+
 		{% if error %}
 			<p>{{ error }}</p>
 		{% endif %}
 	</div>
-{% endmacro %}-->
+{% endmacro %}
+
+{% macro inputNoRequiredNoError(title, value, type, name, id, placeholder) %}
+	<div class="label-column">
+		<label for="{{ title }}">{{ value }}</label>
+		<input type="{{ type }}" id="{{ id }}" name="{{ name }}" placeholder="{{ placeholder }}">
+	</div>
+{% endmacro %}
+
+{% macro selectRegion(title, value, name, id) %}
+	<div class="label-column">
+		<label for="{{ title }}">{{ value }}</label>
+		<select id="{{ id }}" name="{{ name }}">
+			<option value="Auvergne-Rhône-Alpes">Auvergne-Rhône-Alpes</option>
+			<option value="Bourgogne-Franche-Comté">Bourgogne-Franche-Comté</option>
+			<option value="Bretagne">Bretagne</option>
+			<option value="Centre-Val de Loire">Centre-Val de Loire</option>
+			<option value="Corse">Corse</option>
+			<option value="Grand Est">Grand Est</option>
+			<option value="Hauts-de-France">Hauts-de-France</option>
+			<option value="Île-de-France">Île-de-France</option>
+			<option value="Normandie">Normandie</option>
+			<option value="Nouvelle-Aquitaine">Nouvelle-Aquitaine</option>
+			<option value="Occitanie">Occitanie</option>
+			<option value="Pays de la Loire">Pays de la Loire</option>
+			<option value="Provence-Alpes-Côte d'Azur">Provence-Alpes-Côte d'Azur</option>
+		</select>
+	</div>
+{% endmacro %}
+
+{% macro selectCategory(title, value, name, id) %}
+	<div class="label-column">
+		<label for="{{ title }}">{{ value }}</label>
+		<select id="{{ id }}" name="{{ name }}">
+			<option value="Event">Evenement</option>
+			<option value="food-service">Restauration</option>
+			<option value="accommodation">Logement</option>
+		</select>
+	</div>
+{% endmacro %}
+
+
+{% macro textarea(title, value, type, name, id, error, placeholder) %}
+	<div class="label-column">
+		<label for="{{ title }}">{{ value }}</label>
+		<textarea type="{{ type }}" id="{{ id }}" name="{{ name }}" required placeholder="{{ placeholder }}"></textarea>
+		{% if error %}
+			<p>{{ error }}</p>
+		{% endif %}
+	</div>
+{% endmacro %}
