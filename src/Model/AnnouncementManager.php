@@ -39,7 +39,7 @@ class AnnouncementManager extends AbstractManager
      */
     public function select(array $where = []): array
     {
-        $addWhere = ' 1';
+        $addWhere = ' (`date_end` > NOW() OR `date_end` IS NULL)';
         if ($where) {
             if (isset($where['search'])) {
                 $addWhere .= " AND (city LIKE '%" . $where['search'] . "%' OR message LIKE '%" . $where['search'] . "%'
@@ -52,11 +52,33 @@ class AnnouncementManager extends AbstractManager
                 }
             }
         }
-        $query = "SELECT * FROM `" . self::TABLE . "` as ann
+        $query = "SELECT ann.id, `region_id`, `author_id`, `message`, `address`, `city`, `zipcode`, `date_start`,
+        `date_end`, `title`, `image`, `lastname`, `firstname` FROM `" . self::TABLE . "` as ann
          INNER JOIN `author` ON ann.author_id=author.id WHERE" . $addWhere . " ORDER BY ann.id DESC" .
           (isset($where['limitQuery']) ? $where['limitQuery'] : '');
         $statement = $this->pdo->prepare($query);
         $statement->execute();
         return $statement->fetchAll();
+    }
+
+    /**
+     * Info about event with given id
+     */
+    public function selectById(int $id): array
+    {
+        $query = "SELECT * FROM `" . self::TABLE . "` as ann
+         INNER JOIN `author` ON ann.author_id=author.id WHERE ann.id=" . $id;
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
+        return $statement->fetch();
+    }
+    /**
+     * Delete event with given id
+     */
+    public function deleteById(int $id): void
+    {
+        $query = "DELETE FROM `" . self::TABLE . "` WHERE id=" . $id;
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
     }
 }

@@ -25,6 +25,7 @@
     --font-size-h1-body: 36px;
     --font-size-card-header: 18px;
     --font-size-card-date: 16px;
+    --font-size-card-footer: 18px;
     --padding-card: 20px;
     --margin-card: 65px;
     --padding-line: 3px;
@@ -38,6 +39,8 @@
     --margin-photo-dev: 70 px;
     --width-about-text: 300px;
     --nav-width: 700px;
+    --height-header: 95px;
+    --height-footer: 75px;
 }
 
 body {
@@ -47,8 +50,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    position: relative;
 }
 
 body h1 {
@@ -56,6 +59,12 @@ body h1 {
     text-align: center;
     color: var(--color-primary);
     font-family: var(--font-primary-bold);
+}
+
+main {
+    min-height: calc(100vh - var(--height-header) - var(--heignt-footer));
+    box-sizing: border-box;
+    padding: var(--padding-card) 0 var(--height-footer);
 }
 
 .mention {
@@ -83,6 +92,66 @@ input[type=submit] {
     background-color: var(--overlay-color);
     z-index: 1;
     border-radius: 16px;
+}
+
+.btn-goodeals {
+    box-shadow: 0px 10px 14px -7px var(--color-primary);
+    background-color: var(--color-primary);
+    border-radius: 25px;
+    display: inline-block;
+    cursor: pointer;
+    color: var(--color-secondary);
+    font-family: Arial;
+    font-weight: bold;
+    padding: 15px 32px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px var(--color-primary);
+    border: none;
+    border: solid 1px var(--color-primary);
+    position: absolute;
+    right: 20px;
+    margin: 0;
+}
+
+.btn-goodeals:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    border: solid 1px var(--color-primary);
+}
+
+.btn-goodeals.mobile {
+    display: none;
+}
+
+.btn-goodeals.mobile:hover {
+    border: 0.5px solid var(--color-primary);
+}
+
+@media (max-width: 1200px) {
+    .btn-goodeals {
+        display: none;
+    }
+
+    .btn-goodeals.mobile {
+        position: fixed;
+        display: block;
+        margin: var(--padding-card) auto 0;
+        z-index: 11;
+        border: 0.5px solid var(--color-secondary);
+        padding: 0 15px;
+        font-size: 48px;
+        border-radius: 50%;
+        margin: 0;
+        top: calc(var(--height-header) + var(--padding-card));
+    }
+}
+
+@media (max-width: 870px) {
+    .btn-goodeals.mobile {
+        top: calc(2*var(--height-header)/3);
+    }
 }
 
 ul.container p.error {
