@@ -89,5 +89,4 @@ class AnnouncementController extends AbstractController
         $announcementManager->deleteById($id);
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
-
 }
