@@ -135,7 +135,7 @@ class FormAddGoodealController extends AbstractController
                 $errors['image'] = "Votre fichier doit exister et faire moins de 1M !";
             } else {
                 if (!move_uploaded_file($_FILES['imageupload']['tmp_name'], $uploadFile)) {
-                    $error['image'] = "erreur chargement de l'image";
+                    $errors['image'] = "erreur chargement de l'image";
                 }
             }
         } else {
@@ -157,7 +157,7 @@ class FormAddGoodealController extends AbstractController
 
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                 $uploadDir = 'assets/images/cards/';
-                $uploadFile = $uploadDir . uniqid(basename($_FILES['imageupload']['name']));
+                $uploadFile = uniqid(basename($_FILES['imageupload']['name'])) . $uploadDir;
                 $extension = pathinfo($_FILES['imageupload']['name'], PATHINFO_EXTENSION);
                 $authorizedExtensions = ['jpg','png', 'gif', 'webp'];
                 $maxFileSize = 1000000;
