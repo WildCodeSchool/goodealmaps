@@ -75,6 +75,7 @@ class AnnouncementManager extends AbstractManager
         $query = "DELETE FROM `" . self::TABLE . "` WHERE id=" . $id;
         $statement = $this->pdo->prepare($query);
         $statement->execute();
+        
     }
 
 }

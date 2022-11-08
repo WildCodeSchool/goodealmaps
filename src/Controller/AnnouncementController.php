@@ -14,7 +14,7 @@ class AnnouncementController extends AbstractController
         3 => 'hebergements'
     ];
 
-    private int $perPage = 2;
+    private int $perPage = 3;
 
     /**
      * List announcements
@@ -65,12 +65,12 @@ class AnnouncementController extends AbstractController
     /**
      * List announcements
      */
-    public function selectCard(int $id): string
+    public function show(int $id): string
     {
         $announcementManager = new AnnouncementManager();
         $announcement = $announcementManager->selectById($id);
         $announcement['ref'] = $_SERVER['HTTP_REFERER'];
-        return $this->twig->render('Announcement/card.html.twig', ['announcement' => $announcement]);
+        return $this->twig->render('Announcement/detail.html.twig', ['announcement' => $announcement]);
     }
 
     /**
