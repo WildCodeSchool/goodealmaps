@@ -23,10 +23,10 @@
     --font-primary-bold: IstokWebBold;
     --font-size-h1-header: 40px;
     --font-size-h1-body: 36px;
-    --font-size-card-header: 18px;
+    --font-size-card-header: 16px;
     --font-size-card-date: 16px;
-    --font-size-card-footer: 18px;
-    --padding-card: 20px;
+    --font-size-card-footer: 14px;
+    --padding-card: 40px;
     --margin-card: 65px;
     --padding-line: 3px;
     --card-header-height: calc(3*var(--font-size-card-header));
@@ -39,8 +39,10 @@
     --margin-photo-dev: 70 px;
     --width-about-text: 300px;
     --nav-width: 700px;
-    --height-header: 95px;
-    --height-footer: 75px;
+    --height-header: 60px;
+    --height-header-mobile:120px;
+    --height-footer: 40px;
+    --padding-footer: 10px
 }
 
 body {
@@ -62,9 +64,9 @@ body h1 {
 }
 
 main {
-    min-height: calc(100vh - var(--height-header) - var(--heignt-footer));
+    min-height: calc(100vh - var(--height-header) - var(--height-footer));
     box-sizing: border-box;
-    padding: var(--padding-card) 0 var(--height-footer);
+    /* padding: var(--padding-card) 0 var(--height-footer); */
 }
 
 .mention {

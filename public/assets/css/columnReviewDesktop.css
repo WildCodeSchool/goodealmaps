@@ -8,26 +8,15 @@
         flex-direction: column;
         align-items: center;
     }
-
+    .column{
+        margin-top: 12vh;
+    }
     .btn-goodeals {
-        box-shadow: 0px 10px 14px -7px var(--color-primary);
-        background-color: var(--color-primary);
-        border-radius: 25px;
-        display: inline-block;
-        cursor: pointer;
-        color: var(--color-secondary);
-        font-family: Arial;
-        font-weight: bold;
-        padding: 15px 32px;
-        font-size: 16px;
-        text-align: center;
-        text-decoration: none;
-        text-shadow: 0px 1px 0px var(--color-primary);
-        border: none;
+       
+        
         margin-top: 30px;
-        margin-left: 15px;
-        margin-right: 15px;
-        border: solid 1px var(--color-primary);
+        
+        
     }
    
     .btn-goodeals:hover {
@@ -37,12 +26,18 @@
     }
 
     /*Card Column right CSS*/
-
-    .title-column {
-        margin-top: 30px;
+    .right-column {
+        height: 68vh;
+        overflow: auto;
+    }
+    .right-column::-webkit-scrollbar {
+        width: 1px;
+      }
+    
+    .title-column {     
         font-size: 24px;
         color: var(--color-primary);
-
+        text-align: center;
     }
 
     .right-card {
@@ -50,6 +45,7 @@
         height: 210px;
         margin-top: 20px;
         box-shadow: 0px 0px 10px 0px var(--color-primary);
+        border: 1px solid var(--color-primary);
     }
 
     .header-card {
