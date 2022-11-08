@@ -292,17 +292,26 @@ div.pages {
     color: var(--color-primary);
     width: 100%;
     font-size: var(--font-size-card-header);
+    padding-bottom: 10px;
 }
 
 div.pages span {
     width: 20px;
-    height: 25px;
+    height: 20px;
+    text-align: center;
+    color: rgba(15, 7, 31, 0.541);
+    font-size: var(--font-size-card-date);
+    line-height: 21px;
 }
 
 div.pages a {
     cursor: pointer;
     color: var(--color-primary);
-    font-family: var(--font-primary-bold);
+    font-family: var(--font-primary-regular);
+    text-decoration: none;
+    font-size: var(--font-size-card-date);
+    line-height: 21px;
+    margin: 0 3px;
 }
 
 @media (max-width: 1300px) {

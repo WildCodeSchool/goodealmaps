@@ -17,6 +17,5 @@ return [
     'announcements' => ['AnnouncementController', 'index',],
     'announcements/card' => ['AnnouncementController', 'show', ['id']],
     'announcements/delete' => ['AnnouncementController', 'delete', ['id']],
-    'items/show' => ['ItemController', 'show', ['id']],
     '404' => ['ErrorController','index'],
 ];

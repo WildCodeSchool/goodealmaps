@@ -7,3 +7,11 @@ link.addEventListener('click', function (event) {
     burger.classList.toggle('open')
     ul.classList.toggle('open')
 })
+
+function search_GooDeal() {
+    let search = document.getElementById('search').value;
+    if (search) {
+        window.location.href = 'announcements?search=' + search;
+        Ї
+    }
+}
