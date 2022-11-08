@@ -41,9 +41,14 @@ class AnnouncementManager extends AbstractManager
     {
         $addWhere = ' 1';
         if ($where) {
-            foreach ($where as $key => $value) {
-                if ($key != 'limitQuery') {
-                    $addWhere .= " AND `" . $key . "`='" . $value . "'";
+            if (isset($where['search'])) {
+                $addWhere .= " AND (city LIKE '%" . $where['search'] . "%' OR message LIKE '%" . $where['search'] . "%'
+                 OR title LIKE '%" . $where['search'] . "%' OR lastname LIKE '%" . $where['search'] . "%')";
+            } else {
+                foreach ($where as $key => $value) {
+                    if ($key != 'limitQuery') {
+                        $addWhere .= " AND `" . $key . "`='" . $value . "'";
+                    }
                 }
             }
         }
