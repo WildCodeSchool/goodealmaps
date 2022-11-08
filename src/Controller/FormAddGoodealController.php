@@ -146,7 +146,7 @@ class FormAddGoodealController extends AbstractController
         } else {
             $errors['image'] = 'Veuillez sélectionner une image de type Jpg ou Jpeg ou Png !';
         }
-          if (empty($errors['image'])) {
+        if (empty($errors['image'])) {
             $gooDeal['image'] = $uploadFile;
         }
 
@@ -192,18 +192,17 @@ class FormAddGoodealController extends AbstractController
                 $finalValue = array_merge_recursive($this->checkForm($checkedData), $checkImage);
 
                 if (!$finalValue["errors"]) {
-
                     $addAuthor = new AuthorManager();
                   /*  if (null !== ($addAuthor->checkAuthor($finalValue["gooDeal"])))
                     {
 
-                    } else 
+                    } else
                     {*/
                     $addAuthor->insertAuthor($finalValue["gooDeal"]);
-                  
+
                     $addGoodealManager = new AddGoodealManager();
                     $addGoodealManager->insertGoodeal($finalValue["gooDeal"]);
-                    
+
 
 
                    //   header('Location: /addGoodeal');

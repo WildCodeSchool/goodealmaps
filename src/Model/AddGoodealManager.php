@@ -19,7 +19,7 @@ class AddGoodealManager extends AbstractManager
     {
         $regionId = new RegionManager();
         $regionId->selectRegionById($announcement['region']);
-        
+
         $authorId = new AuthorManager();
         $authorId->selectAuthorById($announcement['firstname'], $announcement['lastname'], $announcement['email']);
 
