@@ -34,6 +34,7 @@ class AnnouncementController extends AbstractController
         } else {
             if (isset($_GET['region_id'])) {
                 $where['region_id'] = (int) $_GET['region_id'];
+                $selected = $where['region_id'];
             }
             if (isset($_GET['category'])) {
                 if (in_array($_GET['category'], self::EVENTS)) {
