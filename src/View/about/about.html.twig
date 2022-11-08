@@ -25,9 +25,8 @@
             <span class="dev">
                 <a href="#" class="over"><img class="dev-ava" src="{{pathAva ~ dev.image}}" /></a>
                 <span class="name">{{dev.name}}</span>
-                <!--<span class="icon git"><a href="{{dev.github}}"><img class="icon" src="{{pathIcon ~ 'github1.svg'}}" /></a></span>-->
-                <span class="icon git"><a href="{{dev.github}}" class="svg-background"></a></span>
-                <span class="icon linkedin"><a href="{{dev.linkedin}}"><img class="icon" src="{{pathIcon ~ 'linkedin.png'}}" /></a></span>
+                <span class="icon git"><a target="_blank" href="{{dev.github}}" class="svg-background"></a></span>
+                <span class="icon linkedin"><a target="_blank" href="{{dev.linkedin}}"><img class="icon" src="{{pathIcon ~ 'linkedin.png'}}" /></a></span>
             </span>
             {% endfor %}
         </span>
