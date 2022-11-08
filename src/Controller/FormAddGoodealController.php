@@ -63,7 +63,7 @@ class FormAddGoodealController extends AbstractController
                 $length = 20;
                 $errorKey = "Ton email";
                 break;
-            case "adress":
+            case "address":
                 $length = 255;
                 $errorKey = "L'adresse";
                 break;
@@ -177,7 +177,7 @@ class FormAddGoodealController extends AbstractController
                 "lastname" => $_POST['lastname'],
                 "firstname" => $_POST['firstname'],
                 "category" => $_POST['category'],
-                "adress" => $_POST['adress'],
+                "address" => $_POST['address'],
                 "region" => $_POST['region'],
                 "city" => $_POST['city'],
                 "zipcode" => $_POST['zipcode'],
