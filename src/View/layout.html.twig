@@ -20,10 +20,13 @@
 			{% endblock %}
 		</title>
 	</head>
-</html></head><body>
-{% include 'Components/_header.html.twig' %}
-{% block header %}{% endblock %}
-{% block content %}{% endblock %}
+
+<body>
+	{% include 'Components/_header.html.twig' %}
+    {% block header %} 
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
 
 {% include 'Components/_footer.html.twig' %}
 {% block footer %}{% endblock %}

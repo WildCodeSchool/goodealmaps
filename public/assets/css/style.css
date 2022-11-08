@@ -85,33 +85,7 @@ input[type=submit] {
     border-radius: 16px;
 }
 
-<<<<<<< HEAD h2 {
-    font-size: var(--font-size-cart-header);
-
-    font-family: var(--font-primary-bold)=======.mention {
-        padding: 10%
-    }
-
-
-    input[type=submit] {
-        background-color: rgba(34, 65, 81, 1);
-        color: white;
-        padding: 12px 40px;
-        border: none;
-        cursor: pointer;
-        margin-left: 70%;
-        display: block;
-        border-radius: 28px;
-    }
-
-    .overlay {
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        width: 80%;
-        background-color: var(--overlay-color);
-        z-index: 1;
-        border-radius: 16px;
-        >>>>>>>effb3ac3d279f85f60823013585402a7f02653d5
-    }
+ul.container p.error {
+    color: red;
+    padding-bottom: var(--padding-card);
+}
