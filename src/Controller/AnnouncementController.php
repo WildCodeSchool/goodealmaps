@@ -44,9 +44,6 @@ class AnnouncementController extends AbstractController
                     $where = [];
                 }
             }
-            if (isset($where['id'])) {
-                unset($where['id']);
-            }
         }
 
         $regions = $regionManager->select();
