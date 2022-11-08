@@ -93,9 +93,8 @@ class FormAddGoodealController extends AbstractController
     {
         $errors = [];
         $gooDeal = [];
-
         foreach ($data as $key => $value) {
-            if (!$this->checkEmptyValue($value)) {  //&& $key != "errors"
+            if (!$this->checkEmptyValue($value)) {
                 $errors[$key] = "Merci de Remplir le champ";
             }
 
@@ -118,9 +117,6 @@ class FormAddGoodealController extends AbstractController
             }
         }
 
-    //        var_dump($errors);
-      //      die;
-
         $checkedData = [
             "errors" => $errors,
             "gooDeal" => $gooDeal
@@ -128,14 +124,9 @@ class FormAddGoodealController extends AbstractController
         return $checkedData;
     }
 
-    /*public function checkImage(
-        string $extension,
-        array $authorizedExtensions,
-        int $maxFileSize,
-        string $uploadFile
-    ): array {
-        $errors = [];
-      //  $gooDeal = [];
+    public function checkImage( string $extension, array $authorizedExtensions,
+        int $maxFileSize, string $uploadFile): array {
+        $errors= [];
        if (in_array($extension, $authorizedExtensions)) {
             if (
                 !file_exists($_FILES['imageupload']['tmp_name']) ||
@@ -153,10 +144,10 @@ class FormAddGoodealController extends AbstractController
 
         $checkImage = [
             "errors" => $errors,
-        //    "gooDeal" => $gooDeal
         ];
+
         return $checkImage;
-    }*/
+    }
 
     public function addGoodeal(): string
     {
@@ -165,11 +156,11 @@ class FormAddGoodealController extends AbstractController
         $finalValue['errors'] = [];
 
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
-               /* $uploadDir = 'public/assets/images/cards/';
+                $uploadDir = 'assets/images/cards/';
                 $uploadFile = $uploadDir . uniqid(basename($_FILES['imageupload']['name']));
                 $extension = pathinfo($_FILES['imageupload']['name'], PATHINFO_EXTENSION);
                 $authorizedExtensions = ['jpg','png', 'gif', 'webp'];
-                $maxFileSize = 1000000;*/
+                $maxFileSize = 1000000;
 
 
                 $data = [
@@ -188,9 +179,9 @@ class FormAddGoodealController extends AbstractController
                 "message" => $_POST['description']
                 ];
 
-              //  $checkImage = $this->checkImage($extension, $authorizedExtensions, $maxFileSize, $uploadFile);
-                $checkedData = $this->cleanValue($data); // + $checkImage
-                $finalValue = $this->checkForm($checkedData);
+                $checkImage = $this->checkImage($extension, $authorizedExtensions, $maxFileSize, $uploadFile);
+                $checkedData = $this->cleanValue($data);
+                $finalValue = array_merge($this->checkForm($checkedData), $checkImage);
 
                 if (!$finalValue["errors"]) {
                  //   $addGoodealManager = new AddGoodealManager();

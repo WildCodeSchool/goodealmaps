@@ -10,7 +10,7 @@
 	</div>
 {% endmacro %}
 
-{% macro inputNoRequired(title, value, type, name, id, error, placeholder) %}
+{% macro inputNoRequired(title, value, type, name, id, error) %}
 	<div class="label-column">
 		<label for="{{ title }}">{{ value }}</label>
 		<input type="{{ type }}" id="{{ id }}" name="{{ name }}" placeholder="{{ placeholder }}">
