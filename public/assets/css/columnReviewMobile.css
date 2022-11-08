@@ -4,20 +4,20 @@
     height: 100%;
     background-color: var(--color-secondary);
     display: flex;
-    flex-direction: column;
+   flex-direction: row;
     align-items: center;
       
   }
-  .btn-goodeals {
-    display: none;
-  }
+  
    
   /*Caroussel CSS*/
   .right-column {
     display: flex;
+    flex-direction: row;
+    max-width: 100%;
     overflow-x: auto;
-    width: 100%;
-    scroll-snap-type: x mandatory;
+   
+    
   }
   .right-card {
     width: 200px;
@@ -27,8 +27,13 @@
     box-shadow: 0px 0px 10px 0px var(--color-primary);
     flex: 1 0 200px;
     margin-left: 1rem;
-    scroll-snap-align: start;
+     scroll-snap-align: start; 
   }
+  .column{
+    width: 100%;
+    margin-top: initial;
+  }
+  
   .right-card a {
     text-decoration: none;
 }
@@ -37,9 +42,12 @@
     border-radius: 3px;
   }
   .title-column {
+    height: 100%;
+    margin-left: 10px;
     margin-top: 20px;
     font-size: 24px;
     color: var(--color-primary);
+    text-align: center;
   }
   .header-card {
     font-size: 22px;

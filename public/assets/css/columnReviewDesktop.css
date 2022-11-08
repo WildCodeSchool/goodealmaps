@@ -12,11 +12,7 @@
         margin-top: 12vh;
     }
     .btn-goodeals {
-       
-        
         margin-top: 30px;
-        
-        
     }
    
     .btn-goodeals:hover {
@@ -27,6 +23,7 @@
 
     /*Card Column right CSS*/
     .right-column {
+        width: 100%;
         height: 68vh;
         overflow: auto;
     }

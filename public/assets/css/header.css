@@ -178,26 +178,19 @@ body {
         padding-top: 7px;
         height: var(--height-header-mobile);
     }
-
     .title {
         font-size: 30px;
-
     }
 
     .menu-burger {
         display: unset;
     }
-
     .nav-header {
-
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-top: 20px;
-        
-
-
     }
 
     .search {
