@@ -34,6 +34,7 @@ class AnnouncementController extends AbstractController
         } else {
             if (isset($_GET['region_id'])) {
                 $where['region_id'] = (int) $_GET['region_id'];
+                $selected = $where['region_id'];
             }
             if (isset($_GET['category'])) {
                 if (in_array($_GET['category'], self::EVENTS)) {
@@ -64,5 +65,26 @@ class AnnouncementController extends AbstractController
         return $this->twig->render('Announcement/index.html.twig', ['announcements' => $announcements,
         'events' => self::EVENTS, 'active' => $active, 'regions' => $regions, 'selected' => $selected,
         'numpages' => $numpages, 'where' => $where, 'page' => $page, 'error' => $error]);
+    }
+
+    /**
+     * List announcements
+     */
+    public function show(int $id): string
+    {
+        $announcementManager = new AnnouncementManager();
+        $announcement = $announcementManager->selectById($id);
+        $announcement['ref'] = $_SERVER['HTTP_REFERER'];
+        return $this->twig->render('Announcement/detail.html.twig', ['announcement' => $announcement]);
+    }
+
+    /**
+     * Delete announcement with given id
+     */
+    public function delete(int $id): void
+    {
+        $announcementManager = new AnnouncementManager();
+        $announcementManager->deleteById($id);
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }

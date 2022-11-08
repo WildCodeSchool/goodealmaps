@@ -15,9 +15,7 @@ return [
     'legal' => ['LegalController', 'index'],
     'home' => ['HomeController', 'index',],
     'announcements' => ['AnnouncementController', 'index',],
-    'items/edit' => ['ItemController', 'edit', ['id']],
-    'items/show' => ['ItemController', 'show', ['id']],
-    'items/add' => ['ItemController', 'add',],
-    'items/delete' => ['ItemController', 'delete',],
+    'announcements/card' => ['AnnouncementController', 'show', ['id']],
+    'announcements/delete' => ['AnnouncementController', 'delete', ['id']],
     '404' => ['ErrorController','index'],
 ];
