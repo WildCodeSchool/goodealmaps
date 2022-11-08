@@ -22,7 +22,7 @@ class RegionManager extends AbstractManager
         $statement = $this->pdo->prepare("SELECT id FROM " . self::TABLE . " WHERE region_name=:region");
         $statement->bindValue(':region', $name, PDO::PARAM_STR);
         $statement->execute();
-        $regionId = $statement->fetch(); 
+        $regionId = $statement->fetch();
         return $regionId['id'];
     }
 }

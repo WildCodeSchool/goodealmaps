@@ -6,7 +6,6 @@ use PDO;
 use App\Model\AuthorManager;
 use App\Model\RegionManager;
 
-
 class AddGoodealManager extends AbstractManager
 {
     public const TABLE = 'announcement';
@@ -19,7 +18,11 @@ class AddGoodealManager extends AbstractManager
         $regionId = $regionManager->selectRegionId($announcement['region']);
 
         $authorManager = new AuthorManager();
-        $authorId = $authorManager->selectAuthorId($announcement['firstname'], $announcement['lastname'], $announcement['email']);
+        $authorId = $authorManager->selectAuthorId(
+            $announcement['firstname'],
+            $announcement['lastname'],
+            $announcement['email']
+        );
 
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (region_id, title, message, address,
         author_id, category, date, date_start, date_end, image, city, zipcode)
