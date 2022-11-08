@@ -1,8 +1,8 @@
 <?php
 
-use App\Model\ContactController;
-
-if (isset($_POST["message"])) {
+use App\Controller\ContactController;
+/*
+if(isset($_POST["message"])) {
     $message = "Message envoyé depuis la page contact de goodealmap
     Nom : " . $_POST["lname"] . "
     Prenom : " . $_POST["fname"] . "
@@ -20,3 +20,4 @@ if (isset($_POST["message"])) {
         echo "<p>Email bien envoyé.</p>";
     }
 }
+*/
