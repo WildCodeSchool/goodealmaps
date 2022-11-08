@@ -17,15 +17,16 @@ class AuthorManager extends AbstractManager
         $statement->execute();
         return $statement->fetchAll();
     }
- /*   public function selectAuthorById(): int
+    public function selectAuthorById(string $firstname, string $lastname, string $email): int
     {
         $statement = $this->pdo->prepare("SELECT id " . self::TABLE . " WHERE firstname=:firstname
         AND lastname=:lastname AND email=:email");
-        $statement->bindValue(':firstname', $announcement['firstname'], \PDO::PARAM_STR);
-        $statement->bindValue(':lastname', $announcement['lastname'], \PDO::PARAM_STR);
-        $statement->bindValue(':email', $announcement['email'], \PDO::PARAM_STR);
-        $authorId = $statement->fetchAll();
-    }*/
+        $statement->bindValue(':firstname', $firstname, \PDO::PARAM_STR);
+        $statement->bindValue(':lastname', $lastname, \PDO::PARAM_STR);
+        $statement->bindValue(':email', $email, \PDO::PARAM_STR);
+        $authorId = $statement->fetch();
+        return $authorId;
+    }
 
     public function insertAuthor(array $announcement): void
     {
