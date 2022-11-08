@@ -33,7 +33,7 @@ class FormAddGoodealController extends AbstractController
             $error = "$errorKey Est trop long.ue. Merci de racourcir le champ.";
         }
         if (
-            ($key === "zipcode" && !filter_var(!$value, FILTER_VALIDATE_INT)) ||
+            ($key === "zipcode" && !filter_var($value, FILTER_VALIDATE_INT)) ||
             ($key === "zipcode" && strlen($value) < 5 && $errorKey)
         ) {
             $error = "$errorKey Veuillez saisir un code postal valide";
@@ -131,6 +131,7 @@ class FormAddGoodealController extends AbstractController
         string $uploadFile
     ): array {
         $errors = [];
+        $gooDeal = [];
         if (in_array($extension, $authorizedExtensions)) {
             if (
                 !file_exists($_FILES['imageupload']['tmp_name']) ||
@@ -145,9 +146,13 @@ class FormAddGoodealController extends AbstractController
         } else {
             $errors['image'] = 'Veuillez sélectionner une image de type Jpg ou Jpeg ou Png !';
         }
+          if (empty($errors['image'])) {
+            $gooDeal['image'] = $uploadFile;
+        }
 
         $checkImage = [
             "errors" => $errors,
+            "gooDeal" => $gooDeal
         ];
 
         return $checkImage;
@@ -161,7 +166,7 @@ class FormAddGoodealController extends AbstractController
 
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                 $uploadDir = 'assets/images/cards/';
-                $uploadFile = uniqid(basename($_FILES['imageupload']['name'])) . $uploadDir;
+                $uploadFile = $uploadDir . uniqid(basename($_FILES['imageupload']['name'])) ;
                 $extension = pathinfo($_FILES['imageupload']['name'], PATHINFO_EXTENSION);
                 $authorizedExtensions = ['jpg','png', 'gif', 'webp'];
                 $maxFileSize = 1000000;
@@ -179,20 +184,28 @@ class FormAddGoodealController extends AbstractController
                 "start-date" => $_POST['start-date'],
                 "end-date" => $_POST['end-date'],
                 "email" => $_POST['email'],
-          //    "image" => $_FILE['imageupload'],
                 "message" => $_POST['description']
                 ];
 
                 $checkImage = $this->checkImage($extension, $authorizedExtensions, $maxFileSize, $uploadFile);
                 $checkedData = $this->cleanValue($data);
-                $finalValue = array_merge($this->checkForm($checkedData), $checkImage);
+                $finalValue = array_merge_recursive($this->checkForm($checkedData), $checkImage);
 
                 if (!$finalValue["errors"]) {
-                 //   $addGoodealManager = new AddGoodealManager();
-                 //   $addGoodealManager->insertGoodeal($checkedData["gooDeal"]);
 
-                      $addAuthor = new AuthorManager();
-                      $addAuthor->insertAuthor($finalValue["gooDeal"]);
+                    $addAuthor = new AuthorManager();
+                  /*  if (null !== ($addAuthor->checkAuthor($finalValue["gooDeal"])))
+                    {
+
+                    } else 
+                    {*/
+                    $addAuthor->insertAuthor($finalValue["gooDeal"]);
+                  
+                    $addGoodealManager = new AddGoodealManager();
+                    $addGoodealManager->insertGoodeal($finalValue["gooDeal"]);
+                    
+
+
                    //   header('Location: /addGoodeal');
                 }
         }

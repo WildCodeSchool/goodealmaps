@@ -17,10 +17,11 @@ class RegionManager extends AbstractManager
         $statement->execute();
         return $statement->fetchAll();
     }
-/*    public function selectRegionById($announcement): int
+    public function selectRegionById(string $name): int
     {
         $statement = $this->pdo->prepare("SELECT id FROM " . self::TABLE . " WHERE region_name=:region");
-        $statement->bindValue(':region', $announcement['region'], \PDO::PARAM_STR);
-        $regionId = $statement->fetchAll();
-    }*/
+        $statement->bindValue(':region', $name, \PDO::PARAM_STR);
+        $regionId = $statement->fetch();
+        return $regionId;
+    }
 }
