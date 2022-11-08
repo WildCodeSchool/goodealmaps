@@ -84,3 +84,8 @@ input[type=submit] {
     z-index: 1;
     border-radius: 16px;
 }
+
+ul.container p.error {
+    color: red;
+    padding-bottom: var(--padding-card);
+}
