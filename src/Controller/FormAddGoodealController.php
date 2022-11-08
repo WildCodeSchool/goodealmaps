@@ -124,10 +124,14 @@ class FormAddGoodealController extends AbstractController
         return $checkedData;
     }
 
-    public function checkImage( string $extension, array $authorizedExtensions,
-        int $maxFileSize, string $uploadFile): array {
-        $errors= [];
-       if (in_array($extension, $authorizedExtensions)) {
+    public function checkImage(
+        string $extension,
+        array $authorizedExtensions,
+        int $maxFileSize,
+        string $uploadFile
+    ): array {
+        $errors = [];
+        if (in_array($extension, $authorizedExtensions)) {
             if (
                 !file_exists($_FILES['imageupload']['tmp_name']) ||
                 filesize($_FILES['imageupload']['tmp_name']) > $maxFileSize
@@ -139,7 +143,7 @@ class FormAddGoodealController extends AbstractController
                 }
             }
         } else {
-             $errors['image'] = 'Veuillez sélectionner une image de type Jpg ou Jpeg ou Png !';
+            $errors['image'] = 'Veuillez sélectionner une image de type Jpg ou Jpeg ou Png !';
         }
 
         $checkImage = [
