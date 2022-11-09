@@ -1,3 +1,7 @@
+main.announcement {
+    padding-top: var(--padding-card);
+}
+
 .card-single h2 {
     font-size: var(--font-size-card-header);
     font-family: var(--font-primary-bold);
@@ -113,7 +117,7 @@ span.icon img {
 }
 
 a.icon.remove {
-    top: calc(2.5*var(--card-header-height) - var(--card-icon-width) );
+    top: calc(2.5*var(--card-header-height) - var(--card-icon-width));
     z-index: 10;
 }
 
@@ -217,7 +221,7 @@ div.card-see-more {
     font-family: var(--font-primary-regular);
     font-size: var(--font-size-button);
     padding: calc(0.5*var(--padding-card)) var(--padding-card);
-    
+
 }
 
 .announcement nav {
@@ -227,7 +231,6 @@ div.card-see-more {
     height: var(--card-header-height);
     margin: 0 auto var(--padding-card);
     border: 0.5px solid var(--color-primary);
-    margin-top: 20px;
 }
 
 .announcement nav a,
