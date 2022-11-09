@@ -1,39 +1,47 @@
 {% extends 'layout.html.twig' %}
 {% block title %}
-    {{parent()}} - Annonces
+	{{parent()}}
+	- Annonces
 {% endblock %}
 {% block stylesheet%}
-    <link rel="stylesheet" href="/assets/css/announcement.css">
+    <link rel="stylesheet" href="/assets/css/blur.css">
+	<link rel="stylesheet" href="/assets/css/announcement.css">
 {% endblock %}
+
 {% block content %}
 {% set line = "" %}
 {% for key, value in where %}
     {% set line =line~key~"="~value~"&" %}
 {% endfor %}
 <main class="announcement">
-    <button class="btn-goodeals" type="button" onclick="location.href='404'"><!-- ../addGoodeal?{{line|trim('&')}} -->
-        Ajoute GooDeals
-    </button>
+    {% include 'Components/_button.html.twig' %}
     {% include 'Components/_navbar.html.twig' %}
-    {% include 'Components/_regions.html.twig' %}
+    {% include 'Components/_regions.html.twig' %}    
     <ul class="container">
+        {% if error %}<li class="wide"><p class="error">{{error}}</p></li>{% endif %}
         {% if announcements %}
             {% for announcement in announcements %}
                 {% include 'Components/_card.html.twig' %}
             {% endfor %}
         {% else %}
-            <li class="wide"><p>Rien trouvé, désolé</p></li>
+            <li class="wide"><p>Il n'y a encore aucune offre pour ta recherche.<br/>Tu veux en ajouter une ?</p></li>
         {% endif %}
         {% if numpages > 1 %}
             <div class="pages">
+                {% if page > 1 %}
+                    <a href="/announcements?{{line}}page={{page-1}}">« prev</a>
+                {% endif %}
                 {% for i in 1..numpages %}
                     <span>
                         {% if i == page %}
                             {{i}}
-                        {% else %}<a href="/announcement?{{line}}page={{i}}">{{i}}</a>
+                        {% else %}<a href="/announcements?{{line}}page={{i}}">{{i}}</a>
                         {% endif %}
                     </span>
                 {% endfor %}
+                {% if page < numpages %}
+                    <a href="/announcements?{{line}}page={{page+1}}">suiv »</a>
+                {% endif %}
             </div>
         {% endif%}
     </ul>
