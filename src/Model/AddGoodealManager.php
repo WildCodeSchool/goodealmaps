@@ -24,16 +24,16 @@ class AddGoodealManager extends AbstractManager
             $announcement['email']
         );
 
-        if ($announcement['start-date'] === "") {
+        if ($announcement['startDate'] === "") {
             $startDate = null;
         } else {
-            $startDate = $announcement['start-date'];
+            $startDate = $announcement['startDate'];
         }
 
-        if ($announcement['end-date'] === "") {
+        if ($announcement['endDate'] === "") {
             $endDate = null;
         } else {
-            $endDate = $announcement['end-date'];
+            $endDate = $announcement['endDate'];
         }
 
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (region_id, title, message, address,
