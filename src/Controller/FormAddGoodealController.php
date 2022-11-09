@@ -165,7 +165,6 @@ class FormAddGoodealController extends AbstractController
         $finalValue['errors'] = [];
 
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
-
                 // upload file
                 $uploadDir = 'assets/images/cards/';
                 $uploadFile = $uploadDir . uniqid(basename($_FILES['imageupload']['name'])) ;
@@ -200,7 +199,7 @@ class FormAddGoodealController extends AbstractController
                     if ($authorIdReal === false) {
                         $authorManager->insertAuthor($finalValue["gooDeal"]);
                     }
-                
+
                     $addGoodealManager = new AddGoodealManager();
                     $addGoodealManager->insertGoodeal($finalValue["gooDeal"]);
 
