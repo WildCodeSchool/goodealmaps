@@ -20,19 +20,24 @@
 			</h1>
 
 			<form class="form-add" action="/addGoodeal/add" class="contact-form" method="post" enctype="multipart/form-data">
-				{{ form.input("deal-name","nomme ton deal*", "text", "deal-name", "deal-name", errors.title, "nom du deal") }}
-				{{ form.input("lastname","ton nom*", "text", "lastname", "lastname", errors.lastname, "ex: juste") }}
-				{{ form.input("firstname", "ton prénom*", "text", "firstname", "firstname", errors.firstname, "ex: axel") }}
+				{{ form.input("deal-name","nomme ton deal*", "text", "deal-name", "deal-name", errors.title, "nom du deal", data.title) }}
+				{{ form.input("lastname","ton nom*", "text", "lastname", "lastname", errors.lastname, "ex: juste", data.lastname) }}
+				{{ form.input("firstname", "ton prénom*", "text", "firstname", "firstname", errors.firstname, "ex: axel", data.firstname) }}
 				{{ form.selectCategory("category","choisis ta catégorie*", "category", "category") }}
-				{{ form.input("address","nom et numéro de rue du goodeal*", "text", "address", "address", errors.address, "ex: 14 bis route nationale") }}
-				{{ form.selectregion("region","région du goodeal*", "region", "region") }}
-				{{ form.input("city","ville du goodeal*", "text", "city", "city", errors.city, "ex: Wargnies") }}
-				{{ form.input("zipcode", "code postal du goodeal*", "text", "zipcode", "zipcode", errors.zipcode, "ex: 59144") }}
+				{{ form.input("address","nom et numéro de rue du goodeal*", "text", "address", "address", errors.address, "ex: 14 bis route nationale", data.address) }}
+				<label for="region">région du goodeal*</label>
+				{% include 'Components/_regions.html.twig' %}
+				{% if errors.region %}
+					<p class="error">{{ errors.region }}</p>
+				{% endif %}
+				{# {{ form.selectregion("region","région du goodeal*", "region", "region") }} #}
+				{{ form.input("city","ville du goodeal*", "text", "city", "city", errors.city, "ex: Wargnies", data.city) }}
+				{{ form.input("zipcode", "code postal du goodeal*", "text", "zipcode", "zipcode", errors.zipcode, "ex: 59144", data.zipcode) }}
 				{{ form.inputNoRequiredNoError("start-date", "date de début", "date", "start-date", "start-date", "ex: 20/12/2022") }}
 				{{ form.inputNoRequiredNoError("end-date", "date de fin", "date", "end-date", "end-date", "ex: 25/12/2022") }}
-				{{ form.input("email", "ton adresse mail*", "email", "email", "email", errors.email, "ex: florent.dupond@gmail.com") }}
+				{{ form.input("email", "ton adresse mail*", "email", "email", "email", errors.email, "ex: florent.dupond@gmail.com", data.email) }}
 				{{ form.input("imageupload", "la photo de ton deal", "file", "imageupload", "imageupload", errors.image) }}
-				{{ form.textarea("description", "décris ton deal*", "text", "description", "description", errors.message, "ex: grand tournoi de pétanque avec plus de 300 paritcipants...") }}
+				{{ form.textarea("description", "décris ton deal*", "text", "description", "description", errors.message, "ex: grand tournoi de pétanque avec plus de 300 paritcipants...", data.description) }}
 				<button class="btn type=" submit">Ajouter ton deal</button>
 			</form>
 		</div>

@@ -49,7 +49,7 @@ input[type=submit]:hover {
   border-radius: 16px;
 }
 
-.form-add{
+.form-add {
   height: 100%;
   width: 100%;
   padding-bottom: 5px;
@@ -74,4 +74,8 @@ input[type=submit]:hover {
   flex-direction: column;
   text-align: left;
 
+}
+
+.form-add p.error {
+  padding: 5px 0;
 }

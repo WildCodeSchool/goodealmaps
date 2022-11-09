@@ -15,8 +15,7 @@ class AddGoodealManager extends AbstractManager
     public function insertGoodeal(array $announcement): void
     {
         $regionManager = new RegionManager();
-        $regionId = $regionManager->selectRegionId($announcement['region']);
-
+        $regionId = $announcement['region'];
         $authorManager = new AuthorManager();
         $authorId = $authorManager->selectAuthorId(
             $announcement['firstname'],
@@ -52,8 +51,6 @@ class AddGoodealManager extends AbstractManager
         $statement->bindValue(':image', $announcement['image'], PDO::PARAM_STR);
         $statement->bindValue(':city', $announcement['city'], PDO::PARAM_STR);
         $statement->bindValue(':zipcode', $announcement['zipcode'], PDO::PARAM_INT);
-
-
         $statement->execute();
     }
 

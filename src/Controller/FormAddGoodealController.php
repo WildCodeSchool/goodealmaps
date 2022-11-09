@@ -5,12 +5,15 @@ namespace App\Controller;
 use App\Model\AddGoodealManager;
 use App\Model\AuthorManager;
 use App\Model\AnnouncementManager;
+use App\Model\RegionManager;
 
 class FormAddGoodealController extends AbstractController
 {
     public function index(): string
     {
-        return $this->twig->render('Announcement/addGoodeal.html.twig');
+        $regionManager = new RegionManager();
+        $regions = $regionManager->select();
+        return $this->twig->render('Announcement/addGoodeal.html.twig', ['regions' => $regions]);
     }
 
     private function cleanValue(array $data): array
@@ -61,7 +64,7 @@ class FormAddGoodealController extends AbstractController
                 $errorKey = "Ton prénom";
                 break;
             case "email":
-                $length = 20;
+                $length = 40;
                 $errorKey = "Ton email";
                 break;
             case "address":
@@ -107,6 +110,11 @@ class FormAddGoodealController extends AbstractController
                 case "email":
                     if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
                         $errors[$key] = "Merci de Remplir un email valide";
+                    }
+                    break;
+                case "region":
+                    if (!$value) {
+                        $errors[$key] = "Merci de choisir une region";
                     }
                     break;
                 default:
@@ -213,14 +221,18 @@ class FormAddGoodealController extends AbstractController
                 $addGoodealManager = new AddGoodealManager();
                 $addGoodealManager->insertGoodeal($finalValue["gooDeal"]);
                 header('Location: /announcements');
+            } else {
+                unlink ($uploadFile);
             }
         }
            // Generate the web page
+           $regionManager = new RegionManager();
+           $regions = $regionManager->select();
 
           return $this->twig->render('Announcement/addGoodeal.html.twig', [
             'data' => $data,
-            'errors' => $finalValue['errors']
-               ]);
+            'errors' => $finalValue['errors'], 'regions' => $regions, 'selected' => $data['region']
+            ]);
     }
 
     public function editGooDeal(): string
