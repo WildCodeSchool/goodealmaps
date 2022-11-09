@@ -62,7 +62,7 @@ body h1 {
 }
 
 main {
-    min-height: calc(100vh - var(--height-header) - var(--heignt-footer));
+    min-height: calc(100vh - var(--height-header) - var(--height-footer));
     box-sizing: border-box;
     padding: var(--padding-card) 0 var(--height-footer);
 }
