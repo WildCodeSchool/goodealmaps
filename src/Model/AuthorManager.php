@@ -38,4 +38,18 @@ class AuthorManager extends AbstractManager
         $statement->bindValue(':lastname', $announcement['lastname'], \PDO::PARAM_STR);
         $statement->execute();
     }
+
+    function autorExists(array $author): bool | array
+    {
+        $statement = $this->pdo->prepare("SELECT id FROM " . self::TABLE . " WHERE firstname=:firstname
+        AND lastname=:lastname AND email=:email");
+        $statement->bindValue(':firstname', $author['firstname'], \PDO::PARAM_STR);
+        $statement->bindValue(':lastname', $author['lastname'], \PDO::PARAM_STR);
+        $statement->bindValue(':email', $author['email'], \PDO::PARAM_STR);
+        $statement->execute();
+        $authorIdReal = $statement->fetch();
+
+        return $authorIdReal;
+
+    }
 }
