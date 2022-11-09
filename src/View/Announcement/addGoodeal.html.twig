@@ -13,13 +13,13 @@
 
 {% block content %}
 <main>
-	<div class="form">
+	<div class="form-add">
 		<div class="overlay">
 			<h1 class="txt_form">Dépose ton GooDeal
 
 			</h1>
 
-			<form action="/addGoodeal/add" class="contact-form" method="post" enctype="multipart/form-data">
+			<form class="form-add" action="/addGoodeal/add" class="contact-form" method="post" enctype="multipart/form-data">
 				{{ form.input("deal-name","nomme ton deal*", "text", "deal-name", "deal-name", errors.title, "nom du deal") }}
 				{{ form.input("lastname","ton nom*", "text", "lastname", "lastname", errors.lastname, "ex: juste") }}
 				{{ form.input("firstname", "ton prénom*", "text", "firstname", "firstname", errors.firstname, "ex: axel") }}
@@ -33,7 +33,7 @@
 				{{ form.input("email", "ton adresse mail*", "email", "email", "email", errors.email, "ex: florent.dupond@gmail.com") }}
 				{{ form.inputnorequired("imageupload", "la photo de ton deal", "file", "imageupload", "imageupload", errors.image) }}
 				{{ form.textarea("description", "décris ton deal*", "text", "description", "description", errors.message, "ex: grand tournoi de pétanque avec plus de 300 paritcipants...") }}
-				<button type=" submit">Ajouter ton deal</button>
+				<button class="btn type=" submit">Ajouter ton deal</button>
 			</form>
 		</div>
 	</div>
