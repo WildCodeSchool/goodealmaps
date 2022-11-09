@@ -293,10 +293,7 @@ class FormAddGoodealController extends AbstractController
                 if ($authorIdReal === false) {
                     $authorManager->insertAuthor($finalValue["gooDeal"]);
                 }
-                var_dump($finalValue["gooDeal"]);
-                var_dump($gooDealData);
 
-                die;
                 $finalValue["gooDeal"]["id"] = $gooDealData["id"];
 
                 $addGoodealManager = new AddGoodealManager();
