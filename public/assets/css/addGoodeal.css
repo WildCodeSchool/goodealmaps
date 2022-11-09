@@ -1,4 +1,4 @@
- .form-add input,
+.form-add input,
 .form-add textarea,
 .form-add input {
   width: 50%;
@@ -11,27 +11,22 @@
   resize: vertical; 
 }
 
-  
-
 input:hover {
   background-color: var(--color-secondary);
   color: var(--color-primary)
 }
-label {
- 
+label { 
   width: 100%;
   color: var(--color-secondary);
   display: block;
   font-size: 20px;
   margin-top: 16px;
   margin-bottom: 5px;
-  
 }
 .form {
   height: 100%;
   width: 100%;
   padding-bottom: 5px;
-
 }
 #category,
 #region {
@@ -58,13 +53,11 @@ label {
   text-align: center;
   vertical-align: middle;
   padding: 15px;
-
 }
 h1{
   margin-top: 10px;
 }
 .txt-form {
- 
   size: 32px;
   color: var(--color-secondary);;
 }
