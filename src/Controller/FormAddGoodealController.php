@@ -222,7 +222,7 @@ class FormAddGoodealController extends AbstractController
                 $addGoodealManager->insertGoodeal($finalValue["gooDeal"]);
                 header('Location: /announcements');
             } else {
-                unlink ($uploadFile);
+                unlink($uploadFile);
             }
         }
            // Generate the web page
