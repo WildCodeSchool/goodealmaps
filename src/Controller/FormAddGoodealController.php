@@ -128,7 +128,8 @@ class FormAddGoodealController extends AbstractController
         string $extension,
         array $authorizedExtensions,
         int $maxFileSize,
-        string $uploadFile
+        string $uploadFile,
+        string $nameImageEncrypted
     ): array {
         $errors = [];
         $gooDeal = [];
@@ -147,7 +148,7 @@ class FormAddGoodealController extends AbstractController
             $errors['image'] = 'Veuillez sélectionner une image de type Jpg ou Jpeg ou Png !';
         }
         if (empty($errors['image'])) {
-            $gooDeal['image'] = $uploadFile;
+            $gooDeal['image'] = $nameImageEncrypted;
         }
 
         $checkImage = [
@@ -167,11 +168,13 @@ class FormAddGoodealController extends AbstractController
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                 // upload file
                 $uploadDir = 'assets/images/cards/';
-                $uploadFile = $uploadDir . uniqid(basename($_FILES['imageupload']['name'])) ;
+                $nameImage = pathinfo($_FILES['imageupload']['name'], PATHINFO_FILENAME);          
                 $extension = pathinfo($_FILES['imageupload']['name'], PATHINFO_EXTENSION);
+                $nameImageEncrypted = uniqid($nameImage) . ".$extension" ;
                 $authorizedExtensions = ['jpg','png', 'gif', 'webp'];
                 $maxFileSize = 1000000;
-
+                $uploadFile = $uploadDir . $nameImageEncrypted;
+ 
                 //data
                 $data = [
                 "title" => $_POST['deal-name'],
@@ -186,7 +189,7 @@ class FormAddGoodealController extends AbstractController
                 "message" => $_POST['description']
                 ];
 
-                $checkImage = $this->checkImage($extension, $authorizedExtensions, $maxFileSize, $uploadFile);
+                $checkImage = $this->checkImage($extension, $authorizedExtensions, $maxFileSize, $uploadFile, $nameImageEncrypted);
                 $checkedData = $this->cleanValue($data);
                 $finalValue = array_merge_recursive($this->checkForm($checkedData), $checkImage);
                 //processing date
