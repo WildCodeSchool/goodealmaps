@@ -15,6 +15,7 @@
 }
 
 :root {
+    --height-page: calc(100vh - var(--height-header) - var(--height-footer));
     --color-primary: #224151;
     --color-secondary: #F1EFDA;
     --color-text: #000;
@@ -23,10 +24,10 @@
     --font-primary-bold: IstokWebBold;
     --font-size-h1-header: 40px;
     --font-size-h1-body: 36px;
-    --font-size-card-header: 18px;
+    --font-size-card-header: 16px;
     --font-size-card-date: 16px;
-    --font-size-card-footer: 18px;
-    --padding-card: 20px;
+    --font-size-card-footer: 14px;
+    --padding-card: 40px;
     --margin-card: 65px;
     --padding-line: 3px;
     --card-header-height: calc(3*var(--font-size-card-header));
@@ -40,7 +41,17 @@
     --width-about-text: 300px;
     --nav-width: 700px;
     --height-header: 60px;
+<<<<<<< HEAD
     --height-footer: 60px;
+=======
+    --height-header-mobile:120px;
+    --height-footer: 40px;
+    --padding-footer: 10px;
+    
+    --font-size-card-icon: 16px;
+    --padding-card-icon: 40px;
+    --card-header-height-icon: calc(3*var(--font-size-card-icon));
+>>>>>>> dev
 }
 
 body {
@@ -64,7 +75,7 @@ body h1 {
 main {
     min-height: calc(100vh - var(--height-header) - var(--height-footer));
     box-sizing: border-box;
-    padding: var(--padding-card) 0 var(--height-footer);
+    /* padding: var(--padding-card) 0 var(--height-footer); */
 }
 
 .mention {
@@ -99,6 +110,7 @@ input[type=submit] {
     background-color: var(--color-primary);
     border-radius: 25px;
     display: inline-block;
+    align-items: center;
     cursor: pointer;
     color: var(--color-secondary);
     font-family: Arial;
@@ -111,8 +123,8 @@ input[type=submit] {
     border: none;
     border: solid 1px var(--color-primary);
     position: absolute;
-    right: 20px;
-    margin: 0;
+    right: 35px;
+    /* margin: 0; */
 }
 
 .btn-goodeals:hover {
@@ -129,7 +141,7 @@ input[type=submit] {
     border: 0.5px solid var(--color-primary);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1100px) {
     .btn-goodeals {
         display: none;
     }
@@ -137,22 +149,22 @@ input[type=submit] {
     .btn-goodeals.mobile {
         position: fixed;
         display: block;
-        margin: var(--padding-card) auto 0;
+        /* margin: var(--padding-card) auto 0; */
         z-index: 11;
         border: 0.5px solid var(--color-secondary);
         padding: 0 15px;
         font-size: 48px;
         border-radius: 50%;
-        margin: 0;
+        margin-top: 40px;
         top: calc(var(--height-header) + var(--padding-card));
     }
 }
 
-@media (max-width: 870px) {
+/* @media (max-width: 870px) {
     .btn-goodeals.mobile {
         top: calc(2*var(--height-header)/3);
     }
-}
+} */
 
 ul.container p.error {
     color: red;
