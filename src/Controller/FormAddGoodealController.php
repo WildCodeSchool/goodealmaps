@@ -168,13 +168,13 @@ class FormAddGoodealController extends AbstractController
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
                 // upload file
                 $uploadDir = 'assets/images/cards/';
-                $nameImage = pathinfo($_FILES['imageupload']['name'], PATHINFO_FILENAME);          
+                $nameImage = pathinfo($_FILES['imageupload']['name'], PATHINFO_FILENAME);
                 $extension = pathinfo($_FILES['imageupload']['name'], PATHINFO_EXTENSION);
                 $nameImageEncrypted = uniqid($nameImage) . ".$extension" ;
                 $authorizedExtensions = ['jpg','png', 'gif', 'webp'];
                 $maxFileSize = 1000000;
                 $uploadFile = $uploadDir . $nameImageEncrypted;
- 
+
                 //data
                 $data = [
                 "title" => $_POST['deal-name'],
@@ -189,27 +189,33 @@ class FormAddGoodealController extends AbstractController
                 "message" => $_POST['description']
                 ];
 
-                $checkImage = $this->checkImage($extension, $authorizedExtensions, $maxFileSize, $uploadFile, $nameImageEncrypted);
+                $checkImage = $this->checkImage(
+                    $extension,
+                    $authorizedExtensions,
+                    $maxFileSize,
+                    $uploadFile,
+                    $nameImageEncrypted
+                );
                 $checkedData = $this->cleanValue($data);
                 $finalValue = array_merge_recursive($this->checkForm($checkedData), $checkImage);
                 //processing date
                 $finalValue["gooDeal"]["start-date"] = $_POST['start-date'];
                 $finalValue["gooDeal"]["end-date"] = $_POST['end-date'];
 
-                if (!$finalValue["errors"]) {
-                    $authorManager = new AuthorManager();
-                    $authorIdReal = $authorManager->autorExists($finalValue["gooDeal"]);
-                    if ($authorIdReal === false) {
-                        $authorManager->insertAuthor($finalValue["gooDeal"]);
-                    }
-
-                    $addGoodealManager = new AddGoodealManager();
-                    $addGoodealManager->insertGoodeal($finalValue["gooDeal"]);
-
-
-
-                   //   header('Location: /addGoodeal');
+            if (!$finalValue["errors"]) {
+                $authorManager = new AuthorManager();
+                $authorIdReal = $authorManager->autorExists($finalValue["gooDeal"]);
+                if ($authorIdReal === false) {
+                    $authorManager->insertAuthor($finalValue["gooDeal"]);
                 }
+
+                $addGoodealManager = new AddGoodealManager();
+                $addGoodealManager->insertGoodeal($finalValue["gooDeal"]);
+
+
+
+               //   header('Location: /addGoodeal');
+            }
         }
            // Generate the web page
 
