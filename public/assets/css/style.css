@@ -39,8 +39,8 @@
     --margin-photo-dev: 70 px;
     --width-about-text: 300px;
     --nav-width: 700px;
-    --height-header: 95px;
-    --height-footer: 75px;
+    --height-header: 60px;
+    --height-footer: 60px;
 }
 
 body {
@@ -62,9 +62,13 @@ body h1 {
 }
 
 main {
-    min-height: calc(100vh - var(--height-header) - var(--heignt-footer));
+    min-height: calc(100vh - var(--height-header) - var(--height-footer));
     box-sizing: border-box;
     padding: var(--padding-card) 0 var(--height-footer);
+}
+
+main#home {
+    padding-top: 0;
 }
 
 .mention {
