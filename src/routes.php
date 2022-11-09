@@ -14,9 +14,12 @@ return [
     'contact' => ['ContactController', 'index'],
     'legal' => ['LegalController', 'index'],
     'home' => ['HomeController', 'index',],
-    'announcement' => ['AnnouncementController', 'index',],
+    'announcements' => ['AnnouncementController', 'index',],
+    'announcements/card' => ['AnnouncementController', 'show', ['id']],
+    'announcements/delete' => ['AnnouncementController', 'delete', ['id']],
     'addGoodeal' => ['FormAddGoodealController', 'index'],
     'addGoodeal/add' => ['FormAddGoodealController', 'addGoodeal'],
+
     'addGoodeal/edit' => ['FormAddGoodealController', 'editGooDeal', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],

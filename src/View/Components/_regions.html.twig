@@ -1,7 +1,7 @@
-<select class="region" autocomplete="off" onchange="top.location=this.value" onclick="this.classList.toggle('opened');" onblur="this.classList.remove('opened');">
-    <option class="not-selected" value="/announcements{% if active != 'tous' %}?category={{active}}{% endif %}">Tous regions</option>
+<select class="region" autocomplete="off"  onclick="this.classList.toggle('opened');" onblur="this.classList.remove('opened');">
+    <option class="not-selected" value="" link="/announcements{% if active != 'tous' %}?category={{active}}{% endif %}">Tous regions</option>
     {% for region in regions %}
-        <option value="/announcements?{% if active != 'tous' %}category={{active}}&{% endif %}region_id={{region.id}}"
+        <option value="{{region.id}}" link="/announcements?{% if active != 'tous' %}category={{active}}&{% endif %}region_id={{region.id}}"
         {% if selected==region.id %}
             selected="selected" 
         {% endif %}

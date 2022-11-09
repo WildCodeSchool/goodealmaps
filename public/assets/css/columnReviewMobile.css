@@ -4,20 +4,15 @@
     height: 100%;
     background-color: var(--color-secondary);
     display: flex;
-    flex-direction: column;
-    align-items: center;
-      
+    flex-direction: row;
+    align-items: center;  
   }
-  .btn-goodeals {
-    display: none;
-  }
-   
   /*Caroussel CSS*/
   .right-column {
     display: flex;
-    overflow-x: auto;
-    width: 100%;
-    scroll-snap-type: x mandatory;
+    flex-direction: row;
+    max-width: 100%;
+    overflow-x: scroll;  
   }
   .right-card {
     width: 200px;
@@ -27,19 +22,29 @@
     box-shadow: 0px 0px 10px 0px var(--color-primary);
     flex: 1 0 200px;
     margin-left: 1rem;
-    scroll-snap-align: start;
+     scroll-snap-align: start; 
   }
+  .column{
+    width: 100%;
+    margin-top: initial;
+  }
+  
   .right-card a {
     text-decoration: none;
 }
-  ::-webkit-scrollbar-thumb {
-    background-color: #3d4852;
-    border-radius: 3px;
+  .right-column::-webkit-scrollbar {
+    width: 1px;
+  }
+  .right-column::-webkit-scrollbar-track {
+    background: #f1f1f1;
   }
   .title-column {
+    height: 100%;
+    margin-left: 10px;
     margin-top: 20px;
     font-size: 24px;
     color: var(--color-primary);
+    text-align: center;
   }
   .header-card {
     font-size: 22px;
@@ -61,6 +66,6 @@
     object-fit:cover;
     object-position: right;
   }
-    
+
 }
 
