@@ -22,21 +22,17 @@ class AddGoodealManager extends AbstractManager
             $announcement['firstname'],
             $announcement['lastname'],
             $announcement['email']
-        );     
+        );
 
-        if ($announcement['start-date'] === ""){
+        if ($announcement['start-date'] === "") {
             $startDate = null;
-        }
-        else 
-        {
+        } else {
             $startDate = $announcement['start-date'];
         }
 
-        if ($announcement['end-date'] === ""){
+        if ($announcement['end-date'] === "") {
             $endDate = null;
-        }
-        else 
-        {
+        } else {
             $endDate = $announcement['end-date'];
         }
 

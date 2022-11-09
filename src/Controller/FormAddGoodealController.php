@@ -165,13 +165,15 @@ class FormAddGoodealController extends AbstractController
         $finalValue['errors'] = [];
 
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
+
+                // upload file
                 $uploadDir = 'assets/images/cards/';
                 $uploadFile = $uploadDir . uniqid(basename($_FILES['imageupload']['name'])) ;
                 $extension = pathinfo($_FILES['imageupload']['name'], PATHINFO_EXTENSION);
                 $authorizedExtensions = ['jpg','png', 'gif', 'webp'];
                 $maxFileSize = 1000000;
 
-
+                //data
                 $data = [
                 "title" => $_POST['deal-name'],
                 "lastname" => $_POST['lastname'],
@@ -181,8 +183,6 @@ class FormAddGoodealController extends AbstractController
                 "region" => $_POST['region'],
                 "city" => $_POST['city'],
                 "zipcode" => $_POST['zipcode'],
-                "start-date" => $_POST['start-date'],
-                "end-date" => $_POST['end-date'],
                 "email" => $_POST['email'],
                 "message" => $_POST['description']
                 ];
@@ -190,16 +190,17 @@ class FormAddGoodealController extends AbstractController
                 $checkImage = $this->checkImage($extension, $authorizedExtensions, $maxFileSize, $uploadFile);
                 $checkedData = $this->cleanValue($data);
                 $finalValue = array_merge_recursive($this->checkForm($checkedData), $checkImage);
+                //processing date
+                $finalValue["gooDeal"]["start-date"] = $_POST['start-date'];
+                $finalValue["gooDeal"]["end-date"] = $_POST['end-date'];
 
                 if (!$finalValue["errors"]) {
-                    $addAuthor = new AuthorManager();
-                  /*  if (null !== ($addAuthor->checkAuthor($finalValue["gooDeal"])))
-                    {
-
-                    } else
-                    {*/
-                    $addAuthor->insertAuthor($finalValue["gooDeal"]);
-
+                    $authorManager = new AuthorManager();
+                    $authorIdReal = $authorManager->autorExists($finalValue["gooDeal"]);
+                    if ($authorIdReal === false) {
+                        $authorManager->insertAuthor($finalValue["gooDeal"]);
+                    }
+                
                     $addGoodealManager = new AddGoodealManager();
                     $addGoodealManager->insertGoodeal($finalValue["gooDeal"]);
 

@@ -39,7 +39,7 @@ class AuthorManager extends AbstractManager
         $statement->execute();
     }
 
-    function autorExists(array $author): bool | array
+    public function autorExists(array $author): bool | array
     {
         $statement = $this->pdo->prepare("SELECT id FROM " . self::TABLE . " WHERE firstname=:firstname
         AND lastname=:lastname AND email=:email");
@@ -48,8 +48,6 @@ class AuthorManager extends AbstractManager
         $statement->bindValue(':email', $author['email'], \PDO::PARAM_STR);
         $statement->execute();
         $authorIdReal = $statement->fetch();
-
         return $authorIdReal;
-
     }
 }
