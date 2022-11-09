@@ -64,9 +64,10 @@ class AnnouncementManager extends AbstractManager
     /**
      * Info about event with given id
      */
-    public function selectById(int $id): array
+    public function selectById(int $id): array|false
     {
-        $query = "SELECT * FROM `" . self::TABLE . "` as ann
+        $query = "SELECT  ann.id, `region_id`, `author_id`, `message`, `address`, `city`, `zipcode`, `date_start`,
+        `date_end`, `title`, `image`, `lastname`, `firstname`, `email` FROM `" . self::TABLE . "` as ann
          INNER JOIN `author` ON ann.author_id=author.id WHERE ann.id=" . $id;
         $statement = $this->pdo->prepare($query);
         $statement->execute();

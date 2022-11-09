@@ -1,7 +1,7 @@
-{% macro input(title, value, type, name, id, error, placeholder) %}
+{% macro input(title, label, type, name, id, error, placeholder, value = "") %}
 	<div class="label-column">
-		<label for="{{ title }}">{{ value }}</label>
-		<input type="{{ type }}" id="{{ id }}" name="{{ name }}" required placeholder="{{ placeholder }}">
+		<label for="{{ title }}">{{ label }}</label>
+		<input type="{{ type }}" id="{{ id }}" name="{{ name }}" required placeholder="{{ placeholder }}" value="{{value}}">
 
 
 		{% if error %}
@@ -10,28 +10,17 @@
 	</div>
 {% endmacro %}
 
-{% macro inputNoRequired(title, value, type, name, id, error) %}
+{% macro inputNoRequiredNoError(title, label, type, name, id, placeholder, value = "") %}
 	<div class="label-column">
-		<label for="{{ title }}">{{ value }}</label>
-		<input type="{{ type }}" id="{{ id }}" name="{{ name }}" placeholder="{{ placeholder }}">
-
-		{% if error %}
-			<p>{{ error }}</p>
-		{% endif %}
+		<label for="{{ title }}">{{ label }}</label>
+		<input type="{{ type }}" id="{{ id }}" name="{{ name }}" placeholder="{{ placeholder }}" value="{{value}}">
 	</div>
 {% endmacro %}
 
-{% macro inputNoRequiredNoError(title, value, type, name, id, placeholder) %}
+{% macro selectRegion(title, label, name, id, value = "") %}
 	<div class="label-column">
-		<label for="{{ title }}">{{ value }}</label>
-		<input type="{{ type }}" id="{{ id }}" name="{{ name }}" placeholder="{{ placeholder }}">
-	</div>
-{% endmacro %}
-
-{% macro selectRegion(title, value, name, id) %}
-	<div class="label-column">
-		<label for="{{ title }}">{{ value }}</label>
-		<select id="{{ id }}" name="{{ name }}">
+		<label for="{{ title }}">{{ label }}</label>
+		<select id="{{ id }}" name="{{ name }}" value="{{value}}">
 			<option value="Auvergne Rhône Alpes">Auvergne-Rhône-Alpes</option>
 			<option value="Bourgogne Franche Comté">Bourgogne-Franche-Comté</option>
 			<option value="Bretagne">Bretagne</option>
@@ -49,10 +38,10 @@
 	</div>
 {% endmacro %}
 
-{% macro selectCategory(title, value, name, id) %}
+{% macro selectCategory(title, label, name, id, value = "") %}
 	<div class="label-column">
-		<label for="{{ title }}">{{ value }}</label>
-		<select id="{{ id }}" name="{{ name }}">
+		<label for="{{ title }}">{{ label }}</label>
+		<select id="{{ id }}" name="{{ name }}" value="{{value}}">
 			<option value="Event">Evenement</option>
 			<option value="food-service">Restauration</option>
 			<option value="accommodation">Logement</option>
@@ -61,10 +50,23 @@
 {% endmacro %}
 
 
-{% macro textarea(title, value, type, name, id, error, placeholder) %}
+{% macro textarea(title, label, type, name, id, error, placeholder, value = "") %}
 	<div class="label-column">
-		<label for="{{ title }}">{{ value }}</label>
-		<textarea type="{{ type }}" id="{{ id }}" name="{{ name }}" required placeholder="{{ placeholder }}"></textarea>
+		<label for="{{ title }}">{{ label }}</label>
+		<textarea type="{{ type }}" id="{{ id }}" name="{{ name }}" required placeholder="{{ placeholder }}">{{ value }}</textarea>
+		{% if error %}
+			<p>{{ error }}</p>
+		{% endif %}
+	</div>
+{% endmacro %}
+
+{% macro inputImage(title, label, type, name, id, error, value = "") %}
+	<div class="label-column">
+		<label for="{{ title }}">{{ label }}</label>
+		<p>{{value}}</p>
+		<p>Choisis une nouvelle image</p>
+		<input type="{{ type }}" id="{{ id }}" name="{{ name }}" placeholder="{{ placeholder }}">
+
 		{% if error %}
 			<p>{{ error }}</p>
 		{% endif %}
