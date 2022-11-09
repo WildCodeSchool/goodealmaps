@@ -14,7 +14,6 @@ class AddGoodealManager extends AbstractManager
      */
     public function insertGoodeal(array $announcement): void
     {
-        $regionManager = new RegionManager();
         $regionId = $announcement['region'];
         $authorManager = new AuthorManager();
         $authorId = $authorManager->selectAuthorId(
