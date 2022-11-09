@@ -17,5 +17,7 @@ return [
     'announcements' => ['AnnouncementController', 'index',],
     'announcements/card' => ['AnnouncementController', 'show', ['id']],
     'announcements/delete' => ['AnnouncementController', 'delete', ['id']],
+    'addGoodeal' => ['FormAddGoodealController', 'index'],
+    'addGoodeal/add' => ['FormAddGoodealController', 'addGoodeal'],
     '404' => ['ErrorController','index'],
 ];

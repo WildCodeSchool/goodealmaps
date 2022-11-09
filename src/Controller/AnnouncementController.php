@@ -66,6 +66,14 @@ class AnnouncementController extends AbstractController
         'events' => self::EVENTS, 'active' => $active, 'regions' => $regions, 'selected' => $selected,
         'numpages' => $numpages, 'where' => $where, 'page' => $page, 'error' => $error]);
     }
+//Form add annonce
+    public function showFormAddGoodeal(): string
+    {
+
+        {
+            return $this->twig->render('Announcement/addGoodeal.html.twig');
+        }
+    }
 
     /**
      * List announcements
