@@ -227,32 +227,31 @@ class FormAddGoodealController extends AbstractController
     }
 
     public function editGooDeal(): string
-    {           
+    {
         $data = [];
         $finalValue = [];
         $finalValue['errors'] = [];
-        
+        $gooDealData = [];
+        $gooDeal = [];
+
         //If I get id in url parameter, I'll retrieve the recipe to edit
-        if(isset($_GET["id"])){
+        if (isset($_GET["id"])) {
             $gooDealDataManager = new AnnouncementManager();
             $gooDealData = $gooDealDataManager->selectById($_GET["id"]);
+        } else {
+            echo "id non trouvé";
+        };
 
-        }
-
-        else {echo "id non trouvé";};
-        
 
         //If the user send the form
 
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            if ($_FILES['imageupload']["name"] === ""){
-            $gooDeal['image'] = $gooDealData["image"];
-            $checkImage = [
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if ($_FILES['imageupload']["name"] === "") {
+                $gooDeal['image'] = $gooDealData["image"];
+                $checkImage = [
                 "gooDeal" => $gooDeal
-            ];}
-           
-           
-            else {
+                ];
+            } else {
                 $uploadDir = 'assets/images/cards/';
                 $nameImage = pathinfo($_FILES['imageupload']['name'], PATHINFO_FILENAME);
                 $extension = pathinfo($_FILES['imageupload']['name'], PATHINFO_EXTENSION);
@@ -260,14 +259,15 @@ class FormAddGoodealController extends AbstractController
                 $authorizedExtensions = ['jpg','png', 'gif', 'webp'];
                 $maxFileSize = 1000000;
                 $uploadFile = $uploadDir . $nameImageEncrypted;
-            
-            $checkImage = $this->checkImage(
-                $extension,
-                $authorizedExtensions,
-                $maxFileSize,
-                $uploadFile,
-                $nameImageEncrypted
-            );}
+
+                $checkImage = $this->checkImage(
+                    $extension,
+                    $authorizedExtensions,
+                    $maxFileSize,
+                    $uploadFile,
+                    $nameImageEncrypted
+                );
+            }
 
             $data = [
             "title" => $_POST['deal-name'],
@@ -282,7 +282,7 @@ class FormAddGoodealController extends AbstractController
             "message" => $_POST['description']
             ];
 
-           
+
 
             $checkedData = $this->cleanValue($data);
             $finalValue = array_merge_recursive($this->checkForm($checkedData), $checkImage);
@@ -299,8 +299,8 @@ class FormAddGoodealController extends AbstractController
 
                 $finalValue["gooDeal"]["id"] = $gooDealData["id"];
 
-            $addGoodealManager = new AddGoodealManager();
-            $addGoodealManager->updateGoodeal($finalValue["gooDeal"]);
+                $addGoodealManager = new AddGoodealManager();
+                $addGoodealManager->updateGoodeal($finalValue["gooDeal"]);
               //  header("location: /");
             }
         }

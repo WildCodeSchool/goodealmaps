@@ -55,7 +55,6 @@ class AddGoodealManager extends AbstractManager
 
 
         $statement->execute();
-
     }
 
     public function updateGoodeal(array $updategoodeal): void
@@ -82,11 +81,10 @@ class AddGoodealManager extends AbstractManager
             $endDate = $updategoodeal['endDate'];
         }
 
-/*        $query = "UPDATE " . self::TABLE . " SET region_id = :region_id, title = :title, message = :message, address = :address, 
-        author_id = :author_id, category = :category, date = :date, date_start = :date_start, date_end = :date_end, image = :image, 
-        city = :city, zipcode = :zipcode WHERE id = :id";*/
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET region_id = :region_id, title = :title, message = :message, address = :address, 
-        author_id = :author_id, category = :category, date = :date, date_start = :date_start, date_end = :date_end, image = :image, 
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET region_id = :region_id, 
+        title = :title, message = :message, address = :address, 
+        author_id = :author_id, category = :category, date = :date, 
+        date_start = :date_start, date_end = :date_end, image = :image, 
         city = :city, zipcode = :zipcode WHERE id = :id");
         $statement->bindValue(':region_id', $regionId, PDO::PARAM_INT);
         $statement->bindValue(':title', $updategoodeal['title'], PDO::PARAM_STR);
@@ -104,5 +102,4 @@ class AddGoodealManager extends AbstractManager
 
         $statement->execute();
     }
-    
 }
