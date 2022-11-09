@@ -4,7 +4,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: row;
-    max-height: calc(100vh - var(--height-header) - var(--height-footer));
+    max-height: var(--height-page);
   }
 
   /*CSS MAP First section*/

@@ -15,6 +15,7 @@
 }
 
 :root {
+    --height-page: calc(100vh - var(--height-header) - var(--height-footer));
     --color-primary: #224151;
     --color-secondary: #F1EFDA;
     --color-text: #000;
