@@ -67,10 +67,6 @@ main {
     padding: var(--padding-card) 0 var(--height-footer);
 }
 
-main#home {
-    padding-top: 0;
-}
-
 .mention {
     padding: 10%
 }
