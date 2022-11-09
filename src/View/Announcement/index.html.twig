@@ -1,11 +1,13 @@
 {% extends 'layout.html.twig' %}
 {% block title %}
-    {{parent()}} - Annonces
+	{{parent()}}
+	- Annonces
 {% endblock %}
 {% block stylesheet%}
     <link rel="stylesheet" href="/assets/css/blur.css">
-    <link rel="stylesheet" href="/assets/css/announcement.css">
+	<link rel="stylesheet" href="/assets/css/announcement.css">
 {% endblock %}
+
 {% block content %}
 {% set line = "" %}
 {% for key, value in where %}

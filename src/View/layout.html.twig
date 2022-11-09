@@ -14,7 +14,7 @@
 		
 	
 		{% block stylesheet%}
-		 <link rel="stylesheet" href="/assets/css/blur.css">
+			<link rel="stylesheet" href="/assets/css/blur.css">
 		{% endblock %}
 		<title>
 			{% block title %}GooDealMap
@@ -29,11 +29,7 @@
     {% block content %}
     {% endblock %}
 
-	{% include 'Components/_footer.html.twig' %}
-    {% block footer %}
-    {% endblock %}
+{% include 'Components/_footer.html.twig' %}
+{% block footer %}{% endblock %}
 
-	{% block javascript %}
-	{% endblock %}
-</body>
-</html>
+{% block javascript %}{% endblock %}</body></html>
