@@ -94,7 +94,7 @@ a.icon {
     display: flex;
     position: absolute;
     width: var(--card-icon-width);
-    top: calc(var(--card-header-height) + 0.5*var(--padding-card));
+    top: calc(var(--card-header-height-icon) + 0.5*var(--padding-card-icon));
     left: calc(var(--card-width) - var(--padding-card) - var(--card-icon-width));
 }
 
@@ -113,7 +113,7 @@ span.icon img {
 }
 
 a.icon.remove {
-    top: calc(2.5*var(--card-header-height) - var(--card-icon-width) - 0.5*var(--padding-card));
+    top: calc(2.5*var(--card-header-height) - var(--card-icon-width) );
     z-index: 10;
 }
 
@@ -217,7 +217,7 @@ div.card-see-more {
     font-family: var(--font-primary-regular);
     font-size: var(--font-size-button);
     padding: calc(0.5*var(--padding-card)) var(--padding-card);
-    margin-top: var(--padding-card);
+    
 }
 
 .announcement nav {
@@ -227,6 +227,7 @@ div.card-see-more {
     height: var(--card-header-height);
     margin: 0 auto var(--padding-card);
     border: 0.5px solid var(--color-primary);
+    margin-top: 20px;
 }
 
 .announcement nav a,

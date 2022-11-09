@@ -1,6 +1,6 @@
-.contact_form input[type=text],
-.contact_form textarea,
-.contact_form input[type=email] {
+.contact-form input[type=text],
+.contact-form textarea,
+.contact-form input[type=email] {
   width: 50%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -9,7 +9,7 @@
   margin-bottom: 16px;
   margin-right: 0px;
   margin-left: 0px;
-
+  resize: vertical;
 }
 
 label {
@@ -20,16 +20,21 @@ label {
   display: block;
 }
 
-
+.btn[type=submit] {
+  background-color: rgba(34, 65, 81, 1);
+  color: white;
+  padding: 12px 40px;
+  border: none;
+  cursor: pointer;
+  margin-left: 60%;
+  display: block;
+  border-radius: 28px;
+}
 
 input[type=submit]:hover {
   background-color: var(--color-secondary);
   color: var(--color-primary)
 }
-
-
-
-
 
 .form {
   height: 100%;
@@ -38,14 +43,13 @@ input[type=submit]:hover {
 
 }
 
-.contactForm {
+.contact-form {
   text-align: center;
   vertical-align: middle;
-
 }
 
-.txtForm {
-  font-size: var(--font-size-card-date);
+.txt-form {
+  font-size: 16px;
   text-align: center;
   padding: 15px;
   color: var(--color-secondary);

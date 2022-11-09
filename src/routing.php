@@ -19,8 +19,10 @@ $matchingRoute = $routes[$route];
 
 // Get the FQCN of controller associated to the matching route
 $controller = 'App\\Controller\\' . $matchingRoute[0];
+
 // Get the method associated to the matching route
 $method = $matchingRoute[1];
+
 // Get the queryString values configured for the matching route (in $_GET superglobal).
 // If there are additional queryString parameters, they are ignored here, and should be
 // directly manage in the controller

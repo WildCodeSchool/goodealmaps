@@ -49,7 +49,7 @@ input[type=submit]:hover {
   border-radius: 16px;
 }
 
-.form {
+.form-add{
   height: 100%;
   width: 100%;
   padding-bottom: 5px;
