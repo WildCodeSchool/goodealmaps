@@ -212,10 +212,7 @@ class FormAddGoodealController extends AbstractController
 
                 $addGoodealManager = new AddGoodealManager();
                 $addGoodealManager->insertGoodeal($finalValue["gooDeal"]);
-
-
-
-               //   header('Location: /addGoodeal');
+                header('Location: /announcements');
             }
         }
            // Generate the web page
@@ -296,12 +293,15 @@ class FormAddGoodealController extends AbstractController
                 if ($authorIdReal === false) {
                     $authorManager->insertAuthor($finalValue["gooDeal"]);
                 }
+                var_dump($finalValue["gooDeal"]);
+                var_dump($gooDealData);
 
+                die;
                 $finalValue["gooDeal"]["id"] = $gooDealData["id"];
 
                 $addGoodealManager = new AddGoodealManager();
                 $addGoodealManager->updateGoodeal($finalValue["gooDeal"]);
-              //  header("location: /");
+                header('Location: /announcements');
             }
         }
 
