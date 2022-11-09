@@ -30,7 +30,7 @@
 				{{ form.inputNoRequiredNoError("start-date", "date de début", "date", "start-date", "start-date", "ex: 20/12/2022") }}
 				{{ form.inputNoRequiredNoError("end-date", "date de fin", "date", "end-date", "end-date", "ex: 25/12/2022") }}
 				{{ form.input("email", "ton adresse mail*", "email", "email", "email", errors.email, "ex: florent.dupond@gmail.com") }}
-				{{ form.inputnorequired("imageupload", "la photo de ton deal", "file", "imageupload", "imageupload", errors.image) }}
+				{{ form.input("imageupload", "la photo de ton deal", "file", "imageupload", "imageupload", errors.image) }}
 				{{ form.textarea("description", "décris ton deal*", "text", "description", "description", errors.message, "ex: grand tournoi de pétanque avec plus de 300 paritcipants...") }}
 				<button type=" submit">Ajouter ton deal</button>
 			</form>

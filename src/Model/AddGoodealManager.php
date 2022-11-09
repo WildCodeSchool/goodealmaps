@@ -56,13 +56,53 @@ class AddGoodealManager extends AbstractManager
 
         $statement->execute();
 
-/*    public function update(array $item): bool
-    {
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `title` = :title WHERE id=:id");
-        $statement->bindValue('id', $item['id'], PDO::PARAM_INT);
-        $statement->bindValue('title', $item['title'], PDO::PARAM_STR);
-
-        return $statement->execute();
-    }*/
     }
+
+    public function updateGoodeal(array $updategoodeal): void
+    {
+        $regionManager = new RegionManager();
+        $regionId = $regionManager->selectRegionId($updategoodeal['region']);
+
+        $authorManager = new AuthorManager();
+        $authorId = $authorManager->selectAuthorId(
+            $updategoodeal['firstname'],
+            $updategoodeal['lastname'],
+            $updategoodeal['email']
+        );
+
+        if ($updategoodeal['startDate'] === "") {
+            $startDate = null;
+        } else {
+            $startDate = $updategoodeal['startDate'];
+        }
+
+        if ($updategoodeal['endDate'] === "") {
+            $endDate = null;
+        } else {
+            $endDate = $updategoodeal['endDate'];
+        }
+
+/*        $query = "UPDATE " . self::TABLE . " SET region_id = :region_id, title = :title, message = :message, address = :address, 
+        author_id = :author_id, category = :category, date = :date, date_start = :date_start, date_end = :date_end, image = :image, 
+        city = :city, zipcode = :zipcode WHERE id = :id";*/
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET region_id = :region_id, title = :title, message = :message, address = :address, 
+        author_id = :author_id, category = :category, date = :date, date_start = :date_start, date_end = :date_end, image = :image, 
+        city = :city, zipcode = :zipcode WHERE id = :id");
+        $statement->bindValue(':region_id', $regionId, PDO::PARAM_INT);
+        $statement->bindValue(':title', $updategoodeal['title'], PDO::PARAM_STR);
+        $statement->bindValue(':message', $updategoodeal['message'], PDO:: PARAM_STR);
+        $statement->bindValue(':address', $updategoodeal['address'], PDO::PARAM_STR);
+        $statement->bindValue(':author_id', $authorId, PDO::PARAM_INT);
+        $statement->bindValue(':category', $updategoodeal['category'], \PDO::PARAM_STR);
+        $statement->bindValue(':date', date("Y-m-d"), PDO::PARAM_STR);
+        $statement->bindValue(':date_start', $startDate, PDO::PARAM_STR);
+        $statement->bindValue(':date_end', $endDate, PDO::PARAM_STR);
+        $statement->bindValue(':image', $updategoodeal['image'], PDO::PARAM_STR);
+        $statement->bindValue(':city', $updategoodeal['city'], PDO::PARAM_STR);
+        $statement->bindValue(':zipcode', $updategoodeal['zipcode'], PDO::PARAM_INT);
+        $statement->bindValue(':id', $updategoodeal["id"], \PDO::PARAM_INT);
+
+        $statement->execute();
+    }
+    
 }

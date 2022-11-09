@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Model\AddGoodealManager;
 use App\Model\AuthorManager;
+use App\Model\AnnouncementManager;
 
 class FormAddGoodealController extends AbstractController
 {
@@ -199,8 +200,8 @@ class FormAddGoodealController extends AbstractController
                 $checkedData = $this->cleanValue($data);
                 $finalValue = array_merge_recursive($this->checkForm($checkedData), $checkImage);
                 //processing date
-                $finalValue["gooDeal"]["start-date"] = $_POST['start-date'];
-                $finalValue["gooDeal"]["end-date"] = $_POST['end-date'];
+                $finalValue["gooDeal"]["startDate"] = $_POST['start-date'];
+                $finalValue["gooDeal"]["endDate"] = $_POST['end-date'];
 
             if (!$finalValue["errors"]) {
                 $authorManager = new AuthorManager();
@@ -223,5 +224,92 @@ class FormAddGoodealController extends AbstractController
             'data' => $data,
             'errors' => $finalValue['errors']
                ]);
+    }
+
+    public function editGooDeal(): string
+    {           
+        $data = [];
+        $finalValue = [];
+        $finalValue['errors'] = [];
+        
+        //If I get id in url parameter, I'll retrieve the recipe to edit
+        if(isset($_GET["id"])){
+            $gooDealDataManager = new AnnouncementManager();
+            $gooDealData = $gooDealDataManager->selectById($_GET["id"]);
+
+        }
+
+        else {echo "id non trouvé";};
+        
+
+        //If the user send the form
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            if ($_FILES['imageupload']["name"] === ""){
+            $gooDeal['image'] = $gooDealData["image"];
+            $checkImage = [
+                "gooDeal" => $gooDeal
+            ];}
+           
+           
+            else {
+                $uploadDir = 'assets/images/cards/';
+                $nameImage = pathinfo($_FILES['imageupload']['name'], PATHINFO_FILENAME);
+                $extension = pathinfo($_FILES['imageupload']['name'], PATHINFO_EXTENSION);
+                $nameImageEncrypted = uniqid($nameImage) . ".$extension" ;
+                $authorizedExtensions = ['jpg','png', 'gif', 'webp'];
+                $maxFileSize = 1000000;
+                $uploadFile = $uploadDir . $nameImageEncrypted;
+            
+            $checkImage = $this->checkImage(
+                $extension,
+                $authorizedExtensions,
+                $maxFileSize,
+                $uploadFile,
+                $nameImageEncrypted
+            );}
+
+            $data = [
+            "title" => $_POST['deal-name'],
+            "lastname" => $_POST['lastname'],
+            "firstname" => $_POST['firstname'],
+            "category" => $_POST['category'],
+            "address" => $_POST['address'],
+            "region" => $_POST['region'],
+            "city" => $_POST['city'],
+            "zipcode" => $_POST['zipcode'],
+            "email" => $_POST['email'],
+            "message" => $_POST['description']
+            ];
+
+           
+
+            $checkedData = $this->cleanValue($data);
+            $finalValue = array_merge_recursive($this->checkForm($checkedData), $checkImage);
+            //processing date
+            $finalValue["gooDeal"]["startDate"] = $_POST['start-date'];
+            $finalValue["gooDeal"]["endDate"] = $_POST['end-date'];
+
+            if (!$finalValue["errors"]) {
+                $authorManager = new AuthorManager();
+                $authorIdReal = $authorManager->autorExists($finalValue["gooDeal"]);
+                if ($authorIdReal === false) {
+                    $authorManager->insertAuthor($finalValue["gooDeal"]);
+                }
+
+                $finalValue["gooDeal"]["id"] = $gooDealData["id"];
+
+            $addGoodealManager = new AddGoodealManager();
+            $addGoodealManager->updateGoodeal($finalValue["gooDeal"]);
+              //  header("location: /");
+            }
+        }
+
+        // Generate the web page
+            return $this->twig->render('Announcement/edit.html.twig', [
+                'data' => $data,
+                'errors' => $finalValue['errors'],
+                'GooDealData' => $gooDealData
+            ]);
     }
 }
