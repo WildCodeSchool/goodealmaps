@@ -85,6 +85,7 @@ body {
     border: none;
     background-color: var(--color-secondary);
     padding-bottom: 5px;
+    width: 90%;
 }
 
 .searchbar:focus {
@@ -177,6 +178,7 @@ body {
         padding-top: 7px;
         height: var(--height-header-mobile);
     }
+
     .title {
         font-size: 30px;
     }
@@ -184,6 +186,7 @@ body {
     .menu-burger {
         display: unset;
     }
+
     .nav-header {
         width: 100%;
         display: flex;
