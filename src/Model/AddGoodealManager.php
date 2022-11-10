@@ -4,7 +4,6 @@ namespace App\Model;
 
 use PDO;
 use App\Model\AuthorManager;
-use App\Model\RegionManager;
 
 class AddGoodealManager extends AbstractManager
 {
@@ -55,8 +54,7 @@ class AddGoodealManager extends AbstractManager
 
     public function updateGoodeal(array $updategoodeal): void
     {
-        $regionManager = new RegionManager();
-        $regionId = $updategoodeal['region'];//$regionId = $regionManager->selectRegionId($updategoodeal['region']);
+        $regionId = $updategoodeal['region'];
 
         $authorManager = new AuthorManager();
         $authorId = $authorManager->selectAuthorId(
