@@ -56,7 +56,7 @@ class AddGoodealManager extends AbstractManager
     public function updateGoodeal(array $updategoodeal): void
     {
         $regionManager = new RegionManager();
-        $regionId = $regionManager->selectRegionId($updategoodeal['region']);
+        $regionId = $updategoodeal['region'];//$regionId = $regionManager->selectRegionId($updategoodeal['region']);
 
         $authorManager = new AuthorManager();
         $authorId = $authorManager->selectAuthorId(

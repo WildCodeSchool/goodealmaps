@@ -251,7 +251,6 @@ class FormAddGoodealController extends AbstractController
             echo "id non trouvé";
         };
 
-
         //If the user send the form
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -291,8 +290,6 @@ class FormAddGoodealController extends AbstractController
             "message" => $_POST['description']
             ];
 
-
-
             $checkedData = $this->cleanValue($data);
             $finalValue = array_merge_recursive($this->checkForm($checkedData), $checkImage);
             //processing date
@@ -314,11 +311,16 @@ class FormAddGoodealController extends AbstractController
             }
         }
 
+            $regionManager = new RegionManager();
+           $regions = $regionManager->select();
+
         // Generate the web page
             return $this->twig->render('Announcement/edit.html.twig', [
                 'data' => $data,
                 'errors' => $finalValue['errors'],
-                'GooDealData' => $gooDealData
+                'GooDealData' => $gooDealData,
+                'regions' => $regions,
+                'selected' => $gooDealData['region_id']
             ]);
     }
 }

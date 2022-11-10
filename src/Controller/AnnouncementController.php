@@ -82,7 +82,9 @@ class AnnouncementController extends AbstractController
     {
         $announcementManager = new AnnouncementManager();
         $announcement = $announcementManager->selectById($id);
-        $announcement['ref'] = $_SERVER['HTTP_REFERER'];
+        if (isset($_SERVER['HTTP_REFERER'])) {
+            $announcement['ref'] = $_SERVER['HTTP_REFERER'];
+        }
         return $this->twig->render('Announcement/detail.html.twig', ['announcement' => $announcement]);
     }
 
