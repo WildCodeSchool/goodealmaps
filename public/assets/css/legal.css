@@ -1,3 +1,4 @@
+
 .overlay-mention {
     margin-left: auto;
     margin-right: auto;
@@ -7,9 +8,13 @@
     background-color: var(--overlay-color);
     z-index: 1;
     border-radius: 16px;
-    height: 600px;
+    height: 83vh;
     overflow: auto;
+  
 }
+::-webkit-scrollbar {
+    display: none;
+  }
 
 .p-legal{
     color: var(--color-secondary);

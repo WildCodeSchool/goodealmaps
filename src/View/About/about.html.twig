@@ -1,7 +1,7 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %} 
-    {{parent() }} - A propos
+{% block title %}
+    {{parent()}} - A propos
 {% endblock %}
 
 {% block stylesheet%}
@@ -10,24 +10,23 @@
 {% endblock %}
 
 {% block content %}
-    <main>
+    <main class="about">
     <h1 class="about">Qui nous sommes </h1>
     <div class="container-about">
         <div class="text">
         <h2>Salut !</h2>
         <p>Nous sommes une équipe de 5 devs-voyagers.
             On apprecie le bon pain (et le vin) ainsi que les bon jeux du cirque.
-            C’est pourquoi on a crie ce site.<br/>Bon courage et bon voyage !
+            C'est pourquoi on a crie ce site.<br/>Bon courage et bon voyage !
         </p>
         </div>
         <span class="devs">
             {% for dev in devs %}
             <span class="dev">
-                <img class="dev-ava" src="{{pathAva ~ dev.image}}" />
+                <a href="#" class="over"><img class="dev-ava" src="{{pathAva ~ dev.image}}" /></a>
                 <span class="name">{{dev.name}}</span>
-                <!--<span class="icon git"><a href="{{dev.github}}"><img class="icon" src="{{pathIcon ~ 'github1.svg'}}" /></a></span>-->
-                <span class="icon git"><a href="{{dev.github}}" class="svg-background"></a></span>
-                <span class="icon linkedin"><a href="{{dev.linkedin}}"><img class="icon" src="{{pathIcon ~ 'linkedin.png'}}" /></a></span>
+                <span class="icon git"><a target="_blank" href="{{dev.github}}" class="svg-background"></a></span>
+                <span class="icon linkedin"><a target="_blank" href="{{dev.linkedin}}"><img class="icon" src="{{pathIcon ~ 'linkedin.png'}}" /></a></span>
             </span>
             {% endfor %}
         </span>
