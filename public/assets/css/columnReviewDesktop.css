@@ -75,4 +75,7 @@
         object-fit: cover;
         object-position: right;
     }
+    ::-webkit-scrollbar {
+        display: none;
+      }
 }
