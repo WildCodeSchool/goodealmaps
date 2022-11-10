@@ -89,7 +89,7 @@ body {
 
 .searchbar:focus {
     outline: none;
-    border: 2px solid var(--color-primary);
+    border: 1px solid var(--color-primary);
 }
 
 .search {
@@ -177,6 +177,7 @@ body {
         padding-top: 7px;
         height: var(--height-header-mobile);
     }
+
     .title {
         font-size: 30px;
     }
@@ -184,6 +185,7 @@ body {
     .menu-burger {
         display: unset;
     }
+
     .nav-header {
         width: 100%;
         display: flex;

@@ -41,10 +41,10 @@
     --width-about-text: 300px;
     --nav-width: 700px;
     --height-header: 60px;
-    --height-header-mobile:120px;
+    --height-header-mobile: 120px;
     --height-footer: 40px;
     --padding-footer: 10px;
-    
+
     --font-size-card-icon: 16px;
     --padding-card-icon: 40px;
     --card-header-height-icon: calc(3*var(--font-size-card-icon));
