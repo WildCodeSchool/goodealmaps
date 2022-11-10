@@ -172,7 +172,7 @@ div.card-title h2 {
 }
 
 .card-image img {
-    object-fit: contain;
+    object-fit: cover;
     height: 250px;
     width: 100%;
     transition: 1s;
@@ -185,15 +185,17 @@ div.card-text {
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+    padding-top: calc(var(--padding-card-icon)/2);
 }
 
-div.card-info {
+article.card-single div.card-info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    padding-top: var(--padding-card-icon);
 }
 
 div.card-author {
@@ -221,6 +223,7 @@ div.card-see-more {
     font-family: var(--font-primary-regular);
     font-size: var(--font-size-button);
     padding: calc(0.5*var(--padding-card)) var(--padding-card);
+    margin: 10px 0;
 
 }
 
