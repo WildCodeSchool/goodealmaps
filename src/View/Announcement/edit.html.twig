@@ -21,7 +21,7 @@
 				{{ GooDealData.title }}
 			</h1>
 
-			<form method="post" enctype="multipart/form-data">
+			<form method="post" enctype="multipart/form-data" class="form-add">
 				<input type="hidden" name="id" value="{{ GooDealData.id }}"/>
 				{{ form.input("deal-name","Nom de ton deal*", "text", "deal-name", "deal-name", errors.title, "nom du deal", GooDealData.title) }}
 				{{ form.input("lastname","Ton nom*", "text", "lastname", "lastname", errors.lastname, "ex: juste", GooDealData.lastname) }}
@@ -41,7 +41,7 @@
 				{{ form.input("email", "ton adresse mail*", "Email", "email", "email", errors.email, "ex: florent.dupond@gmail.com", GooDealData.email) }}
 				{{ form.inputImage("imageupload", "La photo de ton deal", "file", "imageupload", "imageupload", errors.image, GooDealData.image) }}
 				{{ form.textarea("description", "Décris ton deal*", "text", "description", "description", errors.message, "ex: grand tournoi de pétanque avec plus de 300 paritcipants...", GooDealData.message) }}
-				<button type="submit">Mise à jour du GooDeal</button>
+				<button class="btn" type="submit">Mise à jour du GooDeal</button>
 			</form>
 		</div>
 	</div>
