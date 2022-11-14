@@ -8,14 +8,15 @@
   margin-top: 6px;
   margin-bottom: 3px;
   background-color: white;
-  resize: vertical; 
+  resize: vertical;
 }
 
 input:hover {
   background-color: var(--color-secondary);
   color: var(--color-primary)
 }
-label { 
+
+label {
   width: 100%;
   color: var(--color-secondary);
   display: block;
@@ -23,23 +24,27 @@ label {
   margin-top: 16px;
   margin-bottom: 5px;
 }
-.form {
+
+.form-add {
   height: 100%;
   width: 100%;
   padding-bottom: 5px;
 }
+
 #category,
 #region {
-  background-color:white;
-  padding: 6px ;
+  background-color: white;
+  padding: 6px;
   width: 52%;
 }
-#end-date{
-  color:var(--color-primary);
+
+#end-date {
+  color: var(--color-primary);
 }
+
 .btn {
   background-color: rgba(34, 65, 81, 1);
-  color:var(--color-secondary);
+  color: var(--color-secondary);
   padding: 12px 20px;
   border: none;
   cursor: pointer;
@@ -48,17 +53,24 @@ label {
   border-radius: 28px;
   margin-top: 10px;
 }
+
 .form-add {
   margin-top: 10px;
   text-align: center;
   vertical-align: middle;
   padding: 15px;
 }
-h1{
+
+h1 {
   margin-top: 10px;
 }
+
 .txt-form {
   size: 32px;
-  color: var(--color-secondary);;
+  color: var(--color-secondary);
+  ;
 }
 
+.form-add p.error {
+  padding: 5px 0;
+}
