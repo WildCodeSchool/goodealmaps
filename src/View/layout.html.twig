@@ -1,21 +1,35 @@
 <!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="/assets/images/favicon.png">
-
-    <title>{% block title %}{% endblock %}</title>
-
-    <link rel="stylesheet" href="/assets/css/style.css">
-    {% block stylesheet %}{% endblock %}
-</head>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="/assets/images/icons/favicon.png">
+		<link rel="stylesheet" href="/assets/css/style.css">
+		<link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+        <link rel="stylesheet" href="/assets/css/reset.css">
+        
+		
+		
+	
+		{% block stylesheet%}
+			<link rel="stylesheet" href="/assets/css/blur.css">
+		{% endblock %}
+		<title>
+		{% block title %}GooDealMap
+		{% endblock %}
+		</title>  		
+	</head>
 
 <body>
-    {% block content %}{% endblock %}
-    {% block javascript %}{% endblock %}
-</body>
-</html>
+	{% include 'Components/_header.html.twig' %}
+    {% block header %} 
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
 
+{% include 'Components/_footer.html.twig' %}
+{% block footer %}{% endblock %}
 
+{% block javascript %}{% endblock %}</body></html>
