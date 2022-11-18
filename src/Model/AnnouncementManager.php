@@ -8,7 +8,6 @@ class AnnouncementManager extends AbstractManager
 {
     public const TABLE = 'announcement';
 
-
     /**
      * Insert new announcement in database
      */
@@ -78,8 +77,10 @@ class AnnouncementManager extends AbstractManager
      */
     public function deleteById(int $id): void
     {
+        $image = $this->selectById($id)['image'];
         $query = "DELETE FROM `" . self::TABLE . "` WHERE id=" . $id;
         $statement = $this->pdo->prepare($query);
         $statement->execute();
+        unlink('assets/images/cards/' . $image);
     }
 }

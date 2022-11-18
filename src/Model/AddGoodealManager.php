@@ -4,7 +4,6 @@ namespace App\Model;
 
 use PDO;
 use App\Model\AuthorManager;
-use App\Model\RegionManager;
 
 class AddGoodealManager extends AbstractManager
 {
@@ -14,9 +13,7 @@ class AddGoodealManager extends AbstractManager
      */
     public function insertGoodeal(array $announcement): void
     {
-        $regionManager = new RegionManager();
-        $regionId = $regionManager->selectRegionId($announcement['region']);
-
+        $regionId = $announcement['region'];
         $authorManager = new AuthorManager();
         $authorId = $authorManager->selectAuthorId(
             $announcement['firstname'],
@@ -52,15 +49,12 @@ class AddGoodealManager extends AbstractManager
         $statement->bindValue(':image', $announcement['image'], PDO::PARAM_STR);
         $statement->bindValue(':city', $announcement['city'], PDO::PARAM_STR);
         $statement->bindValue(':zipcode', $announcement['zipcode'], PDO::PARAM_INT);
-
-
         $statement->execute();
     }
 
     public function updateGoodeal(array $updategoodeal): void
     {
-        $regionManager = new RegionManager();
-        $regionId = $regionManager->selectRegionId($updategoodeal['region']);
+        $regionId = $updategoodeal['region'];
 
         $authorManager = new AuthorManager();
         $authorId = $authorManager->selectAuthorId(
